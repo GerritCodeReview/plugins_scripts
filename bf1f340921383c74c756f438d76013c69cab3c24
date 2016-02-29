@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e25359c8_a3bd3ade",
+        "filename": "admin/readonly-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-02-29T08:08:59Z",
+      "side": 1,
+      "message": "Does this need a copyright and license header?",
+      "revId": "bf1f340921383c74c756f438d76013c69cab3c24",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2e0153f_c2e382f2",
+        "filename": "admin/readonly-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-02-29T08:08:59Z",
+      "side": 1,
+      "message": "nit: wrap this long line.",
+      "revId": "bf1f340921383c74c756f438d76013c69cab3c24",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
