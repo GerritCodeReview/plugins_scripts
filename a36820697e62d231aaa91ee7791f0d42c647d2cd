@@ -22,6 +22,30 @@
       "revId": "a36820697e62d231aaa91ee7791f0d42c647d2cd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "425fc5cb_0671baae",
+        "filename": "admin/reindexer-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2016-03-01T23:10:57Z",
+      "side": 1,
+      "message": "TIme flies :-)",
+      "parentUuid": "a20c01ef_7998672e",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "a36820697e62d231aaa91ee7791f0d42c647d2cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
