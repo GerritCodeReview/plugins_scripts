@@ -25,6 +25,53 @@
     },
     {
       "key": {
+        "uuid": "425fc5cb_26495607",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2016-03-02T22:55:23Z",
+      "side": 1,
+      "message": "Not strictly needed ... but for a lazy guy like me, yes :-)",
+      "parentUuid": "a20c01ef_994c5b6e",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "a86ff88623ff16582db61d4460b9cc1def67cdd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "425fc5cb_e65b3ece",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2016-03-02T22:55:23Z",
+      "side": 1,
+      "message": "This option is a security hole: the user wanting to warm up the cache is not necessarily authorised to see the actual project names. Just knowing that N projects have been loaded is good enough.",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 17
+      },
+      "revId": "a86ff88623ff16582db61d4460b9cc1def67cdd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a20c01ef_b9479f4a",
         "filename": "admin/warm-cache-1.0.groovy",
         "patchSetId": 2
@@ -48,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "62684971_27107add",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2016-03-02T22:55:23Z",
+      "side": 1,
+      "message": "Not really.",
+      "parentUuid": "a20c01ef_b9479f4a",
+      "range": {
+        "startLine": 37,
+        "startChar": 9,
+        "endLine": 37,
+        "endChar": 10
+      },
+      "revId": "a86ff88623ff16582db61d4460b9cc1def67cdd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c2ae55f9_52cab464",
         "filename": "admin/warm-cache-1.0.groovy",
         "patchSetId": 2
@@ -59,6 +130,30 @@
       "writtenOn": "2016-03-02T00:45:50Z",
       "side": 1,
       "message": "Just to confirm that I\u0027m understanding this correctly: it only prints the number when it\u0027s a multiple of 1000?\n\nIt might be useful to add something like\n\n  \" of $allProjects.length\"\n\nso the user can see how far it\u0027s got.\n\n(excuse my syntax; I\u0027ve never written groovy code before)",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 92
+      },
+      "revId": "a86ff88623ff16582db61d4460b9cc1def67cdd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "425fc5cb_c65642a9",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2016-03-02T22:55:23Z",
+      "side": 1,
+      "message": "need to use a temporary var, but yes I can just request the total size and display in the progress.",
+      "parentUuid": "c2ae55f9_52cab464",
       "range": {
         "startLine": 42,
         "startChar": 8,
