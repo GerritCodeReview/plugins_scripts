@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a20c01ef_994c5b6e",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-03-02T00:45:50Z",
+      "side": 1,
+      "message": "Should we be using wildcard imports?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "a86ff88623ff16582db61d4460b9cc1def67cdd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a20c01ef_b9479f4a",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-03-02T00:45:50Z",
+      "side": 1,
+      "message": "Is this whitespace needed?  Same at the closing one.",
+      "range": {
+        "startLine": 37,
+        "startChar": 9,
+        "endLine": 37,
+        "endChar": 10
+      },
+      "revId": "a86ff88623ff16582db61d4460b9cc1def67cdd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2ae55f9_52cab464",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2016-03-02T00:45:50Z",
+      "side": 1,
+      "message": "Just to confirm that I\u0027m understanding this correctly: it only prints the number when it\u0027s a multiple of 1000?\n\nIt might be useful to add something like\n\n  \" of $allProjects.length\"\n\nso the user can see how far it\u0027s got.\n\n(excuse my syntax; I\u0027ve never written groovy code before)",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 92
+      },
+      "revId": "a86ff88623ff16582db61d4460b9cc1def67cdd5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
