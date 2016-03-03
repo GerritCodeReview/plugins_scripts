@@ -52,5 +52,51 @@ class WarmProjectsCache extends BaseSshCommand {
   }
 }
 
-commands = [ WarmProjectsCache ]
+@Export("groups")
+class WarmGroupsCache extends WarmProjectsCache {
+
+  @Inject
+  GroupCache groupCache
+
+  @Inject
+  GroupIncludeCache groupIncludeCache
+
+  private HashSet<AccountGroup.UUID> allGroupsUUIDs() {
+    def allGroupsUuids = new HashSet<AccountGroup.UUID>()
+    for (project in cache.all()) {
+      def groupUuids = cache.get(project)?.getConfig()?.getAllGroupUUIDs()
+      if (groupUuids != null) { allGroupsUuids.addAll(groupUuids) }
+    }
+    allGroupsUuids.addAll(groupIncludeCache.allExternalMembers())
+    return allGroupsUuids;
+  }
+
+  public void run() {
+    println "Loading groups list ..."
+    def start = System.currentTimeMillis()
+    def allGroupsUuids = allGroupsUUIDs();
+    def totGroups = allGroupsUuids.size()
+    def groupsLoaded = 0
+
+    for (groupUuid in allGroupsUuids) {
+      groupIncludeCache.subgroupsOf(groupUuid)
+      groupIncludeCache.parentGroupsOf(groupUuid)
+      def group = groupCache.get(groupUuid)
+      if(group != null) {
+        groupCache.get(group.getNameKey())
+        groupCache.get(group.getId())
+      }
+      groupsLoaded++
+
+      if (groupsLoaded%1000==0) {
+        println "$groupsLoaded of $totGroups groups"
+      }
+    }
+
+    def elapsed = (System.currentTimeMillis()-start)/1000
+    println "$groupsLoaded groups loaded in $elapsed secs"
+  }
+}
+
+commands = [ WarmProjectsCache, WarmGroupsCache ]
 
