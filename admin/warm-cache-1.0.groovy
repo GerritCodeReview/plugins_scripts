@@ -17,6 +17,7 @@ import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.server.project.*
 import com.google.gerrit.server.account.*
 import com.google.gerrit.reviewdb.client.AccountGroup
+import com.google.gerrit.reviewdb.server.ReviewDb
 import com.google.inject.*
 import org.kohsuke.args4j.*
 
@@ -100,5 +101,39 @@ class WarmGroupsCache extends WarmProjectsCache {
   }
 }
 
-commands = [ WarmProjectsCache, WarmGroupsCache ]
+@Export("accounts")
+class WarmAccountsCache extends BaseSshCommand {
+
+  @Inject
+  AccountCache cache
+
+  @Inject
+  AccountByEmailCache cacheByEmail
+
+  @Inject
+  Provider<ReviewDb> db
+
+  public void run() {
+    println "Loading accounts ..."
+    def start = System.currentTimeMillis()
+    def allAccounts = db.get().accounts().all()
+    def loaded = 0
+
+    for (account in allAccounts) {
+      cache.get(account.accountId)
+      if (account.preferredEmail != null) {
+        cacheByEmail.get(account.preferredEmail)
+      }
+      loaded++
+      if (loaded%1000==0) {
+        println "$loaded accounts"
+      }
+    }
+
+    def elapsed = (System.currentTimeMillis()-start)/1000
+    println "$loaded accounts loaded in $elapsed secs"
+  }
+}
+
+commands = [ WarmProjectsCache, WarmGroupsCache, WarmAccountsCache ]
 
