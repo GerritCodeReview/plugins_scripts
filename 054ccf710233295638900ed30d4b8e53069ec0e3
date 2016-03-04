@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "82861d95_20d32a27",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2016-03-04T11:11:49Z",
+      "side": 1,
+      "message": "Those are not related, better to avoid them.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 53
+      },
+      "revId": "054ccf710233295638900ed30d4b8e53069ec0e3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2bfd930_839a1e8a",
         "filename": "admin/warm-cache-1.0.groovy",
         "patchSetId": 1
