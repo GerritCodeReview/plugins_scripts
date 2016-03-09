@@ -16,6 +16,7 @@ import com.google.gerrit.sshd.*
 import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.server.project.*
 import com.google.gerrit.server.account.*
+import com.google.gerrit.server.IdentifiedUser
 import com.google.gerrit.reviewdb.client.AccountGroup
 import com.google.gerrit.reviewdb.server.ReviewDb
 import com.google.inject.*
@@ -30,10 +31,14 @@ abstract class BaseSshCommand extends SshCommand {
 }
 
 @Export("projects")
+@CommandMetaData(description = "Warm-up project_list and projects caches")
 class WarmProjectsCache extends BaseSshCommand {
 
   @Inject
   ProjectCache cache
+
+  @Inject
+  GroupCache groupCache
 
   public void run() {
     println "Loading project list ..."
@@ -135,5 +140,36 @@ class WarmAccountsCache extends BaseSshCommand {
   }
 }
 
-commands = [ WarmProjectsCache, WarmGroupsCache, WarmAccountsCache ]
+@Export("groups-backends")
+class WarmGroupsBackendsCache extends WarmAccountsCache {
+
+  @Inject
+  IdentifiedUser.GenericFactory userFactory
+
+  public void run() {
+    println "Loading groups ..."
+    def start = System.currentTimeMillis()
+    def allAccounts = db.get().accounts().all()
+    def loaded = 0
+    def allGroupsUUIDs = new HashSet<AccountGroup.UUID>()
+    def lastDisplay = 0
+
+    for (account in allAccounts) {
+      def user = userFactory.create(account.accountId)
+      def groupsUUIDs = user?.getEffectiveGroups()?.getKnownGroups()
+      if (groupsUUIDs != null) { allGroupsUUIDs.addAll(groupsUUIDs) }
+
+      loaded = allGroupsUUIDs.size()
+      if (loaded.intdiv(1000) > lastDisplay) {
+        println "$loaded groups"
+        lastDisplay = loaded.intdiv(1000)
+      }
+    }
+
+    def elapsed = (System.currentTimeMillis()-start)/1000
+    println "$loaded groups loaded in $elapsed secs"
+  }
+}
+
+commands = [ WarmProjectsCache, WarmGroupsCache, WarmAccountsCache, WarmGroupsBackendsCache ]
 
