@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import com.google.gerrit.common.data.GlobalCapability
 import com.google.gerrit.sshd.*
 import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.server.project.*
@@ -32,6 +33,7 @@ abstract class BaseSshCommand extends SshCommand {
 
 @Export("projects")
 @CommandMetaData(description = "Warm-up project_list and projects caches")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
 class WarmProjectsCache extends BaseSshCommand {
 
   @Inject
@@ -61,6 +63,7 @@ class WarmProjectsCache extends BaseSshCommand {
 }
 
 @Export("groups")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
 class WarmGroupsCache extends WarmProjectsCache {
 
   @Inject
@@ -107,6 +110,7 @@ class WarmGroupsCache extends WarmProjectsCache {
 }
 
 @Export("accounts")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
 class WarmAccountsCache extends BaseSshCommand {
 
   @Inject
