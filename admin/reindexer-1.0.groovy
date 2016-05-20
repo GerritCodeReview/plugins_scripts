@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import com.google.gerrit.common.data.GlobalCapability
 import com.google.gerrit.sshd.*
 import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.lucene.*
@@ -20,6 +21,7 @@ import org.kohsuke.args4j.*
 
 @Export("start")
 @CommandMetaData(name = "start", description = "Start a new on-line re-indexing for a target Lucene index version")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
 class StartReindex extends SshCommand {
 
   @Inject OnlineReindexer.Factory reindexerFactory
