@@ -22,6 +22,30 @@
       "revId": "d10241970d06dbc694a21f5fe11b6ab6aa4867e0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97682aa0_597823e0",
+        "filename": "admin/cmd-reindexer.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2016-05-20T20:18:21Z",
+      "side": 1,
+      "message": "already fixed.",
+      "parentUuid": "57d4f27c_4775cee6",
+      "range": {
+        "startLine": 19,
+        "startChar": 38,
+        "endLine": 19,
+        "endChar": 39
+      },
+      "revId": "d10241970d06dbc694a21f5fe11b6ab6aa4867e0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
