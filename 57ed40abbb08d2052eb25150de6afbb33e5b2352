@@ -34,6 +34,24 @@
       "revId": "57ed40abbb08d2052eb25150de6afbb33e5b2352",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29680870_47356e38",
+        "filename": "admin/cmd-reindexer.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1012623
+      },
+      "writtenOn": "2016-06-21T05:35:19Z",
+      "side": 1,
+      "message": "I removed references to Access Control and Command Line Tools",
+      "parentUuid": "dc1e4759_74b2e8f5",
+      "revId": "57ed40abbb08d2052eb25150de6afbb33e5b2352",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
