@@ -117,9 +117,6 @@ class WarmAccountsCache extends BaseSshCommand {
   AccountCache cache
 
   @Inject
-  AccountByEmailCache cacheByEmail
-
-  @Inject
   Provider<ReviewDb> db
 
   public void run() {
@@ -130,9 +127,6 @@ class WarmAccountsCache extends BaseSshCommand {
 
     for (account in allAccounts) {
       cache.get(account.accountId)
-      if (account.preferredEmail != null) {
-        cacheByEmail.get(account.preferredEmail)
-      }
       loaded++
       if (loaded%1000==0) {
         println "$loaded accounts"
