@@ -90,12 +90,12 @@ class WarmGroupsCache extends WarmProjectsCache {
     def groupsLoaded = 0
 
     for (groupUuid in allGroupsUuids) {
-      groupIncludeCache.subgroupsOf(groupUuid)
       groupIncludeCache.parentGroupsOf(groupUuid)
       def group = groupCache.get(groupUuid)
-      if(group != null) {
-        groupCache.get(group.getNameKey())
-        groupCache.get(group.getId())
+
+      if(group.isPresent()) {
+        groupCache.get(group.get().getNameKey())
+        groupCache.get(group.get().getId())
       }
       groupsLoaded++
 
@@ -117,16 +117,19 @@ class WarmAccountsCache extends BaseSshCommand {
   AccountCache cache
 
   @Inject
+  Accounts accounts
+
+  @Inject
   Provider<ReviewDb> db
 
   public void run() {
     println "Loading accounts ..."
     def start = System.currentTimeMillis()
-    def allAccounts = db.get().accounts().all()
+    def allAccountIds = accounts.allIds()
     def loaded = 0
 
-    for (account in allAccounts) {
-      cache.get(account.accountId)
+    for (accountId in allAccountIds) {
+      cache.get(accountId)
       loaded++
       if (loaded%1000==0) {
         println "$loaded accounts"
@@ -148,13 +151,14 @@ class WarmGroupsBackendsCache extends WarmAccountsCache {
   public void run() {
     println "Loading groups ..."
     def start = System.currentTimeMillis()
-    def allAccounts = db.get().accounts().all()
+    def allAccountIds = accounts.allIds()
+
     def loaded = 0
     def allGroupsUUIDs = new HashSet<AccountGroup.UUID>()
     def lastDisplay = 0
 
-    for (account in allAccounts) {
-      def user = userFactory.create(account.accountId)
+    for (accountId in allAccountIds) {
+      def user = userFactory.create(accountId)
       def groupsUUIDs = user?.getEffectiveGroups()?.getKnownGroups()
       if (groupsUUIDs != null) { allGroupsUUIDs.addAll(groupsUUIDs) }
 
