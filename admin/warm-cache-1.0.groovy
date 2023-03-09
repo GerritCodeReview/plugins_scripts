@@ -19,7 +19,6 @@ import com.google.gerrit.server.project.*
 import com.google.gerrit.server.account.*
 import com.google.gerrit.server.IdentifiedUser
 import com.google.gerrit.reviewdb.client.AccountGroup
-import com.google.gerrit.reviewdb.server.ReviewDb
 import com.google.inject.*
 import org.kohsuke.args4j.*
 
@@ -117,16 +116,15 @@ class WarmAccountsCache extends BaseSshCommand {
   AccountCache cache
 
   @Inject
-  Provider<ReviewDb> db
+  Accounts accounts
 
   public void run() {
     println "Loading accounts ..."
     def start = System.currentTimeMillis()
-    def allAccounts = db.get().accounts().all()
     def loaded = 0
 
-    for (account in allAccounts) {
-      cache.get(account.accountId)
+    for (accountId in accounts.allIds()) {
+      cache.get(accountId)
       loaded++
       if (loaded%1000==0) {
         println "$loaded accounts"
@@ -148,13 +146,13 @@ class WarmGroupsBackendsCache extends WarmAccountsCache {
   public void run() {
     println "Loading groups ..."
     def start = System.currentTimeMillis()
-    def allAccounts = db.get().accounts().all()
+
     def loaded = 0
     def allGroupsUUIDs = new HashSet<AccountGroup.UUID>()
     def lastDisplay = 0
 
-    for (account in allAccounts) {
-      def user = userFactory.create(account.accountId)
+    for (accountId in accounts.allIds()) {
+      def user = userFactory.create(accountId)
       def groupsUUIDs = user?.getEffectiveGroups()?.getKnownGroups()
       if (groupsUUIDs != null) { allGroupsUUIDs.addAll(groupsUUIDs) }
 
