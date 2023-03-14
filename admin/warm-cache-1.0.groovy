@@ -90,6 +90,9 @@ class WarmGroupsCache extends WarmProjectsCache {
     def groupsLoaded = 0
 
     for (groupUuid in allGroupsUuids) {
+      if(groupUuid.get().length() == 0) {
+        continue
+      }
       groupIncludeCache.parentGroupsOf(groupUuid)
       def group = groupCache.get(groupUuid)
 
