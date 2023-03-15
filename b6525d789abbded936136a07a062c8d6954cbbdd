@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c860507_8b3c14ad",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-15T08:54:52Z",
+      "side": 1,
+      "message": "This is unused and can be removed",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 23
+      },
+      "revId": "b6525d789abbded936136a07a062c8d6954cbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0541626c_2855aa1e",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-15T08:54:52Z",
+      "side": 1,
+      "message": "This can be inlined at L131",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 41
+      },
+      "revId": "b6525d789abbded936136a07a062c8d6954cbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f0e945e_a65512c9",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-15T08:54:52Z",
+      "side": 1,
+      "message": "This can be inlined at L160",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 154,
+        "endChar": 41
+      },
+      "revId": "b6525d789abbded936136a07a062c8d6954cbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
