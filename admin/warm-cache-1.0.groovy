@@ -13,6 +13,8 @@
 // limitations under the License.
 
 import com.google.gerrit.common.data.GlobalCapability
+import com.google.gerrit.reviewdb.client.Account
+import com.google.gerrit.server.git.WorkQueue
 import com.google.gerrit.sshd.*
 import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.server.project.*
@@ -21,7 +23,9 @@ import com.google.gerrit.server.IdentifiedUser
 import com.google.gerrit.reviewdb.client.AccountGroup
 import com.google.gerrit.reviewdb.server.ReviewDb
 import com.google.inject.*
-import org.kohsuke.args4j.*
+import org.apache.sshd.server.Environment
+
+import java.util.concurrent.ExecutorService
 
 abstract class BaseSshCommand extends SshCommand {
 
@@ -148,32 +152,63 @@ class WarmAccountsCache extends BaseSshCommand {
 @RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
 class WarmGroupsBackendsCache extends WarmAccountsCache {
 
+  private static class GroupsBackendsTask implements Runnable {
+    Account.Id accountId
+
+    GroupsBackendsTask(Account.Id id) {
+      accountId = id
+    }
+
+    @Override
+    void run() {
+      def user = userFactory.create(accountId)
+      user?.getEffectiveGroups()?.getKnownGroups()
+    }
+    @Override
+    String toString() {
+      return "Warmup backend groups [accountId: $accountId]"
+    }
+  }
+
   @Inject
   IdentifiedUser.GenericFactory userFactory
 
-  public void run() {
-    println "Loading groups ..."
+  @Inject WorkQueue queues
+
+  ExecutorService executorService
+
+  ExecutorService createExecutor() {
+    queues.createQueue(8, "Groups-Backend-Cache-Warmer", false);
+  }
+
+  @Override
+  void start(Environment env) throws IOException {
+    super.start(env)
+    if(executorService == null) {
+      executorService = createExecutor()
+    }
+  }
+
+  void run() {
+    println "Scheduling LDAP groups loading ..."
     def start = System.currentTimeMillis()
     def allAccountIds = accounts.allIds()
 
-    def loaded = 0
-    def allGroupsUUIDs = new HashSet<AccountGroup.UUID>()
+    def scheduled = 0
     def lastDisplay = 0
 
     for (accountId in allAccountIds) {
-      def user = userFactory.create(accountId)
-      def groupsUUIDs = user?.getEffectiveGroups()?.getKnownGroups()
-      if (groupsUUIDs != null) { allGroupsUUIDs.addAll(groupsUUIDs) }
+      scheduled++
+      executorService.submit(new GroupsBackendsTask(accountId))
 
-      loaded = allGroupsUUIDs.size()
-      if (loaded.intdiv(1000) > lastDisplay) {
-        println "$loaded groups"
-        lastDisplay = loaded.intdiv(1000)
+      if (scheduled.intdiv(1000) > lastDisplay) {
+        println "Scheduled loading of groups for $scheduled accounts"
+        lastDisplay = scheduled.intdiv(1000)
       }
     }
 
-    def elapsed = (System.currentTimeMillis()-start)/1000
-    println "$loaded groups loaded in $elapsed secs"
+    def elapsed = (System.currentTimeMillis() - start) / 1000
+    println "Scheduled loading of groups for $scheduled accounts in $elapsed secs"
   }
 }
 
