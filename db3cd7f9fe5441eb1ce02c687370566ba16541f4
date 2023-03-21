@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb262fbc_34848a69",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-21T22:33:54Z",
+      "side": 1,
+      "message": "What about using `Optional.ifPresent()` instead?",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 27
+      },
+      "revId": "db3cd7f9fe5441eb1ce02c687370566ba16541f4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
