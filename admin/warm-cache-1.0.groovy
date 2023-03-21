@@ -12,15 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
+import com.google.common.flogger.FluentLogger
 import com.google.gerrit.common.data.GlobalCapability
-import com.google.gerrit.sshd.*
-import com.google.gerrit.extensions.annotations.*
-import com.google.gerrit.server.project.*
-import com.google.gerrit.server.account.*
-import com.google.gerrit.server.IdentifiedUser
+import com.google.gerrit.extensions.annotations.Export
+import com.google.gerrit.extensions.annotations.RequiresCapability
 import com.google.gerrit.reviewdb.client.AccountGroup
-import com.google.inject.*
-import org.kohsuke.args4j.*
+import com.google.gerrit.server.IdentifiedUser
+import com.google.gerrit.server.account.AccountCache
+import com.google.gerrit.server.account.Accounts
+import com.google.gerrit.server.account.GroupCache
+import com.google.gerrit.server.account.GroupIncludeCache
+import com.google.gerrit.server.git.WorkQueue
+import com.google.gerrit.server.project.ProjectCache
+import com.google.gerrit.sshd.CommandMetaData
+import com.google.gerrit.sshd.SshCommand
+import com.google.inject.Inject
+import org.apache.sshd.server.Environment
+
+import java.util.concurrent.ExecutorService
 
 abstract class BaseSshCommand extends SshCommand {
 
@@ -142,32 +152,71 @@ class WarmAccountsCache extends BaseSshCommand {
 @Export("groups-backends")
 @RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
 class WarmGroupsBackendsCache extends WarmAccountsCache {
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass()
+  private static THREAD_POOL_SIZE = 8
+  private static QUEUE_NAME = "Groups-Backend-Cache-Warmer"
 
   @Inject
   IdentifiedUser.GenericFactory userFactory
 
-  public void run() {
-    println "Loading groups ..."
+  @Inject WorkQueue queues
+
+  private static class GroupsBackendsTask implements Runnable {
+    IdentifiedUser user
+
+    GroupsBackendsTask(IdentifiedUser identifiedUser) {
+      user = identifiedUser
+    }
+
+    @Override
+    void run() {
+      def threadStart = System.currentTimeMillis()
+      def groupsUUIDs = user.getEffectiveGroups()?.getKnownGroups()
+      def threadElapsed = (System.currentTimeMillis() - threadStart)
+      logger.atWarning().log("Loaded %d groups for account %d in %s millis", groupsUUIDs.size(), user.getAccountId().get(), threadElapsed)
+    }
+
+    @Override
+    String toString() {
+      return "Warmup backend groups [accountId: ${user.getAccountId().get()}]"
+    }
+  }
+
+  ExecutorService executorService
+
+  private ExecutorService executor() {
+    def existingExecutor = queues.getExecutor(QUEUE_NAME)
+    if(existingExecutor != null) {
+      return existingExecutor
+    }
+    return queues.createQueue(THREAD_POOL_SIZE, QUEUE_NAME, true);
+  }
+
+  @Override
+  void start(Environment env) throws IOException {
+    super.start(env)
+    executorService = executor()
+  }
+
+  void run() {
+    println "Scheduling LDAP groups loading ..."
     def start = System.currentTimeMillis()
 
-    def loaded = 0
-    def allGroupsUUIDs = new HashSet<AccountGroup.UUID>()
+    def scheduled = 0
     def lastDisplay = 0
 
     for (accountId in accounts.allIds()) {
-      def user = userFactory.create(accountId)
-      def groupsUUIDs = user?.getEffectiveGroups()?.getKnownGroups()
-      if (groupsUUIDs != null) { allGroupsUUIDs.addAll(groupsUUIDs) }
+      scheduled++
+      executorService.submit(new GroupsBackendsTask(userFactory.create(accountId)))
 
-      loaded = allGroupsUUIDs.size()
-      if (loaded.intdiv(1000) > lastDisplay) {
-        println "$loaded groups"
-        lastDisplay = loaded.intdiv(1000)
+      if (scheduled.intdiv(1000) > lastDisplay) {
+        println "Scheduled loading of groups for $scheduled accounts"
+        lastDisplay = scheduled.intdiv(1000)
       }
     }
 
-    def elapsed = (System.currentTimeMillis()-start)/1000
-    println "$loaded groups loaded in $elapsed secs"
+    def elapsed = (System.currentTimeMillis() - start) / 1000
+    println "Scheduled loading of groups for $scheduled accounts in $elapsed secs"
   }
 }
 
