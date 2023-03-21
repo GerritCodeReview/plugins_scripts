@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9526bd1e_05963e1e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-21T22:41:36Z",
+      "side": 1,
+      "message": "Gerrit",
+      "range": {
+        "startLine": 9,
+        "startChar": 61,
+        "endLine": 9,
+        "endChar": 67
+      },
+      "revId": "e320d470309526d8ab52f79563dfa7d21c7fc4be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bce8d2f2_1d3d9a8c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-21T22:41:36Z",
+      "side": 1,
+      "message": "Parents aren\u0027t needed here.",
+      "range": {
+        "startLine": 11,
+        "startChar": 33,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "e320d470309526d8ab52f79563dfa7d21c7fc4be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76a32167_40a06873",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-21T22:41:36Z",
+      "side": 1,
+      "message": "It would be useful to log something here, so that it is possible to understand how this is progressing from the Gerrit\u0027s error_log",
+      "revId": "e320d470309526d8ab52f79563dfa7d21c7fc4be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ec42a4e_6ed85451",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-21T22:41:36Z",
+      "side": 1,
+      "message": "Nit: add empty line",
+      "revId": "e320d470309526d8ab52f79563dfa7d21c7fc4be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25f9accd_e3d8b754",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-21T22:41:36Z",
+      "side": 1,
+      "message": "Can you avoid magic values here and just declare it at the beginning of the script?",
+      "range": {
+        "startLine": 176,
+        "startChar": 23,
+        "endLine": 176,
+        "endChar": 24
+      },
+      "revId": "e320d470309526d8ab52f79563dfa7d21c7fc4be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
