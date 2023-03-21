@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba586ec3_eaec8e73",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-03-21T14:32:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c860507_8b3c14ad",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 23
+      },
+      "revId": "b6525d789abbded936136a07a062c8d6954cbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0541626c_2855aa1e",
@@ -64,6 +88,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0af9e27_ffbdddff",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-03-21T14:32:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0541626c_2855aa1e",
+      "range": {
+        "startLine": 128,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 41
+      },
+      "revId": "b6525d789abbded936136a07a062c8d6954cbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f0e945e_a65512c9",
@@ -77,6 +125,30 @@
       "writtenOn": "2023-03-15T08:54:52Z",
       "side": 1,
       "message": "This can be inlined at L160",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 154,
+        "endChar": 41
+      },
+      "revId": "b6525d789abbded936136a07a062c8d6954cbbdd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38ec9734_7c127ac8",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-03-21T14:32:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f0e945e_a65512c9",
       "range": {
         "startLine": 154,
         "startChar": 0,
