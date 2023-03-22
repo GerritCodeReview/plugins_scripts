@@ -22,6 +22,30 @@
       },
       "revId": "db3cd7f9fe5441eb1ce02c687370566ba16541f4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e553e2ba_1f323a89",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-03-22T13:13:53Z",
+      "side": 1,
+      "message": "I wrote it like that as first, but it turns out that Groovy parser does not accept lambdas.\n\n```\nsolutions-gerrit-1      | org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:\nsolutions-gerrit-1      | file:/var/gerrit/plugins/warm-cache-2.0.groovy: 94: unexpected token: -\u003e @ line 94, column 46.\nsolutions-gerrit-1      |    e.get(groupUuid).ifPresent( g -\u003e {\n```\n\nTransforming this in a closure works, but there are some gotchas [1] about closures and the scope of the variables.\n\nGiven the above I\u0027d like to keep it as-is, unless you feel strongly about it.\n\n\n[1]https://stackoverflow.com/questions/34283443/for-loop-works-different-in-groovy-and-java",
+      "parentUuid": "eb262fbc_34848a69",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 95,
+        "endChar": 27
+      },
+      "revId": "db3cd7f9fe5441eb1ce02c687370566ba16541f4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
