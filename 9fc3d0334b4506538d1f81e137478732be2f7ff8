@@ -16,6 +16,46 @@
       "message": "Thanks for your review @luca.milanesio@gmail.com, this is now ready for review again.",
       "revId": "9fc3d0334b4506538d1f81e137478732be2f7ff8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcc0df86_820af4cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-27T07:49:29Z",
+      "side": 1,
+      "message": "Just one nit.",
+      "revId": "9fc3d0334b4506538d1f81e137478732be2f7ff8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41e0fe5a_21e57572",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-03-27T07:49:29Z",
+      "side": 1,
+      "message": "`atInfo`",
+      "range": {
+        "startLine": 171,
+        "startChar": 13,
+        "endLine": 171,
+        "endChar": 22
+      },
+      "revId": "9fc3d0334b4506538d1f81e137478732be2f7ff8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
