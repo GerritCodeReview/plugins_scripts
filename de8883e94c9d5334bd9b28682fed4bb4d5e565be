@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb821b16_fce04bec",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-04-26T14:44:28Z",
+      "side": 1,
+      "message": "No need to be public, it can be private",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 8
+      },
+      "revId": "de8883e94c9d5334bd9b28682fed4bb4d5e565be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "574fca57_919b0d02",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-04-26T14:44:28Z",
+      "side": 1,
+      "message": "```suggestion\n  private static final THREAD_POOL_SIZE \u003d 8\n  private static final QUEUE_NAME \u003d \"Groups-Backend-Cache-Warmer\"\n```",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 59
+      },
+      "revId": "de8883e94c9d5334bd9b28682fed4bb4d5e565be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
