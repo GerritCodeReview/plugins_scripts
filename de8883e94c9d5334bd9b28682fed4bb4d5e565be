@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35447578_7b838202",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-05-03T13:10:45Z",
+      "side": 1,
+      "message": "This is an abstract class, setting this private would cause:\n\n```\nBUG! exception in phase \u0027class generation\u0027 in source unit \u0027file:/var/gerrit/plugins/warm-cache-2.0.groovy\u0027 Trying to access private constant field [BaseSshCommand#logger] from inner class\n```\n\nSetting this to `protected`",
+      "parentUuid": "bb821b16_fce04bec",
+      "range": {
+        "startLine": 30,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 8
+      },
+      "revId": "de8883e94c9d5334bd9b28682fed4bb4d5e565be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "574fca57_919b0d02",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-04-26T14:44:28Z",
       "side": 1,
       "message": "```suggestion\n  private static final THREAD_POOL_SIZE \u003d 8\n  private static final QUEUE_NAME \u003d \"Groups-Backend-Cache-Warmer\"\n```",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 59
+      },
+      "revId": "de8883e94c9d5334bd9b28682fed4bb4d5e565be",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e67bb0c2_de7aa35a",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-05-03T13:10:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "574fca57_919b0d02",
       "range": {
         "startLine": 151,
         "startChar": 0,
