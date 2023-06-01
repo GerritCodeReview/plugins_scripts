@@ -20,3 +20,6 @@ and then copy the Scala scripts under your Gerrit /plugins directory.
 
 [Administration Scripts](/admin/)
 ------------------------
+
+[Gerrit multi-primary Scripts](/multi-primary/)
+------------------------
