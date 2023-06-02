@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac66dcc6_0c71cc8e",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-02T07:09:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21c11f2f_8f5bbc62",
+      "range": {
+        "startLine": 43,
+        "startChar": 38,
+        "endLine": 43,
+        "endChar": 56
+      },
+      "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5bbb2d3_a5e2fa67",
@@ -58,6 +82,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a516f695_42e4473c",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-02T07:09:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5bbb2d3_a5e2fa67",
+      "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0008c9d_a2a0f8ec",
@@ -71,6 +113,24 @@
       "writtenOn": "2023-06-02T07:02:15Z",
       "side": 1,
       "message": "nit: remove extra characters",
+      "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c209c4a1_f59666b8",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-02T07:09:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0008c9d_a2a0f8ec",
       "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
