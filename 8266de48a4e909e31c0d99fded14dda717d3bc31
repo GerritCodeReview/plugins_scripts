@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c41ba0c2_a7860198",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-06-02T07:02:15Z",
+      "side": 1,
+      "message": "Could we add as a follow up change check if all refs in global refdb are present in the local repository.\nBeside of that extra functionality all looks good just some small nits",
+      "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21c11f2f_8f5bbc62",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-06-02T07:02:15Z",
+      "side": 1,
+      "message": "we have option to check individual ref so we shouldn\u0027t suggest only all refs",
+      "range": {
+        "startLine": 43,
+        "startChar": 38,
+        "endLine": 43,
+        "endChar": 56
+      },
+      "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5bbb2d3_a5e2fa67",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-06-02T07:02:15Z",
+      "side": 1,
+      "message": "nit: remove extra characters",
+      "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0008c9d_a2a0f8ec",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-06-02T07:02:15Z",
+      "side": 1,
+      "message": "nit: remove extra characters",
+      "revId": "8266de48a4e909e31c0d99fded14dda717d3bc31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
