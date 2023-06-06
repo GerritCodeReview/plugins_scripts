@@ -82,7 +82,8 @@ class ProjectRefsCheck extends BaseSshCommand {
           def refsDonePerc = 0
           def startTime = System.currentTimeMillis()
           repo.refDatabase.refs.each { ref ->
-            checkRef(projectName, repo, ref)
+            def refUpToDate = checkRef(projectName, repo, ref)
+            upToDate = upToDate && refUpToDate
             if (!verbose) {
               refsDone++
               if ((refsDone * 100).intdiv(totRefs) > refsDonePerc) {
@@ -114,6 +115,8 @@ class ProjectRefsCheck extends BaseSshCommand {
       def globalRef = globalRefDb.get().get(projectName, ref.name, String.class)
       println "[OUTDATED] ${ref.name}:${ref.objectId.name} <> ${globalRef.orElse('MISSING')}"
     }
+
+    return isUpToDate
   }
 }
 
