@@ -96,7 +96,7 @@ class ProjectRefsCheck extends BaseSshCommand {
           }
         }
 
-        println "Result: ${upToDate ? 'UP-TO-DATE':'OUTDATED'}"
+        println "Result: $project is ${upToDate ? 'UP-TO-DATE':'OUTDATED'}"
       }
     } catch (RepositoryNotFoundException e) {
       error "Project $project not found"
