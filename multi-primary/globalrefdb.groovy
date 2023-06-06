@@ -77,8 +77,21 @@ class ProjectRefsCheck extends BaseSshCommand {
           upToDate = checkRef(projectName, repo, ref)
         } else {
           println "Checking project $project ..."
+          def totRefs = repo.refDatabase.refs.size()
+          def refsDone = 0
+          def refsDonePerc = 0
+          def startTime = System.currentTimeMillis()
           repo.refDatabase.refs.each { ref ->
             checkRef(projectName, repo, ref)
+            if (!verbose) {
+              refsDone++
+              if ((refsDone * 100).intdiv(totRefs) > refsDonePerc) {
+                refsDonePerc = (refsDone * 100).intdiv(totRefs)
+                def totTime = startTime + Math.round((System.currentTimeMillis() - startTime) / refsDonePerc * 100)
+                def eta = Math.round((totTime - System.currentTimeMillis()) / 1000)
+                println "  $refsDone/$totRefs ($refsDonePerc%, ETA $eta sec)"
+              }
+            }
           }
         }
 
