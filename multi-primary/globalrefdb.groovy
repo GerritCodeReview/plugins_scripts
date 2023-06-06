@@ -81,7 +81,7 @@ class ProjectRefsCheck extends BaseSshCommand {
           def refsDone = 0
           def refsDonePerc = 0
           def startTime = System.currentTimeMillis()
-          repo.refDatabase.refs.each { ref ->
+          repo.refDatabase.refs.parallelStream().forEach { ref ->
             def refUpToDate = checkRef(projectName, repo, ref)
             upToDate = upToDate && refUpToDate
             if (!verbose) {
