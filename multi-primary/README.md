@@ -15,3 +15,4 @@ refs against the globalrefdb:
 * [localalrefdb](localrefdb.md) - Provides ssh commands that create metrics for:
  - Number of refs in project
  - Combined SHA1 of all refs in project
+* [changesize](changesize.md) - Provides utility to check size of patchsets
