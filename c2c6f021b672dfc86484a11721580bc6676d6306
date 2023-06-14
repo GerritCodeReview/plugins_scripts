@@ -70,6 +70,30 @@
       },
       "revId": "c2c6f021b672dfc86484a11721580bc6676d6306",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7548fe6_40f3a3a2",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-14T12:41:13Z",
+      "side": 1,
+      "message": "\u003e Realistically, you\u0027d be interested in which refs are out of date rather than how many. I believe it still logs the out of date refs, could simply pipe to `wc -l` if the user really wants too?\n\nYes, that was the point. We want to display *ALL* the ones out of date, that\u0027s why we do not want to short circuit.",
+      "parentUuid": "cb3013d6_18e4ed32",
+      "range": {
+        "startLine": 85,
+        "startChar": 12,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "c2c6f021b672dfc86484a11721580bc6676d6306",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
