@@ -22,6 +22,30 @@
       },
       "revId": "c2c6f021b672dfc86484a11721580bc6676d6306",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5d6839b_7cd9d3a4",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2023-06-14T11:47:51Z",
+      "side": 1,
+      "message": "I would say that better would be to increase it every time when ref is not up to date so that it is known how many was no up to date. WDYT Luca?",
+      "parentUuid": "85bb3f83_85ba4235",
+      "range": {
+        "startLine": 85,
+        "startChar": 12,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "c2c6f021b672dfc86484a11721580bc6676d6306",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
