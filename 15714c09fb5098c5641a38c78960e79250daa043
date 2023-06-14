@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48fb2680_9b1700b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2023-06-14T11:44:51Z",
+      "side": 1,
+      "message": "nits, but otherwise LGTM",
+      "revId": "15714c09fb5098c5641a38c78960e79250daa043",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3336cda9_654fa284",
@@ -19,6 +36,29 @@
         "startChar": 17,
         "endLine": 86,
         "endChar": 24
+      },
+      "revId": "15714c09fb5098c5641a38c78960e79250daa043",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c73678b2_15b8ab6a",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2023-06-14T11:44:51Z",
+      "side": 1,
+      "message": "nit: apply consistent formatting to operators - missing whitespaces around operators",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 1
       },
       "revId": "15714c09fb5098c5641a38c78960e79250daa043",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
