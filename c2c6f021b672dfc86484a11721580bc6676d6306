@@ -46,6 +46,30 @@
       },
       "revId": "c2c6f021b672dfc86484a11721580bc6676d6306",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb3013d6_18e4ed32",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-06-14T12:26:25Z",
+      "side": 1,
+      "message": "Realistically, you\u0027d be interested in which refs are out of date rather than how many. I believe it still logs the out of date refs, could simply pipe to `wc -l` if the user really wants too?",
+      "parentUuid": "f5d6839b_7cd9d3a4",
+      "range": {
+        "startLine": 85,
+        "startChar": 12,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "c2c6f021b672dfc86484a11721580bc6676d6306",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
