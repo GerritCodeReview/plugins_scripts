@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be48ea8c_434ab6ce",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-14T12:36:45Z",
+      "side": 1,
+      "message": "Honestly, the progress was put there only to prevent the SSH channel to timeout 😊 which isn\u0027t a problem in verbose mode.\n\nYou have a point, however the scrolling would be so fast that you won\u0027t see anything on the progress.\n\nShall we catch-up in a separate change and organise it differently in case of verbose display?",
+      "parentUuid": "3336cda9_654fa284",
+      "range": {
+        "startLine": 86,
+        "startChar": 17,
+        "endLine": 86,
+        "endChar": 24
+      },
+      "revId": "15714c09fb5098c5641a38c78960e79250daa043",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c73678b2_15b8ab6a",
