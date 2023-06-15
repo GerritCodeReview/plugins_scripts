@@ -34,7 +34,12 @@ abstract class BaseSshCommand extends SshCommand {
   }
 
   void error(String msg) {
-    stderr.println msg
+    stderr.println "[ERROR] $msg"
+    stderr.flush()
+  }
+
+  void warning(String msg) {
+    stderr.println "[WARNING] $msg"
     stderr.flush()
   }
 }
@@ -120,5 +125,64 @@ class ProjectRefsCheck extends BaseSshCommand {
   }
 }
 
-commands = [ ProjectRefsCheck ]
+@Export("update-ref")
+@CommandMetaData(description = "Update the global-refdb ref name/value for a project")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class ProjectRefsUpdate extends BaseSshCommand {
+
+  @Argument(index = 0, usage = "Project name", metaVar = "PROJECT", required = true)
+  String project
+
+  @Argument(index = 1, usage = "Ref name", metaVar = "REF", required = true)
+  String ref
+
+  @Argument(index = 2, usage = "New value", metaVar = "NEWVALUE", required = true)
+  String newValue
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  DynamicItem<GlobalRefDatabase> globalRefDb
+
+  public void run() {
+    try {
+      def projectName = Project.nameKey(project)
+
+      repoMgr.openRepository(projectName).with { repo ->
+        if (!repo.refDatabase.exactRef(ref)) {
+          warning "Local project $project does not have $ref"
+        }
+        def currValue = globalRefDb.get().get(projectName, ref, String.class)
+        if (currValue.isEmpty()) {
+          error "Global-refdb for project $project does not have $ref"
+        } else {
+          println "Updating global-refdb ref for /$project/$ref ${currValue.get()} => $newValue ... "
+          def updateDone = globalRefDb.get().compareAndPut(projectName, ref, currValue.get(), newValue)
+          println "Result: /$project/$ref global-refdb update has ${updateDone ? 'SUCCEEDED':'FAILED'}"
+        }
+      }
+    } catch (RepositoryNotFoundException e) {
+      error "Project $project not found"
+    }
+  }
+
+  boolean checkRef(Project.NameKey projectName, Repository repo, Ref ref)
+  {
+    def isUpToDate = globalRefDb.get().isUpToDate(projectName, ref)
+
+    if (verbose && isUpToDate) {
+      println "[UP-TO-DATE] ${ref.name}"
+    }
+
+    if (!isUpToDate) {
+      def globalRef = globalRefDb.get().get(projectName, ref.name, String.class)
+      println "[OUTDATED] ${ref.name}:${ref.objectId.name} <> ${globalRef.orElse('MISSING')}"
+    }
+
+    return isUpToDate
+  }
+}
+
+commands = [ ProjectRefsCheck, ProjectRefsUpdate ]
 
