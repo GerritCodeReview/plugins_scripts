@@ -34,7 +34,12 @@ abstract class BaseSshCommand extends SshCommand {
   }
 
   void error(String msg) {
-    stderr.println msg
+    stderr.println "[ERROR] $msg"
+    stderr.flush()
+  }
+
+  void warning(String msg) {
+    stderr.println "[WARNING] $msg"
     stderr.flush()
   }
 }
@@ -97,6 +102,62 @@ class ProjectRefsCheck extends BaseSshCommand {
         }
 
         println "Result: $project is ${upToDate ? 'UP-TO-DATE':'OUTDATED'}"
+      }
+    } catch (RepositoryNotFoundException e) {
+      error "Project $project not found"
+    }
+  }
+
+  boolean checkRef(Project.NameKey projectName, Repository repo, Ref ref)
+  {
+    def isUpToDate = globalRefDb.get().isUpToDate(projectName, ref)
+
+    if (verbose && isUpToDate) {
+      println "[UP-TO-DATE] ${ref.name}"
+    }
+
+    if (!isUpToDate) {
+      def globalRef = globalRefDb.get().get(projectName, ref.name, String.class)
+      println "[OUTDATED] ${ref.name}:${ref.objectId.name} <> ${globalRef.orElse('MISSING')}"
+    }
+
+    return isUpToDate
+  }
+}
+
+@Export("update-ref")
+@CommandMetaData(description = "Update the global-refdb ref name/value for a project")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class ProjectRefsCheck extends BaseSshCommand {
+
+  @Argument(index = 0, usage = "Project name", metaVar = "PROJECT", required = true)
+  String project
+
+  @Argument(index = 0, usage = "Ref name", metaVar = "REF", required = true)
+  String ref
+
+  @Argument(index = 0, usage = "New value", metaVar = "NEWVALUE", required = true)
+  String newValue
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  DynamicItem<GlobalRefDatabase> globalRefDb
+
+  public void run() {
+    try {
+      def projectName = Project.nameKey(project)
+
+      repoMgr.openRepository(projectName).with { repo ->
+        println "Delete global-refdb ref for /$project/$ref ..."
+        def ref = repo.refDatabase.exactRef(ref)
+        if (!ref) {
+          warning "Local project $project does not have $ref"
+        }
+        def currValue = globalRefDb.get().get(projectName, ref, String.class)
+        def updateDone = globalRefDb.get().compareAndPut(projectName, ref, currValue, newValue)
+        println "Result: /$project/$ref global-refdb update has ${updateDone ? 'SUCCEEDED':'FAILED'}"
       }
     } catch (RepositoryNotFoundException e) {
       error "Project $project not found"
