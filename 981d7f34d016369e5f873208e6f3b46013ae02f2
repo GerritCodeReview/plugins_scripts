@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0526244b_54790ae8",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-16T22:01:49Z",
+      "side": 1,
+      "message": "Not really, it is still a valid use-case to update the global-refdb only.",
+      "parentUuid": "d784c25f_726bb477",
+      "range": {
+        "startLine": 154,
+        "startChar": 9,
+        "endLine": 154,
+        "endChar": 61
+      },
+      "revId": "981d7f34d016369e5f873208e6f3b46013ae02f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b17a269f_e914033b",
@@ -95,6 +119,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99583d15_4f742259",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-16T22:01:49Z",
+      "side": 1,
+      "message": "Yes, we could have a new command to create a new entry. Follow-up change?",
+      "parentUuid": "e6495f90_b4e3605a",
+      "range": {
+        "startLine": 158,
+        "startChar": 10,
+        "endLine": 158,
+        "endChar": 70
+      },
+      "revId": "981d7f34d016369e5f873208e6f3b46013ae02f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55720a18_f8c78413",
@@ -132,6 +180,30 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "55720a18_f8c78413",
+      "range": {
+        "startLine": 170,
+        "startChar": 10,
+        "endLine": 170,
+        "endChar": 18
+      },
+      "revId": "981d7f34d016369e5f873208e6f3b46013ae02f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb864b37_b7d3a2dc",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-06-16T22:01:49Z",
+      "side": 1,
+      "message": "Good catch, this is a leftover of copy\u0026paste from the previous command.",
+      "parentUuid": "272af4fb_6b78ee48",
       "range": {
         "startLine": 170,
         "startChar": 10,
