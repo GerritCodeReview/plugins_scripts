@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b17a269f_e914033b",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-06-16T13:35:14Z",
+      "side": 1,
+      "message": "why we do not create new entry in global-refdb?",
+      "range": {
+        "startLine": 158,
+        "startChar": 10,
+        "endLine": 158,
+        "endChar": 70
+      },
+      "revId": "981d7f34d016369e5f873208e6f3b46013ae02f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55720a18_f8c78413",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-06-16T13:35:14Z",
+      "side": 1,
+      "message": "this method is never used",
+      "range": {
+        "startLine": 170,
+        "startChar": 10,
+        "endLine": 170,
+        "endChar": 18
+      },
+      "revId": "981d7f34d016369e5f873208e6f3b46013ae02f2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
