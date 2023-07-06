@@ -22,6 +22,30 @@
       },
       "revId": "d1e59502953024b24b9626011a931c7346e31617",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8fe53f0_c441e1e6",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-06T23:02:07Z",
+      "side": 1,
+      "message": "I take it back... I know see that this is defined above to be printed on the stdout and stderr, all good.",
+      "parentUuid": "4dd57de8_6b185a19",
+      "range": {
+        "startLine": 95,
+        "startChar": 8,
+        "endLine": 95,
+        "endChar": 15
+      },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
