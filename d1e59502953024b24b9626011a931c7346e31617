@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dd57de8_6b185a19",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-06T22:59:04Z",
+      "side": 1,
+      "message": "Should we use something else than println?",
+      "range": {
+        "startLine": 95,
+        "startChar": 8,
+        "endLine": 95,
+        "endChar": 15
+      },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
