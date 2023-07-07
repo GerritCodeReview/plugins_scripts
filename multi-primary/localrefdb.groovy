@@ -29,6 +29,7 @@ import java.util.function.BiConsumer
 import java.util.concurrent.*
 import com.google.common.flogger.*
 import java.util.regex.Pattern
+import java.security.MessageDigest
 
 abstract class BaseSshCommand extends SshCommand {
   void println(String msg) {
@@ -56,7 +57,22 @@ class RefDbMetrics implements LifecycleListener {
 
   CallbackMetric1<String, Integer> numRefsMetric
   final Map<String, Integer> projectsAndNumRefs = new ConcurrentHashMap()
+  CallbackMetric1<String, Integer> sumRefsMetric
+  final Map<String, Integer> projectsAndSumRefs = new ConcurrentHashMap()
 
+  void setupTrigger(CallbackMetric1<String, Integer> refsMetric, Map<String, Integer> projecsAndRefs ) {
+    metrics.newTrigger(
+        refsMetric, { ->
+      if (projecsAndRefs.isEmpty()) {
+        refsMetric.forceCreate("")
+      } else {
+        projecsAndRefs.each { e ->
+          refsMetric.set(e.key, e.value)
+        }
+        refsMetric.prune()
+      }
+    })
+  }
   void start() {
     numRefsMetric =
         metrics.newCallbackMetric(
@@ -67,26 +83,23 @@ class RefDbMetrics implements LifecycleListener {
                 .description("The name of the repository.")
                 .build())
 
-    metrics.newTrigger(
-        numRefsMetric, { ->
-      if (projectsAndNumRefs.isEmpty()) {
-        numRefsMetric.forceCreate("")
-      } else {
-        projectsAndNumRefs.each { e ->
-          numRefsMetric.set(e.key, e.value)
-        }
-        numRefsMetric.prune()
-      }
-    })
-  }
+    setupTrigger(numRefsMetric, projectsAndNumRefs)
 
-  void setValue(String project, int numRefs) {
-    projectsAndNumRefs[project] = numRefs
-    log.atInfo().log("Num refs per projects updated: %s", projectsAndNumRefs)
+    sumRefsMetric =
+        metrics.newCallbackMetric(
+            "localrefdb/sum_refs_per_project",
+            Integer.class,
+            new Description("Sum of local refs").setGauge(),
+            Field.ofString("repository_name", { it.projectName } as BiConsumer)
+                .description("A SHA1 computed from combining all SHA1s of the repository.")
+                .build())
+
+    setupTrigger(sumRefsMetric, projectsAndSumRefs)
   }
 
   void stop() {
     numRefsMetric.remove()
+    sumRefsMetric.remove()
   }
 }
 
@@ -110,17 +123,69 @@ class CountRefs extends BaseSshCommand {
     projects.each { project ->
       try {
         def projectName = Project.nameKey(project)
-
         repoMgr.openRepository(projectName).with { repo ->
           println "Counting refs of project $project ..."
           def filteredRefs = repo.refDatabase.refs.findAll { ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic }
           println "Result: $project has ${filteredRefs.size()} refs"
-          refdbMetrics.setValue(sanitizeProjectName.sanitize(project), filteredRefs.size())
+          refdbMetrics.projectsAndNumRefs.put(sanitizeProjectName.sanitize(project), filteredRefs.size())
         }
       } catch (RepositoryNotFoundException e) {
         error "Project $project not found"
       }
     }
+  }
+}
+
+@CommandMetaData(name = "sum-refs", description = "Sum the local number of refs, excluding user edits, and publish the value as 'sum_refs' metric")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class SumRefs extends BaseSshCommand {
+
+  @Argument(index = 0, usage = "Project names", metaVar = "PROJECT", required = true)
+  String[] projects
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  RefDbMetrics refdbMetrics
+
+  SanitizeProjectName sanitizeProjectName = new SanitizeProjectName()
+
+  public void run() {
+    refdbMetrics.projectsAndSumRefs.clear()
+    projects.each { project ->
+      try {
+        def projectName = Project.nameKey(project)
+
+        repoMgr.openRepository(projectName).with { repo ->
+          def startTime = System.currentTimeMillis()
+          println "Adding refs of project $project ..."
+
+          def filteredRefs = repo.refDatabase.refs.findAll { ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic }
+          println "Result: $project has ${filteredRefs.size()} refs"
+          def md = MessageDigest.getInstance("SHA-1")
+          def sortingStartTime = System.currentTimeMillis()
+          def sortedFilteredRefs = filteredRefs.sort { it.name }
+          println("Sorting refs took ${System.currentTimeMillis() - sortingStartTime} millis")
+          sortedFilteredRefs.each { ref -> md.update(ref.getObjectId().toString().getBytes("UTF-8")) }
+
+          def sha1SumBytes = md.digest()
+
+          println("MD Digest of sum of all SHA1 for project $project is: ${sha1SumBytes.encodeBase64().toString()}")
+          def sha1Sum = truncateHashToInt(sha1SumBytes)
+          println("Truncated Int representation of sum of all SHA1 for project $project is: $sha1Sum")
+          println("Whole operation too ${System.currentTimeMillis() - startTime} millis")
+          refdbMetrics.projectsAndSumRefs.put(sanitizeProjectName.sanitize(project), sha1Sum)
+        }
+      } catch (RepositoryNotFoundException e) {
+        error "Project $project not found"
+      }
+    }
+  }
+
+  static int truncateHashToInt(byte[] bytes) {
+    int offset = bytes[bytes.length - 1] & 0x0f;
+    return (bytes[offset] & (0x7f << 24)) | (bytes[offset + 1] & (0xff << 16)) | (bytes[offset + 2] & (0xff << 8)) | (bytes[offset + 3] & 0xff);
   }
 }
 
@@ -133,6 +198,7 @@ class MetricsModule extends LifecycleModule {
 class LocalRefDbCommandModule extends PluginCommandModule {
   protected void configureCommands() {
     command(CountRefs)
+    command(SumRefs)
   }
 }
 
