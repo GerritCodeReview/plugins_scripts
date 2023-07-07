@@ -27,6 +27,7 @@ import org.eclipse.jgit.errors.*
 import com.gerritforge.gerrit.globalrefdb.*
 import com.google.gerrit.extensions.registration.*
 import org.eclipse.jgit.lib.*
+import java.security.MessageDigest
 
 abstract class BaseSshCommand extends SshCommand {
   void println(String msg) {
@@ -51,6 +52,7 @@ class RefDbMetrics {
   MetricMaker metrics
 
   RegistrationHandle numRefsMetric
+  RegistrationHandle sumRefsMetric
 
   void registerNumRefsMetric(String project, int numRefs) {
     if (numRefsMetric != null) {
@@ -62,6 +64,18 @@ class RefDbMetrics {
                                               Integer.class,
                                               new Description("Number of local refs").setGauge(),
                                               { -> numRefs })
+  }
+
+    void registerSumRefsMetric(String project, int sumRefs) {
+    if (sumRefsMetric != null) {
+      sumRefsMetric.remove()
+      sumRefsMetric = null
+    }
+
+    sumRefsMetric = metrics.newCallbackMetric("localrefdb/sum_refs/" + project,
+                                              Integer.class,
+                                              new Description("Sum of all SHA-1 of local refs").setGauge(),
+                                              { -> sumRefs })
   }
 }
 
@@ -88,8 +102,6 @@ class CountRefs extends BaseSshCommand {
 
         println "Counting refs of project $project ..."
         def totRefs = repo.refDatabase.refs.size()
-        def refsDone = 0
-        def refsDonePerc = 0
         def startTime = System.currentTimeMillis()
         def filteredRefs = repo.refDatabase.refs.findAll{ ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic}
         println "Result: $project has ${filteredRefs.size()} refs"
@@ -104,5 +116,46 @@ class CountRefs extends BaseSshCommand {
 
 }
 
-commands = [ CountRefs ]
+@Export("sum-refs")
+@CommandMetaData(description = "Sum the local number of refs, excluding user edits, and publish the value as 'sum_refs' metric")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class SumRefs extends BaseSshCommand {
 
+  @Argument(index = 0, usage = "Project name", metaVar = "PROJECT", required = true)
+  String project
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  RefDbMetrics refdbMetrics
+
+  public void run() {
+    try {
+      def projectName = Project.nameKey(project)
+
+      repoMgr.openRepository(projectName).with { repo ->
+        def upToDate = true
+
+        println "Adding refs of project $project ..."
+        def totRefs = repo.refDatabase.refs.size()
+        def refsDone = 0
+        def refsDonePerc = 0
+        def startTime = System.currentTimeMillis()
+        def filteredRefs = repo.refDatabase.refs.findAll{ ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic}
+        println "Result: $project has ${filteredRefs.size()} refs"
+        def md = MessageDigest.getInstance("SHA-1")
+        filteredRefs.sort().each { ref -> md.update(ref.getObjectId)}
+
+        def sha1Sum = md.digest().encodeBase64().toString()
+        println("MD Digest of sum of all SHA1 for project $project is: $outStr")
+        refdbMetrics.registerSumRefsMetric(project, sha1Sum)
+      }
+    } catch (RepositoryNotFoundException e) {
+      error "Project $project not found"
+    }
+  }
+
+
+}
+commands = [ CountRefs, SumRefs ]
