@@ -29,6 +29,7 @@ import java.util.function.BiConsumer
 import java.util.concurrent.*
 import com.google.common.flogger.*
 import java.util.regex.Pattern
+import java.security.MessageDigest
 
 abstract class BaseSshCommand extends SshCommand {
   void println(String msg) {
@@ -54,8 +55,8 @@ class RefDbMetrics implements LifecycleListener {
   @Inject
   MetricMaker metrics
 
-  CallbackMetric1<String, Integer> numRefsMetric
   final Map<String, Integer> projectsAndNumRefs = new ConcurrentHashMap()
+  RegistrationHandle sumRefsMetric
 
   void start() {
     numRefsMetric =
@@ -88,6 +89,18 @@ class RefDbMetrics implements LifecycleListener {
   void stop() {
     numRefsMetric.remove()
   }
+
+    void registerSumRefsMetric(String project, int sumRefs) {
+    if (sumRefsMetric != null) {
+      sumRefsMetric.remove()
+      sumRefsMetric = null
+    }
+
+    sumRefsMetric = metrics.newCallbackMetric("localrefdb/sum_refs/" + project,
+                                              Integer.class,
+                                              new Description("Sum of all SHA-1 of local refs").setGauge(),
+                                              { -> sumRefs })
+  }
 }
 
 @CommandMetaData(name = "count-refs", description = "Count the local number of refs, excluding user edits, and publish the value as 'num_refs' metric")
@@ -110,7 +123,6 @@ class CountRefs extends BaseSshCommand {
     projects.each { project ->
       try {
         def projectName = Project.nameKey(project)
-
         repoMgr.openRepository(projectName).with { repo ->
           println "Counting refs of project $project ..."
           def filteredRefs = repo.refDatabase.refs.findAll { ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic }
@@ -121,6 +133,57 @@ class CountRefs extends BaseSshCommand {
         error "Project $project not found"
       }
     }
+  }
+}
+
+@CommandMetaData(name = "sum-refs", description = "Sum the local number of refs, excluding user edits, and publish the value as 'sum_refs' metric")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class SumRefs extends BaseSshCommand {
+
+  @Argument(index = 0, usage = "Project name", metaVar = "PROJECT", required = true)
+  String project
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  RefDbMetrics refdbMetrics
+
+  public void run() {
+    try {
+      def projectName = Project.nameKey(project)
+
+      repoMgr.openRepository(projectName).with { repo ->
+        def startTime = System.currentTimeMillis()
+        def upToDate = true
+
+        println "Adding refs of project $project ..."
+        def totRefs = repo.refDatabase.refs.size()
+
+        def filteredRefs = repo.refDatabase.refs.findAll{ ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic}
+        println "Result: $project has ${filteredRefs.size()} refs"
+        def md = MessageDigest.getInstance("SHA-1")
+        def sortingStartTime = System.currentTimeMillis()
+        def sortedFilteredRefs = filteredRefs.sort{it.name}
+        println("Sorting refs took ${System.currentTimeMillis() - sortingStartTime} millis")
+        sortedFilteredRefs.each { ref -> md.update(ref.getObjectId().toString().getBytes("UTF-8"))}
+
+        def sha1SumBytes = md.digest()
+
+        println("MD Digest of sum of all SHA1 for project $project is: ${sha1SumBytes.encodeBase64().toString()}")
+        def sha1Sum = truncateHashToInt(sha1SumBytes)
+        println("Truncated Int representation of sum of all SHA1 for project $project is: $sha1Sum")
+        println("Whole operation too ${System.currentTimeMillis() - startTime} millis")
+        refdbMetrics.registerSumRefsMetric(project, sha1Sum)
+      }
+    } catch (RepositoryNotFoundException e) {
+      error "Project $project not found"
+    }
+  }
+
+  static int truncateHashToInt(byte[] bytes) {
+    int offset = bytes[bytes.length - 1] & 0x0f;
+    return (bytes[offset] & (0x7f << 24)) | (bytes[offset + 1] & (0xff << 16)) | (bytes[offset + 2] & (0xff << 8)) | (bytes[offset + 3] & 0xff);
   }
 }
 
