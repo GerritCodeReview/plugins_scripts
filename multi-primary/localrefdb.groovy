@@ -104,5 +104,46 @@ class CountRefs extends BaseSshCommand {
 
 }
 
-commands = [ CountRefs ]
+@Export("add-refs")
+@CommandMetaData(description = "Add the local number of refs, excluding user edits, and publish the value as 'add_refs' metric")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class AddRefs extends BaseSshCommand {
 
+  @Argument(index = 0, usage = "Project name", metaVar = "PROJECT", required = true)
+  String project
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  RefDbMetrics refdbMetrics
+
+  public void run() {
+    try {
+      def projectName = Project.nameKey(project)
+
+      repoMgr.openRepository(projectName).with { repo ->
+        def upToDate = true
+
+        println "Adding refs of project $project ..."
+        def totRefs = repo.refDatabase.refs.size()
+        def refsDone = 0
+        def refsDonePerc = 0
+        def startTime = System.currentTimeMillis()
+        def filteredRefs = repo.refDatabase.refs.findAll{ ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic}
+        println "Result: $project has ${filteredRefs.size()} refs"
+        def md = MessageDigest.getInstance("SHA-1")
+        filteredRefs.sort().each { ref -> md.update(ref.getObjectId)}
+
+        def outStr = BaseEncoding.base32().encode(md.digest())
+        println("MD Digest is: $outStr")
+        // refdbMetrics.registerNumRefsMetric(project, filteredRefs.size())
+      }
+    } catch (RepositoryNotFoundException e) {
+      error "Project $project not found"
+    }
+  }
+
+
+}
+commands = [ CountRefs ]
