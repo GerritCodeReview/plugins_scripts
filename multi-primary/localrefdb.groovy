@@ -29,15 +29,19 @@ import java.util.function.BiConsumer
 import java.util.concurrent.*
 import com.google.common.flogger.*
 import java.util.regex.Pattern
+import java.security.MessageDigest
 
 abstract class BaseSshCommand extends SshCommand {
-  void println(String msg) {
-    stdout.println msg
+  void println(String msg, boolean verbose = false) {
+    if (verbose) {
+      stdout.println msg
+    }
     stdout.flush()
   }
 
-  void error(String msg) { println("[ERROR] $msg") }
-  void warning(String msg) { println("[WARNING] $msg") }
+  void error(String msg) { println("[ERROR] $msg", true) }
+
+  void warning(String msg) { println("[WARNING] $msg", true) }
 }
 
 @Singleton
@@ -49,28 +53,42 @@ class RefDbMetrics implements LifecycleListener {
 
   CallbackMetric1<String, Integer> numRefsMetric
   final Map<String, Integer> projectsAndNumRefs = new ConcurrentHashMap()
+  CallbackMetric1<String, Integer> sha1AllRefsMetric
+  final Map<String, Integer> projectsAndSha1AllRefs = new ConcurrentHashMap()
 
-  void start() {
-    numRefsMetric =
-        metrics.newCallbackMetric(
-            "localrefdb/num_refs_per_project",
-            Integer.class,
-            new Description("Number of local refs").setGauge(),
-            Field.ofString("repository_name", { it.projectName } as BiConsumer)
-                .description("The name of the repository.")
-                .build())
-
+  void setupTrigger(CallbackMetric1<String, Integer> refsMetric, Map<String, Integer> projecsAndRefs) {
     metrics.newTrigger(
-        numRefsMetric, { ->
-      if (projectsAndNumRefs.isEmpty()) {
-        numRefsMetric.forceCreate("")
+        refsMetric, { ->
+      if (projecsAndRefs.isEmpty()) {
+        refsMetric.forceCreate("")
       } else {
-        projectsAndNumRefs.each { e ->
-          numRefsMetric.set(e.key, e.value)
+        projecsAndRefs.each { e ->
+          refsMetric.set(e.key, e.value)
         }
-        numRefsMetric.prune()
+        refsMetric.prune()
       }
     })
+  }
+
+  CallbackMetric1<String, Integer> createCallbackMetric(String name, String description) {
+    metrics.newCallbackMetric(
+        name,
+        Integer.class,
+        new Description(description).setGauge(),
+        Field.ofString("repository_name", { it.projectName } as BiConsumer)
+            .description(description)
+            .build())
+  }
+
+  void start() {
+    numRefsMetric = createCallbackMetric("localrefdb/num_refs_per_project", "Number of local refs")
+
+    setupTrigger(numRefsMetric, projectsAndNumRefs)
+
+
+    sha1AllRefsMetric = createCallbackMetric("localrefdb/sha1_all_refs_per_project", "A SHA1 computed from combining all SHA1s of the repository.")
+
+    setupTrigger(sha1AllRefsMetric, projectsAndSha1AllRefs)
   }
 
   void setValue(String project, int numRefs) {
@@ -80,6 +98,7 @@ class RefDbMetrics implements LifecycleListener {
 
   void stop() {
     numRefsMetric.remove()
+    sha1AllRefsMetric.remove()
   }
 }
 
@@ -89,6 +108,9 @@ class CountRefs extends BaseSshCommand {
 
   @Argument(index = 0, usage = "Project name", metaVar = "PROJECTS", required = true)
   String[] projects
+
+  @Option(name = "--verbose", usage = "Display verbose logging")
+  boolean verbose = false
 
   @Inject
   GitRepositoryManager repoMgr
@@ -103,17 +125,69 @@ class CountRefs extends BaseSshCommand {
     projects.each { project ->
       try {
         def projectName = Project.nameKey(project)
-
         repoMgr.openRepository(projectName).with { repo ->
-          println "Counting refs of project $project ..."
+          println ("Counting refs of project $project ...", verbose)
           def filteredRefs = repo.refDatabase.refs.findAll { ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic }
-          println "Result: $project has ${filteredRefs.size()} refs"
+          println ("Result: $project has ${filteredRefs.size()} refs", verbose)
           refdbMetrics.setValue(sanitizeProjectName.sanitize(project), filteredRefs.size())
         }
       } catch (RepositoryNotFoundException e) {
         error "Project $project not found"
       }
     }
+  }
+}
+
+@CommandMetaData(name = "sha1-all-refs", description = "Combine all the local refs, excluding user edits, and publish the value as 'sha1_all_refs_per_project' metric")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class Sha1AllRefs extends BaseSshCommand {
+
+  @Argument(index = 0, usage = "Project names", metaVar = "PROJECT", required = true)
+  String[] projects
+
+  @Option(name = "--verbose", usage = "Display verbose logging")
+  boolean verbose = false
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  RefDbMetrics refdbMetrics
+
+  SanitizeProjectName sanitizeProjectName = new SanitizeProjectName()
+
+  public void run() {
+    refdbMetrics.projectsAndSha1AllRefs.clear()
+    projects.each { project ->
+      try {
+        def projectName = Project.nameKey(project)
+
+        repoMgr.openRepository(projectName).with { repo ->
+          def startTime = System.currentTimeMillis()
+            println ("Adding refs of project $project ...", verbose)
+          def filteredRefs = repo.refDatabase.refs.findAll { ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic }
+            println ("Result: $project has ${filteredRefs.size()} refs", verbose)
+          def md = MessageDigest.getInstance("SHA-1")
+          def sortingStartTime = System.currentTimeMillis()
+          def sortedFilteredRefs = filteredRefs.sort { it.name }
+            println("Sorting refs took ${System.currentTimeMillis() - sortingStartTime} millis", verbose)
+          sortedFilteredRefs.each { ref -> md.update(ref.getObjectId().toString().getBytes("UTF-8")) }
+          def sha1SumBytes = md.digest()
+            println("MD Digest of sum of all SHA1 for project $project is: ${sha1SumBytes.encodeBase64().toString()}", verbose)
+          def sha1Sum = truncateHashToInt(sha1SumBytes)
+            println("Truncated Int representation of sum of all SHA1 for project $project is: $sha1Sum", verbose)
+            println("Whole operation too ${System.currentTimeMillis() - startTime} millis", verbose)
+          refdbMetrics.projectsAndSha1AllRefs.put(sanitizeProjectName.sanitize(project), sha1Sum)
+        }
+      } catch (RepositoryNotFoundException e) {
+        error "Project $project not found"
+      }
+    }
+  }
+
+  static int truncateHashToInt(byte[] bytes) {
+    int offset = bytes[bytes.length - 1] & 0x0f;
+    return (bytes[offset] & (0x7f << 24)) | (bytes[offset + 1] & (0xff << 16)) | (bytes[offset + 2] & (0xff << 8)) | (bytes[offset + 3] & 0xff);
   }
 }
 
@@ -126,6 +200,7 @@ class MetricsModule extends LifecycleModule {
 class LocalRefDbCommandModule extends PluginCommandModule {
   protected void configureCommands() {
     command(CountRefs)
+    command(Sha1AllRefs)
   }
 }
 
