@@ -3,6 +3,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ac353d73_c9d0a70a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-19T00:57:53Z",
+      "side": 1,
+      "message": "This is partially incorrect: this is useful in general when there is some replication in place, including a primary-replica setup.",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25434721_02718de4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-19T00:57:53Z",
+      "side": 1,
+      "message": "Can you advise on how this would be used to trigger alerts? Can you suggest some Prometheus expression?",
+      "range": {
+        "startLine": 11,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 45
+      },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ee8189d_3ab002e7",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-19T00:57:53Z",
+      "side": 1,
+      "message": "This does not look right here: if we register two metrics with different repository name, the first will cancel the second?",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 34
+      },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f7200e1_6f3e4be1",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-19T00:57:53Z",
+      "side": 1,
+      "message": "This should be sanitised in a non-ambiguous name.",
+      "range": {
+        "startLine": 61,
+        "startChar": 71,
+        "endLine": 61,
+        "endChar": 78
+      },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4dd57de8_6b185a19",
         "filename": "multi-primary/localrefdb.groovy",
         "patchSetId": 3
@@ -44,6 +136,23 @@
         "endLine": 95,
         "endChar": 15
       },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1f70fc8_abbd6448",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-19T00:57:53Z",
+      "side": 1,
+      "message": "nit: unneeded empty line.",
       "revId": "d1e59502953024b24b9626011a931c7346e31617",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
