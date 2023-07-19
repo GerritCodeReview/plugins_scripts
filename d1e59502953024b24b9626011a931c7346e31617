@@ -120,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4719793b_3ff68cda",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-19T18:27:14Z",
+      "side": 1,
+      "message": "We should make the metric more similar to what the JGit cache metric is doing on a per-repo basis: \n\n```\n    CallbackMetric1\u003cString, Long\u003e repoEnt \u003d\n        metrics.newCallbackMetric(\n            \"jgit/block_cache/cache_used_per_repository\",\n            Long.class,\n            new Description(\n                    \"Bytes of memory retained per repository for the top repositories \"\n                        + \"having most data in the cache.\")\n                .setGauge()\n                .setUnit(\"byte\"),\n            Field.ofProjectName(\"repository_name\")\n                .description(\"The name of the repository.\")\n                .build());\n    metrics.newTrigger(\n        repoEnt,\n        () -\u003e {\n          Map\u003cString, Long\u003e cacheMap \u003d WindowCacheStats.getStats().getOpenByteCountPerRepository();\n          if (cacheMap.isEmpty()) {\n            repoEnt.forceCreate(\"\");\n          } else {\n            cacheMap.entrySet().stream()\n                .sorted(Map.Entry.\u003cString, Long\u003ecomparingByValue().reversed())\n                .limit(MAX_REPO_COUNT)\n                .forEach(e -\u003e repoEnt.set(e.getKey(), e.getValue()));\n            repoEnt.prune();\n          }\n        });\n```",
+      "parentUuid": "23dca98e_3ba1eccb",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 34
+      },
+      "revId": "d1e59502953024b24b9626011a931c7346e31617",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8f7200e1_6f3e4be1",
         "filename": "multi-primary/localrefdb.groovy",
         "patchSetId": 3
