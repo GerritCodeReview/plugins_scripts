@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c98cff8f_39ec1365",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-20T21:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a87b5b98_a75726f7",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 20
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe8e6817_bbdb9039",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-07-20T20:34:48Z",
       "side": 1,
       "message": "The map needs to be preserved across invocations, see the example above with this stored as a field in this singleton.\n\nP.S. Remember to make it a concurrent hash-map, because it will be called from different threads.",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 68
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91a0c7d0_0cf796ef",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-20T21:44:34Z",
+      "side": 1,
+      "message": "Does it? I thought we wanted to remove ones that we didn\u0027t check?",
+      "parentUuid": "fe8e6817_bbdb9039",
       "range": {
         "startLine": 50,
         "startChar": 29,
@@ -64,6 +112,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c87eb615_dba05da7",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-20T21:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdff64d9_e7b03e1a",
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a246c6d_ff87041c",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-07-20T20:35:56Z",
       "side": 1,
       "message": "Not needed, because you\u0027ll rely on the explicit module registration.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 21
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f83304d4_92b36e6a",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-20T21:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a246c6d_ff87041c",
       "range": {
         "startLine": 69,
         "startChar": 0,
@@ -110,6 +200,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c5e9d49_fb17860c",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-20T21:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab8ae848_91e9b567",
+      "range": {
+        "startLine": 70,
+        "startChar": 16,
+        "endLine": 70,
+        "endChar": 17
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46274605_7034f8ff",
@@ -123,6 +237,30 @@
       "writtenOn": "2023-07-20T20:34:48Z",
       "side": 1,
       "message": "You need to provide modules here, because of the need to pass a Lifecycle listener.\n\nExample:\n```\nclass MetricsModule extends LifecycleModule {\n  protected void configure() {\n    listener().to(RefDbMetrics)\n  }\n}\n\nclass LocalRefDbCommandModule extends PluginCommandModule {\n  protected void configureCommands() {\n    command(CountRefs)\n  }\n}\n\nmodules \u003d [MetricsModule, LocalRefDbCommandModule]\n```",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 22
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ab9db73_e086fa18",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-20T21:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46274605_7034f8ff",
       "range": {
         "startLine": 105,
         "startChar": 0,
