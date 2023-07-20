@@ -66,6 +66,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9a246c6d_ff87041c",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-20T20:35:56Z",
+      "side": 1,
+      "message": "Not needed, because you\u0027ll rely on the explicit module registration.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 21
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab8ae848_91e9b567",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-20T20:35:56Z",
+      "side": 1,
+      "message": "+ `name \u003d \"count-refs\"`",
+      "range": {
+        "startLine": 70,
+        "startChar": 16,
+        "endLine": 70,
+        "endChar": 17
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "46274605_7034f8ff",
         "filename": "multi-primary/localrefdb.groovy",
         "patchSetId": 5
