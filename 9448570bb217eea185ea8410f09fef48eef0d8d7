@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "716fe312_661cf712",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-20T23:14:48Z",
+      "side": 1,
+      "message": "nit: empty line",
+      "revId": "9448570bb217eea185ea8410f09fef48eef0d8d7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
