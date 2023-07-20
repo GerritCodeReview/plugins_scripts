@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a87b5b98_a75726f7",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-20T20:34:48Z",
+      "side": 1,
+      "message": "This needs to be a `LifecycleListener` and register / deregister the metrics at the plugin start/stop.\n\nExample:\n```\n@Singleton\nclass RefDbMetrics implements LifecycleListener {\n  @Inject\n  MetricMaker metrics\n\n  CallbackMetric1\u003cString, Integer\u003e numRefsMetric;\n\n  void start() {\n    numRefsMetric \u003d\n        metrics.newCallbackMetric(...)\n     metrics.newTrigger(...)\n  }\n\n  void stop() {\n    numRefsMetric.remove()\n  }\n```",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 20
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe8e6817_bbdb9039",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-20T20:34:48Z",
+      "side": 1,
+      "message": "The map needs to be preserved across invocations, see the example above with this stored as a field in this singleton.\n\nP.S. Remember to make it a concurrent hash-map, because it will be called from different threads.",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 68
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdff64d9_e7b03e1a",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-20T20:34:48Z",
+      "side": 1,
+      "message": "You need to force the creation of the metrics even when there are no items.\n\nExample:\n\n```\n       if (projectsAndNumRefs.isEmpty()) {\n          numRefsMetric.forceCreate(\"\")\n       } else {\n         projectsAndNumRefs.each { e -\u003e\n             numRefsMetric.set(e.key, e.value)\n         }\n         numRefsMetric.prune()\n       }\n```",
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46274605_7034f8ff",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-20T20:34:48Z",
+      "side": 1,
+      "message": "You need to provide modules here, because of the need to pass a Lifecycle listener.\n\nExample:\n```\nclass MetricsModule extends LifecycleModule {\n  protected void configure() {\n    listener().to(RefDbMetrics)\n  }\n}\n\nclass LocalRefDbCommandModule extends PluginCommandModule {\n  protected void configureCommands() {\n    command(CountRefs)\n  }\n}\n\nmodules \u003d [MetricsModule, LocalRefDbCommandModule]\n```",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 22
+      },
+      "revId": "40f0ef2ac6134cb66105b86e2dd10a55fd61a108",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
