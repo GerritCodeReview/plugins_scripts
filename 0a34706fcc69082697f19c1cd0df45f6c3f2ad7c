@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6afcf0ed_8f437739",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 19
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T22:19:11Z",
+      "side": 1,
+      "message": "This should be always displayed, verbose should be always true.",
+      "range": {
+        "startLine": 130,
+        "startChar": 70,
+        "endLine": 130,
+        "endChar": 77
+      },
+      "revId": "0a34706fcc69082697f19c1cd0df45f6c3f2ad7c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ea21dc6_42235e2f",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 19
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T22:19:11Z",
+      "side": 1,
+      "message": "output",
+      "range": {
+        "startLine": 147,
+        "startChar": 55,
+        "endLine": 147,
+        "endChar": 62
+      },
+      "revId": "0a34706fcc69082697f19c1cd0df45f6c3f2ad7c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efc5a4a3_d566f1c1",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 19
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T22:19:11Z",
+      "side": 1,
+      "message": "This should be always displayed IMHO, so verbose should be always true.",
+      "range": {
+        "startLine": 175,
+        "startChar": 117,
+        "endLine": 175,
+        "endChar": 124
+      },
+      "revId": "0a34706fcc69082697f19c1cd0df45f6c3f2ad7c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
