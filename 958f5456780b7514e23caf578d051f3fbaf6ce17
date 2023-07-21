@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b57522c1_e1c49c3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T16:24:03Z",
+      "side": 1,
+      "message": "👍 just a few nits.",
+      "revId": "958f5456780b7514e23caf578d051f3fbaf6ce17",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4415d653_8b053872",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T16:24:03Z",
+      "side": 1,
+      "message": "Can this also be DRY-ed up like you did with `setupTrigger`?",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 25
+      },
+      "revId": "958f5456780b7514e23caf578d051f3fbaf6ce17",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f59ed30_4cdfad1e",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T16:24:03Z",
+      "side": 1,
+      "message": "Can this be DRY-ed up?",
+      "range": {
+        "startLine": 163,
+        "startChar": 0,
+        "endLine": 163,
+        "endChar": 126
+      },
+      "revId": "958f5456780b7514e23caf578d051f3fbaf6ce17",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e12c994_e71af2dc",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T16:24:03Z",
+      "side": 1,
+      "message": "All the execution time statistics should be only displayed in a `--verbose` mode, so that the default should just display the result.\n\nWDYT? Can you introduce a `--verbose` flag?",
+      "range": {
+        "startLine": 174,
+        "startChar": 1,
+        "endLine": 174,
+        "endChar": 89
+      },
+      "revId": "958f5456780b7514e23caf578d051f3fbaf6ce17",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "346398cb_15552a58",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-07-21T16:24:03Z",
+      "side": 1,
+      "message": "Can you add credits of who suggested this algorithm? URL?",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 186,
+        "endChar": 3
+      },
+      "revId": "958f5456780b7514e23caf578d051f3fbaf6ce17",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
