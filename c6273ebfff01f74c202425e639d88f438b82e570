@@ -72,6 +72,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d31ebf9_1fb3cd6a",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-21T16:33:17Z",
+      "side": 1,
+      "message": "ah yes, of course, good one.",
+      "parentUuid": "0a4e8069_a3d1f1bb",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 3
+      },
+      "revId": "c6273ebfff01f74c202425e639d88f438b82e570",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b170c99c_3062f342",
