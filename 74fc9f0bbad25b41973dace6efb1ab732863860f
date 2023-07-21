@@ -189,6 +189,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7ef64e7_3ab496f4",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-21T17:03:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e402f2e_4e75975a",
+      "range": {
+        "startLine": 149,
+        "startChar": 7,
+        "endLine": 149,
+        "endChar": 92
+      },
+      "revId": "74fc9f0bbad25b41973dace6efb1ab732863860f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f22d8eea_f237eefb",
@@ -249,6 +273,30 @@
       "writtenOn": "2023-07-19T01:00:49Z",
       "side": 1,
       "message": "This can be removed.",
+      "range": {
+        "startLine": 157,
+        "startChar": 8,
+        "endLine": 157,
+        "endChar": 87
+      },
+      "revId": "74fc9f0bbad25b41973dace6efb1ab732863860f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39c6eb9d_652f70d9",
+        "filename": "multi-primary/localrefdb.groovy",
+        "patchSetId": 11
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-21T17:03:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f51a3d8e_dc274d95",
       "range": {
         "startLine": 157,
         "startChar": 8,
