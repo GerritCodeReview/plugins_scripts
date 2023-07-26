@@ -91,6 +91,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d9a02612_dcbb0a1a",
+        "filename": "multi-primary/globalrefdb.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-26T21:52:33Z",
+      "side": 1,
+      "message": "Just mindful of using the word \"lag\", if we end up in such a situation it\u0027s more likely that the data was restored or some backup/restore procedure took place an globalrefdb has a value that isn\u0027t aligned with what\u0027s actually in the repo anymore.\n\nI\u0027ve reworded it a little, see if that helps?",
+      "parentUuid": "f18fdebb_f52d3ae6",
+      "revId": "f8f4c5ae9b40a401f217f8362387b2bf2ea21c5c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "383f91f2_6a701405",
         "filename": "multi-primary/globalrefdb.md",
         "patchSetId": 3

@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0e5718e8_678b1d55",
+        "filename": "multi-primary/globalrefdb.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-26T21:52:33Z",
+      "side": 1,
+      "message": "We would need it after `the`, as the line length is 84 if you put `the latest`... I can move it by a word?",
+      "parentUuid": "709e410f_b9b36182",
+      "revId": "e820544aa394b22af7d4d91dd7a726f02a85ef73",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d413609_038920b4",
         "filename": "multi-primary/localrefdb.md",
         "patchSetId": 5
@@ -31,6 +49,30 @@
       "writtenOn": "2023-07-26T21:40:51Z",
       "side": 1,
       "message": "Nit: trailing whitespace.",
+      "range": {
+        "startLine": 33,
+        "startChar": 13,
+        "endLine": 33,
+        "endChar": 14
+      },
+      "revId": "e820544aa394b22af7d4d91dd7a726f02a85ef73",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b9ac169_9fe8ff1e",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-26T21:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d413609_038920b4",
       "range": {
         "startLine": 33,
         "startChar": 13,
@@ -54,6 +96,30 @@
       "writtenOn": "2023-07-26T21:40:51Z",
       "side": 1,
       "message": "Nit: trailing whitespace.",
+      "range": {
+        "startLine": 37,
+        "startChar": 65,
+        "endLine": 37,
+        "endChar": 66
+      },
+      "revId": "e820544aa394b22af7d4d91dd7a726f02a85ef73",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19557926_103cf039",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-07-26T21:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6dbcac82_86454fb5",
       "range": {
         "startLine": 37,
         "startChar": 65,
