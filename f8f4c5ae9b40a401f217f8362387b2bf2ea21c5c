@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f18fdebb_f52d3ae6",
+        "filename": "multi-primary/globalrefdb.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-07-26T21:40:51Z",
+      "side": 1,
+      "message": "Ah, yes - maybe this should say `if global-refdb lags behind other nodes`?",
+      "parentUuid": "0e08ca64_153b8a77",
+      "revId": "f8f4c5ae9b40a401f217f8362387b2bf2ea21c5c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "383f91f2_6a701405",
         "filename": "multi-primary/globalrefdb.md",
         "patchSetId": 3
