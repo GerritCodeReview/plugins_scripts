@@ -36,6 +36,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13aeae33_d603789c",
+        "filename": "multi-primary/globalrefdb.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-07-26T21:56:19Z",
+      "side": 1,
+      "message": "It was just a nit, the line looked a little short. I tend to do it automatically, but leave like so if you think it\u0027s better 👍",
+      "parentUuid": "0e5718e8_678b1d55",
+      "revId": "e820544aa394b22af7d4d91dd7a726f02a85ef73",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d413609_038920b4",
