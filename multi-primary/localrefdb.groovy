@@ -92,7 +92,7 @@ class RefDbMetrics implements LifecycleListener {
   }
 
   def listRefs(Repository repo) {
-    repo.refDatabase.refs.findAll { ref -> !(ref.name.startsWith("refs/users/.*")) && !ref.symbolic }
+    repo.refDatabase.refs.findAll { ref -> !(ref.name.startsWith("refs/users/")) && !ref.symbolic }
   }
 
   void stop() {
