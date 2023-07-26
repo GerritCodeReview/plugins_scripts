@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ec44617_1e655164",
+        "filename": "multi-primary/README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-07-26T05:00:49Z",
+      "side": 1,
+      "message": "Here we should add the `update-ref` capability",
+      "revId": "cb2640c311299abd5c3b1745e843a85a20cee988",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddd0339e_ab2434cc",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-07-26T05:00:49Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 7,
+        "startChar": 105,
+        "endLine": 7,
+        "endChar": 118
+      },
+      "revId": "cb2640c311299abd5c3b1745e843a85a20cee988",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c332605d_1907d752",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-07-26T05:00:49Z",
+      "side": 1,
+      "message": "```suggestion\n\u003e     ssh -p \u003cport\u003e \u003chost\u003e localrefdb count-refs PROJECT [--verbose]\n```",
+      "revId": "cb2640c311299abd5c3b1745e843a85a20cee988",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "072e7921_8b91b979",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-07-26T05:00:49Z",
+      "side": 1,
+      "message": "```suggestion\n\u003e     ssh -p \u003cport\u003e \u003chost\u003e localrefdb sha1-all-refs PROJECT [--verbose]\n```",
+      "range": {
+        "startLine": 14,
+        "startChar": 27,
+        "endLine": 14,
+        "endChar": 38
+      },
+      "revId": "cb2640c311299abd5c3b1745e843a85a20cee988",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05f1290a_b7e7852e",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-07-26T05:00:49Z",
+      "side": 1,
+      "message": "What is the benefit of this metric?",
+      "revId": "cb2640c311299abd5c3b1745e843a85a20cee988",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "517798c9_f873750a",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-07-26T05:00:49Z",
+      "side": 1,
+      "message": "```suggestion\n\u003e     $ ssh -p 29418 review.example.com localrefdb count-refs All-Users\n```",
+      "revId": "cb2640c311299abd5c3b1745e843a85a20cee988",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
