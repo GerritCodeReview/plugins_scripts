@@ -16,6 +16,29 @@
       "message": "very nice",
       "revId": "098e2e20df53be7371025ef4f1e35d4270806ab4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42c9b4f8_691a15f1",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2023-08-01T06:41:46Z",
+      "side": 1,
+      "message": "I guess that we are going to replicate them soon, right? Once it is done those metrics need to be updated to count them too.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "098e2e20df53be7371025ef4f1e35d4270806ab4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
