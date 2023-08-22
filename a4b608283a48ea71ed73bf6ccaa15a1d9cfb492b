@@ -18,6 +18,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05d98fdf_06c2663c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-08-22T15:00:18Z",
+      "side": 1,
+      "message": "I\u0027ve tested on my local instance with following config:\n```\n[validation]\n        endpoint \u003d https://gerrithub.io\n        endpoint \u003d https://github.com\n        endpoint \u003d http://github.com\n        checkInterval \u003d 1\n\n```",
+      "parentUuid": "0845744c_98076881",
+      "revId": "a4b608283a48ea71ed73bf6ccaa15a1d9cfb492b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a06cf8a_1910080f",
