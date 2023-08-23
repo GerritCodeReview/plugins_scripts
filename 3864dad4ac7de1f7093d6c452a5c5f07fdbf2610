@@ -16,6 +16,92 @@
       "message": "We need to test it for SSL instead of https",
       "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33440984_d2e7e234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-23T09:37:18Z",
+      "side": 1,
+      "message": "This need to be more generically suitable for SSL.\nThere are plenty of tools that work for HTTPS, but here we are interested in SSL connectivity in general, where the endpoint isn\u0027t HTTPS.",
+      "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abdb09a3_79fa5fd6",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-23T09:37:18Z",
+      "side": 1,
+      "message": "Does this really make sense in milliseconds? I believe the hours would be more than enough, because the certificate expiration resolution is in days isn\u0027t it?",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 25
+      },
+      "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2594e838_6b1b4e98",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-23T09:37:18Z",
+      "side": 1,
+      "message": "This isn\u0027t really checking SSL but rather HTTPS.",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 5
+      },
+      "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28798626_a9fe1f40",
+        "filename": "admin/certificates-validity-checker.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-23T09:37:18Z",
+      "side": 1,
+      "message": "Can you mention a non-https endpoint to check? IMAPs for instance?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
