@@ -60,6 +60,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d7c5423b_d7d7072f",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-08-23T15:30:34Z",
+      "side": 1,
+      "message": "Check interval is in hours we convert it to milliseconds because initial delay uses the same time unit as the interval so we would have to wait minimum one hour to trigger the first check.\nWe could change that to seconds but I\u0027m not sure if changing to hours is a good idea. \n\nAnother option is to remove initial delay and start task immediately.\nWDYT?",
+      "parentUuid": "abdb09a3_79fa5fd6",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 25
+      },
+      "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2594e838_6b1b4e98",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 4
@@ -71,6 +95,30 @@
       "writtenOn": "2023-08-23T09:37:18Z",
       "side": 1,
       "message": "This isn\u0027t really checking SSL but rather HTTPS.",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 5
+      },
+      "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "878b7c0e_6ad592be",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-08-23T15:30:34Z",
+      "side": 1,
+      "message": "good catch! I\u0027ve update the code and tested with `mail.gerritforge.com`",
+      "parentUuid": "2594e838_6b1b4e98",
       "range": {
         "startLine": 161,
         "startChar": 0,
@@ -94,6 +142,30 @@
       "writtenOn": "2023-08-23T09:37:18Z",
       "side": 1,
       "message": "Can you mention a non-https endpoint to check? IMAPs for instance?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "3864dad4ac7de1f7093d6c452a5c5f07fdbf2610",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16ee5d91_111c4360",
+        "filename": "admin/certificates-validity-checker.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-08-23T15:30:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28798626_a9fe1f40",
       "range": {
         "startLine": 16,
         "startChar": 0,
