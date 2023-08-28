@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d73b6ca5_ae6ef64e",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-28T12:36:48Z",
+      "side": 1,
+      "message": "Plus the certificate DN matches the endpoint host name.",
+      "range": {
+        "startLine": 139,
+        "startChar": 16,
+        "endLine": 139,
+        "endChar": 47
+      },
+      "revId": "ec09120b95f44dbb7b86ed075604616abac557eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77c010c8_1d60bf50",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-28T12:36:48Z",
+      "side": 1,
+      "message": "This must be identical to the endpoint hostname, therefore isn\u0027t necessary IMHO",
+      "range": {
+        "startLine": 144,
+        "startChar": 34,
+        "endLine": 144,
+        "endChar": 63
+      },
+      "revId": "ec09120b95f44dbb7b86ed075604616abac557eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a9976fe_37e97780",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-28T12:36:48Z",
+      "side": 1,
+      "message": "In Groovy you can use safe navigation.\n\n\n```suggestion\n          conn.?close()\n```",
+      "range": {
+        "startLine": 155,
+        "startChar": 10,
+        "endLine": 157,
+        "endChar": 11
+      },
+      "revId": "ec09120b95f44dbb7b86ed075604616abac557eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6194c2db_a522dbab",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-28T12:36:48Z",
+      "side": 1,
+      "message": "If this fails, the `sslSocket` won\u0027t be returned and therefore we\u0027ll have a socket and file descriptor leak.",
+      "range": {
+        "startLine": 171,
+        "startChar": 6,
+        "endLine": 171,
+        "endChar": 33
+      },
+      "revId": "ec09120b95f44dbb7b86ed075604616abac557eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ebecf06_c080b064",
+        "filename": "admin/certificates-validity-checker.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-28T12:36:48Z",
+      "side": 1,
+      "message": "Can you just make them more like an example, without real hostnames?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 38
+      },
+      "revId": "ec09120b95f44dbb7b86ed075604616abac557eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0b030f6_809c5e2c",
+        "filename": "admin/certificates-validity-checker.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-28T12:36:48Z",
+      "side": 1,
+      "message": "1 day",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 25
+      },
+      "revId": "ec09120b95f44dbb7b86ed075604616abac557eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e6d280c_61520c61",
+        "filename": "admin/certificates-validity-checker.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-08-28T12:36:48Z",
+      "side": 1,
+      "message": "Why is this needed?\n\nSSL supports virtual hosting, but the only one we should check is the one with the DN that is matching the endpoint host name.\n\nIf you would really need to check for multiple certificates for the same IP, you should specify the endpoint with different hostnames.",
+      "range": {
+        "startLine": 47,
+        "startChar": 101,
+        "endLine": 47,
+        "endChar": 126
+      },
+      "revId": "ec09120b95f44dbb7b86ed075604616abac557eb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
