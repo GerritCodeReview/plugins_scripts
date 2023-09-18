@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed1590ce_b261e2cd",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Why do we need to do this in the constructor? Isn\u0027t it enough to do it in `start`? Do we not have a guarantee that `start` will run before `run`?\n\nAlso, why do we even need these as class args?",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db1e766a_e93660b2",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c041611_04972d5c",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Nit: this can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "855c27cb_e05c1f89",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1afcb14_fcef08d1",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Why do we need this annotation? Isn\u0027t this already a static class in a singleton class?",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4015524b_cf6361c7",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b789e02_1d1ce39f",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45027328_02f26d9e",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-09-18T14:22:17Z",
+      "side": 1,
+      "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
