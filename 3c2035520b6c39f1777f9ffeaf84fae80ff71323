@@ -88,6 +88,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ccfa764a_c4bbc88f",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-19T11:31:13Z",
+      "side": 1,
+      "message": "nit: I think we can use try-with-resources here and forget about the `finally` block:\n\n```groovy\ndef (hostname, port) \u003d parseEndpoint(endpoint)\ntry (SSLSocket conn \u003d openConnetion(hostname as String, port as int)) {\n```",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 13
+      },
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4015524b_cf6361c7",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 8
@@ -99,6 +122,23 @@
       "writtenOn": "2023-09-18T14:22:17Z",
       "side": 1,
       "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e9a81ef_9825c86c",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-19T11:31:13Z",
+      "side": 1,
+      "message": "nit: can\u0027t we assume a default 443 port when it\u0027s not provided explicitly?",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -133,6 +173,23 @@
       "writtenOn": "2023-09-18T14:22:17Z",
       "side": 1,
       "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a7ef414_1d054334",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2023-09-19T11:31:13Z",
+      "side": 1,
+      "message": "nit: I\u0027d put this logging statement at the beginning of the method, especially since it\u0027s using a present tense (_Opening_ vs. _Opened_). With this approach, we\u0027ll first see the \"Opening\" log entry followed up by _any_ potential exceptions that could happen when the connection is being made.",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
