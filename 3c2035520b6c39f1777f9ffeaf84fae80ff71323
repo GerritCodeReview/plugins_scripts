@@ -145,6 +145,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48741266_c723a314",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-04T23:10:28Z",
+      "side": 1,
+      "message": "Why 443? This is a generic SSL socket and there isn\u0027t a default port for SSL AFAIK. 443 is HTTPS, which isn\u0027t really the target of this script anyway.",
+      "parentUuid": "6e9a81ef_9825c86c",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9b789e02_1d1ce39f",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 8
