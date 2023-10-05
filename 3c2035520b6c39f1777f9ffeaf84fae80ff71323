@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea7befc0_89e7c43d",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-10-05T08:44:54Z",
+      "side": 1,
+      "message": "To be clear, I wasn\u0027t referring to `metrics`/`queue`/`cfg`/`plugin`. Yes, these are injected.\n\nI was referring to `endpoints`. This is derived, and the same code is executed both here and in `start()`. It should be enough to execute it in `start()`, no?",
+      "parentUuid": "0e633245_c59601c0",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "db1e766a_e93660b2",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 8
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "Same as above, this is fine.",
       "parentUuid": "db1e766a_e93660b2",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "590732f2_fdbee4e6",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1063024
+      },
+      "writtenOn": "2023-10-05T08:44:54Z",
+      "side": 1,
+      "message": "Same as above, but for `checkIntervalInMillis`.",
+      "parentUuid": "ddb7adcc_e1a96ace",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
