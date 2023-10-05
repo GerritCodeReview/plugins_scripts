@@ -18,6 +18,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e633245_c59601c0",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-05T07:47:14Z",
+      "side": 1,
+      "message": "@dariusjokilehto@gmail.com please look how plugins work in Gerrit: you *have* to inject those arguments as they care coming from Gerrit.\n\nIt is fine to get them in the constructor.",
+      "parentUuid": "ed1590ce_b261e2cd",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db1e766a_e93660b2",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-18T14:22:17Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddb7adcc_e1a96ace",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-05T07:47:14Z",
+      "side": 1,
+      "message": "Same as above, this is fine.",
+      "parentUuid": "db1e766a_e93660b2",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -82,6 +118,24 @@
       "writtenOn": "2023-09-18T14:22:17Z",
       "side": 1,
       "message": "Why do we need this annotation? Isn\u0027t this already a static class in a singleton class?",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49a0f493_f3395c9b",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-05T07:47:14Z",
+      "side": 1,
+      "message": "True, this is unneeded because it\u0027s injected into a singleton anyway.",
+      "parentUuid": "d1afcb14_fcef08d1",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -208,6 +262,24 @@
       "writtenOn": "2023-09-19T11:31:13Z",
       "side": 1,
       "message": "nit: I\u0027d put this logging statement at the beginning of the method, especially since it\u0027s using a present tense (_Opening_ vs. _Opened_). With this approach, we\u0027ll first see the \"Opening\" log entry followed up by _any_ potential exceptions that could happen when the connection is being made.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f569121e_8423dca2",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-05T07:47:14Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "8a7ef414_1d054334",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
