@@ -54,6 +54,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8f4f189_b1c36393",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea7befc0_89e7c43d",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "db1e766a_e93660b2",
@@ -107,6 +125,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9c60d70_e6fd94a2",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "590732f2_fdbee4e6",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c041611_04972d5c",
@@ -126,6 +162,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "24711e45_a1ef919f",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "what\u0027s the point of making it static? I believe making methods static without any reason is an antipattern",
+      "parentUuid": "2c041611_04972d5c",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "855c27cb_e05c1f89",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 8
@@ -137,6 +191,24 @@
       "writtenOn": "2023-09-18T14:22:17Z",
       "side": 1,
       "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "136bf06a_ac3fcbbc",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "855c27cb_e05c1f89",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -176,6 +248,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e7420ae_e05c7311",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49a0f493_f3395c9b",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ccfa764a_c4bbc88f",
@@ -199,6 +289,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a256ebbf_3579d643",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "This was already answered https://gerrit-review.googlesource.com/c/plugins/scripts/+/383440/comment/f4b0dda7_6e9c2e9d/\n\nBasically version of groovy we have doesn\u0027t supports try-with-resources",
+      "parentUuid": "ccfa764a_c4bbc88f",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 136,
+        "endChar": 13
+      },
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4015524b_cf6361c7",
@@ -212,6 +326,24 @@
       "writtenOn": "2023-09-18T14:22:17Z",
       "side": 1,
       "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b7d9d93_797ee7b5",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "4015524b_cf6361c7",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -288,6 +420,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "65b31c9c_6a347e73",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "9b789e02_1d1ce39f",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "45027328_02f26d9e",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 8
@@ -299,6 +449,24 @@
       "writtenOn": "2023-09-18T14:22:17Z",
       "side": 1,
       "message": "Nit: can be static.",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e7c23e2_c3b62ae5",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "45027328_02f26d9e",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -334,6 +502,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "8a7ef414_1d054334",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3240f557_85771755",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-09T12:39:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f569121e_8423dca2",
       "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
