@@ -13,13 +13,12 @@
 // limitations under the License.
 
 import com.google.gerrit.common.data.GlobalCapability
+import com.google.gerrit.entities.AccountGroup
 import com.google.gerrit.sshd.*
 import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.server.project.*
 import com.google.gerrit.server.account.*
 import com.google.gerrit.server.IdentifiedUser
-import com.google.gerrit.reviewdb.client.AccountGroup
-import com.google.gerrit.reviewdb.server.ReviewDb
 import com.google.inject.*
 import org.kohsuke.args4j.*
 
@@ -75,8 +74,8 @@ class WarmGroupsCache extends WarmProjectsCache {
   private HashSet<AccountGroup.UUID> allGroupsUUIDs() {
     def allGroupsUuids = new HashSet<AccountGroup.UUID>()
     for (project in cache.all()) {
-      def groupUuids = cache.get(project)?.getConfig()?.getAllGroupUUIDs()
-      if (groupUuids != null) { allGroupsUuids.addAll(groupUuids) }
+      def groupUuids = cache.get(project).map {projectState -> projectState.getConfig().getAllGroupUUIDs() }
+      if (groupUuids.isPresent()) { allGroupsUuids.addAll(groupUuids.get()) }
     }
     allGroupsUuids.addAll(groupIncludeCache.allExternalMembers())
     return allGroupsUuids;
@@ -90,12 +89,11 @@ class WarmGroupsCache extends WarmProjectsCache {
     def groupsLoaded = 0
 
     for (groupUuid in allGroupsUuids) {
-      groupIncludeCache.subgroupsOf(groupUuid)
       groupIncludeCache.parentGroupsOf(groupUuid)
       def group = groupCache.get(groupUuid)
-      if(group != null) {
-        groupCache.get(group.getNameKey())
-        groupCache.get(group.getId())
+      if(group.isPresent()) {
+        groupCache.get(group.get()?.getNameKey())
+        groupCache.get(group.get()?.getId())
       }
       groupsLoaded++
 
@@ -117,16 +115,16 @@ class WarmAccountsCache extends BaseSshCommand {
   AccountCache cache
 
   @Inject
-  Provider<ReviewDb> db
+  Accounts accounts
 
   public void run() {
     println "Loading accounts ..."
     def start = System.currentTimeMillis()
-    def allAccounts = db.get().accounts().all()
+    def allAccounts = accounts.all()
     def loaded = 0
 
     for (account in allAccounts) {
-      cache.get(account.accountId)
+      cache.get(account.account().id())
       loaded++
       if (loaded%1000==0) {
         println "$loaded accounts"
@@ -148,13 +146,13 @@ class WarmGroupsBackendsCache extends WarmAccountsCache {
   public void run() {
     println "Loading groups ..."
     def start = System.currentTimeMillis()
-    def allAccounts = db.get().accounts().all()
+    def allAccounts = accounts.all()
     def loaded = 0
     def allGroupsUUIDs = new HashSet<AccountGroup.UUID>()
     def lastDisplay = 0
 
     for (account in allAccounts) {
-      def user = userFactory.create(account.accountId)
+      def user = userFactory.create(account.account().id())
       def groupsUUIDs = user?.getEffectiveGroups()?.getKnownGroups()
       if (groupsUUIDs != null) { allGroupsUUIDs.addAll(groupsUUIDs) }
 
