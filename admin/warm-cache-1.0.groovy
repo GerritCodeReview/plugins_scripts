@@ -20,7 +20,6 @@ import com.google.gerrit.server.project.*
 import com.google.gerrit.server.account.*
 import com.google.gerrit.server.IdentifiedUser
 import com.google.inject.*
-import org.kohsuke.args4j.*
 
 abstract class BaseSshCommand extends SshCommand {
 
