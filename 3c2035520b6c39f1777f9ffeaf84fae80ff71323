@@ -198,6 +198,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8bb03836_61f935b3",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-10T10:07:52Z",
+      "side": 1,
+      "message": "I would do opposite. I will mark method static only if I need. This is because Java is object oriented language and static method is basically violating this principle:\n* Static method cannot be overridden\n* Static method cannot be mocked\n* Using DI and static method is very difficult\n\nhttps://dzone.com/articles/why-static-bad-and-how-avoid",
+      "parentUuid": "731f57e8_8d12425f",
+      "revId": "3c2035520b6c39f1777f9ffeaf84fae80ff71323",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "855c27cb_e05c1f89",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 8
