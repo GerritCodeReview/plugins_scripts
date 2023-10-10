@@ -38,9 +38,6 @@ class WarmProjectsCache extends BaseSshCommand {
   @Inject
   ProjectCache cache
 
-  @Inject
-  GroupCache groupCache
-
   public void run() {
     println "Loading project list ..."
     def start = System.currentTimeMillis()
