@@ -35,6 +35,92 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78c11d78_537cd674",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-11T17:45:49Z",
+      "side": 1,
+      "message": "SGTM, just some language suggestions on how to improve it.",
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a9c0dd1_895e9a52",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-11T17:45:49Z",
+      "side": 1,
+      "message": "This would then be an Optional of List, correct? Why not translating everything to a List with a flatMap instead?",
+      "range": {
+        "startLine": 77,
+        "startChar": 6,
+        "endLine": 77,
+        "endChar": 20
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3b8c5ad_758e8d3e",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-11T17:45:49Z",
+      "side": 1,
+      "message": "Why not using `ifDefined`? Or if you have transformed everything to a list at L77, you could consider to just to `allGroupsUuids.addAll(groupUuids)` here.",
+      "range": {
+        "startLine": 78,
+        "startChar": 21,
+        "endLine": 78,
+        "endChar": 32
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd432abc_f1e07836",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-11T17:45:49Z",
+      "side": 1,
+      "message": "group is an `Optional`, why not using `group.ifDefined` instead?",
+      "range": {
+        "startLine": 94,
+        "startChar": 6,
+        "endLine": 97,
+        "endChar": 7
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29ec5ade_9832ae9a",
