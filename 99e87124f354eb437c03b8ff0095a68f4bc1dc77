@@ -16,6 +16,24 @@
       "message": "this no longer exists in the interface and i couldn\u0027t find it anywhere, I think it must have been an old feature or something. Let me know if we need it, and where this operation is defined.",
       "revId": "99e87124f354eb437c03b8ff0095a68f4bc1dc77",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "649411d1_59d1ea00",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2023-10-11T12:41:34Z",
+      "side": 0,
+      "message": "This means that we were loading the the cache also subgroups now we do not do that. Not sure how much this is impacting the warm up",
+      "parentUuid": "c658a368_07c95e54",
+      "revId": "99e87124f354eb437c03b8ff0095a68f4bc1dc77",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
