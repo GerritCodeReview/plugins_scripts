@@ -123,6 +123,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d7f2395_7ed04be7",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-10-12T15:33:56Z",
+      "side": 1,
+      "message": "That\u0027s pretty cool, didnt know that you could call a `stream` on an Option, however this code \n```\nfor (project in cache.all()) {\n      Set\u003cAccountGroup.UUID\u003e groupUuids \u003d cache\n              .get(project)\n              .stream()\n              .flatMap {projectState -\u003e projectState.getConfig().getAllGroupUUIDs() }\n              .collect(Collectors.toSet())\n      allGroupsUuids.addAll(groupUuids)\n    }\n```\n\nfails with\n```\nclass com.google.common.collect.RegularImmutableMap$KeySet cannot be cast to class java.util.stream.Stream (com.google.common.collect.RegularImmutableMap$KeySet is in unnamed module of loader com.google.gerrit.launcher.GerritLauncher$GerritClassLoader @6e3c1e69; java.util.stream.Stream is in module java.base of loader \u0027bootstrap\u0027)\n```\n\nSo I think lets merge this since its a matter of personal taste, rather than functionality.",
+      "parentUuid": "c4c0c79e_d94ae320",
+      "range": {
+        "startLine": 77,
+        "startChar": 6,
+        "endLine": 77,
+        "endChar": 20
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e3b8c5ad_758e8d3e",
