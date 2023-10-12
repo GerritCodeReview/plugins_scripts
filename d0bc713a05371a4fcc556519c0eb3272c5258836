@@ -22,6 +22,30 @@
       },
       "revId": "d0bc713a05371a4fcc556519c0eb3272c5258836",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b75c8a83_4fb37e23",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-10-12T15:34:06Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "53afe757_72f0cd03",
+      "range": {
+        "startLine": 78,
+        "startChar": 5,
+        "endLine": 78,
+        "endChar": 92
+      },
+      "revId": "d0bc713a05371a4fcc556519c0eb3272c5258836",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
