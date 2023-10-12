@@ -149,6 +149,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ae96a8e_af964f3d",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-10-12T16:10:56Z",
+      "side": 1,
+      "message": "Try to use this:\n```\n      def groupUuids \u003d cache.get(project).stream().flatMap { it.config.allGroupUUIDs.stream() }\n      allGroupsUuids.addAll(groupUuids.collect())\n```\n\nAvoiding useless boilerplate and removing waste in the code is my personal taste, which is also a common practice IMHO.\n\nDoes the above work for you?",
+      "parentUuid": "9d7f2395_7ed04be7",
+      "range": {
+        "startLine": 77,
+        "startChar": 6,
+        "endLine": 77,
+        "endChar": 20
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3b8c5ad_758e8d3e",
         "filename": "admin/warm-cache-1.0.groovy",
         "patchSetId": 1
