@@ -77,6 +77,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7a792255_ac08ca7d",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-10-12T10:25:05Z",
+      "side": 1,
+      "message": "I dont see how you can go from an Optional\u003cList\u003cFoo\u003e\u003e to a List\u003cFoo\u003e with a flatMap in java, perhaps a code example would help.",
+      "parentUuid": "4a9c0dd1_895e9a52",
+      "range": {
+        "startLine": 77,
+        "startChar": 6,
+        "endLine": 77,
+        "endChar": 20
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3b8c5ad_758e8d3e",
         "filename": "admin/warm-cache-1.0.groovy",
         "patchSetId": 1
@@ -88,6 +112,30 @@
       "writtenOn": "2023-10-11T17:45:49Z",
       "side": 1,
       "message": "Why not using `ifDefined`? Or if you have transformed everything to a list at L77, you could consider to just to `allGroupsUuids.addAll(groupUuids)` here.",
+      "range": {
+        "startLine": 78,
+        "startChar": 21,
+        "endLine": 78,
+        "endChar": 32
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65ad6f2a_6fd33ba9",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-10-12T10:25:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3b8c5ad_758e8d3e",
       "range": {
         "startLine": 78,
         "startChar": 21,
@@ -111,6 +159,30 @@
       "writtenOn": "2023-10-11T17:45:49Z",
       "side": 1,
       "message": "group is an `Optional`, why not using `group.ifDefined` instead?",
+      "range": {
+        "startLine": 94,
+        "startChar": 6,
+        "endLine": 97,
+        "endChar": 7
+      },
+      "revId": "27915561d9eb0b2e1b1cd5a906ea0c2b33f97408",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4064518_f725b873",
+        "filename": "admin/warm-cache-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-10-12T10:25:05Z",
+      "side": 1,
+      "message": "I assume you mean `ifPresent`",
+      "parentUuid": "cd432abc_f1e07836",
       "range": {
         "startLine": 94,
         "startChar": 6,
