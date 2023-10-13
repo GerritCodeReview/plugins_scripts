@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d64ccc1b_5db44dc5",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1149185
+      },
+      "writtenOn": "2023-10-13T15:11:53Z",
+      "side": 1,
+      "message": "nit: Is not the message misleading when the first condition (L139) is true and the second one is false (L140)?",
+      "revId": "682f8160918745f04bf71555f3170743b20b564f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
