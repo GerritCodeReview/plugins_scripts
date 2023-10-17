@@ -16,6 +16,24 @@
       "message": "nit: Is not the message misleading when the first condition (L139) is true and the second one is false (L140)?",
       "revId": "682f8160918745f04bf71555f3170743b20b564f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4ccd576_a0508e0e",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-10-17T09:17:31Z",
+      "side": 1,
+      "message": "+1\nPerhaps just changing the log line to:\n\n```\nis not a valid X.509 certificate for the specified ${endpoint}\n```",
+      "parentUuid": "d64ccc1b_5db44dc5",
+      "revId": "682f8160918745f04bf71555f3170743b20b564f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
