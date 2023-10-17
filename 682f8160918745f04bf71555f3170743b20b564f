@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5715f9b7_ac8d45c6",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-10-17T10:33:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8416fdd2_4fd60ae7",
+      "range": {
+        "startLine": 46,
+        "startChar": 27,
+        "endLine": 46,
+        "endChar": 49
+      },
+      "revId": "682f8160918745f04bf71555f3170743b20b564f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d64ccc1b_5db44dc5",
@@ -55,6 +79,24 @@
       "side": 1,
       "message": "+1\nPerhaps just changing the log line to:\n\n```\nis not a valid X.509 certificate for the specified ${endpoint}\n```",
       "parentUuid": "d64ccc1b_5db44dc5",
+      "revId": "682f8160918745f04bf71555f3170743b20b564f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73d35d98_520bd196",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2023-10-17T10:33:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4ccd576_a0508e0e",
       "revId": "682f8160918745f04bf71555f3170743b20b564f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
