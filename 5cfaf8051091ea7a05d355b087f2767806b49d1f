@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "770c47a5_8df81f48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1155610
+      },
+      "writtenOn": "2023-11-18T01:38:51Z",
+      "side": 1,
+      "message": "It would be good to also expose some metrics, WDYT?",
+      "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ecc703b_2650a943",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1155610
+      },
+      "writtenOn": "2023-11-18T01:38:51Z",
+      "side": 1,
+      "message": "Is this an overkill? We\u0027ve already added all the projects in the projects cache?",
+      "range": {
+        "startLine": 67,
+        "startChar": 2,
+        "endLine": 67,
+        "endChar": 43
+      },
+      "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b196a0c6_3452aace",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1155610
+      },
+      "writtenOn": "2023-11-18T01:38:51Z",
+      "side": 1,
+      "message": "Why consider a project inactive if no packedRefsLock file exists?",
+      "range": {
+        "startLine": 102,
+        "startChar": 6,
+        "endLine": 102,
+        "endChar": 40
+      },
+      "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
