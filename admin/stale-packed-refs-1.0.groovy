@@ -1,0 +1,111 @@
+import com.google.common.flogger.FluentLogger
+import com.google.gerrit.entities.Project
+import com.google.gerrit.extensions.annotations.Listen
+import com.google.gerrit.extensions.annotations.PluginName
+import com.google.gerrit.extensions.events.GitReferenceUpdatedListener
+import com.google.gerrit.extensions.events.LifecycleListener
+import com.google.gerrit.server.config.PluginConfig
+import com.google.gerrit.server.config.PluginConfigFactory
+import com.google.gerrit.server.git.GitRepositoryManager
+import com.google.gerrit.server.git.WorkQueue
+import com.google.gerrit.server.project.ProjectCache
+import com.google.inject.Singleton
+import org.eclipse.jgit.lib.Repository
+
+import javax.inject.Inject
+import java.nio.file.Files
+import java.nio.file.attribute.BasicFileAttributes
+import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.ScheduledFuture
+import java.util.concurrent.TimeUnit
+
+@Singleton
+@Listen
+class ProjectsPackedRefsStalenessCheckers implements LifecycleListener, GitReferenceUpdatedListener {
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass()
+
+  @Inject
+  @PluginName
+  String pluginName
+  @Inject
+  PluginConfigFactory configFactory
+  @Inject
+  GitRepositoryManager repoMgr
+  @Inject
+  ProjectCache projectCache
+  @Inject
+  WorkQueue workQueue
+  private ScheduledFuture<?> scheduledCheckerTask
+  private Set<String> activeProjects = ConcurrentHashMap.newKeySet()
+
+  def STALE_MAX_AGE_SEC_DEFAULT = 300
+  def CHECK_INTERVAL_SEC_DEFAULT = 10
+  int staleMaxAgeSec
+
+  @Override
+  void start() {
+    if (scheduledCheckerTask != null) {
+      return;
+    }
+
+    PluginConfig pluginConfig = configFactory.getFromGerritConfig(pluginName)
+    def checkInterval = pluginConfig.getInt("checkIntervalSec", CHECK_INTERVAL_SEC_DEFAULT)
+    staleMaxAgeSec = pluginConfig.getInt("staleMaxAgeSec", STALE_MAX_AGE_SEC_DEFAULT)
+
+    scheduledCheckerTask = workQueue.getDefaultQueue().scheduleAtFixedRate({ checkProjects() }, checkInterval, checkInterval, TimeUnit.SECONDS)
+    activeProjects.addAll(projectCache.all().collect { it.get() })
+    logger.atInfo().log("packed-refs.lock staleness checker started for %d projects (checkIntervalSec=%d, staleMaxAgeSec=%d)",
+        activeProjects.size(), checkInterval, staleMaxAgeSec)
+  }
+
+  @Override
+  void stop() {
+    logger.atInfo().log("Stopping all projects staleness checker ...")
+    scheduledCheckerTask?.cancel(true)
+  }
+
+  @Override
+  void onGitReferenceUpdated(Event event) {
+    def projectName = event.getProjectName()
+    activeProjects.add(projectName)
+    logger.atFine().log("Project %s added to the active list", projectName)
+  }
+
+  def checkProjects() {
+    def threadNameOrig = Thread.currentThread().getName()
+    try {
+      Thread.currentThread().setName("packed-refs.lock checker")
+      activeProjects.each { String projectName ->
+        repoMgr.openRepository(Project.nameKey(projectName)).with { Repository it ->
+          try {
+            checkProjectPackedRefs(it, projectName)
+          } catch (Exception e) {
+            logger.atSevere().withCause(e).log("Error whilst checking project %s", projectName)
+          }
+        }
+      }
+    } finally {
+      Thread.currentThread().setName(threadNameOrig)
+    }
+  }
+
+  private void checkProjectPackedRefs(Repository repo, String projectName) {
+    def repoDir = repo.getDirectory()
+    logger.atFine().log("Checking project %s ... ", projectName)
+    File packedRefsLock = new File(repoDir, "packed-refs.lock")
+    if (packedRefsLock.exists()) {
+      def packedRefsLockMillis = fileCreationTimeMillis(packedRefsLock)
+      if (System.currentTimeMillis() > (packedRefsLockMillis + (staleMaxAgeSec * 1000))) {
+        boolean deleteSucceeded = packedRefsLock.delete()
+        logger.atWarning().log("[%s] packed-refs.lock is stale (creationMillis=%d): %s", projectName, packedRefsLockMillis, deleteSucceeded ? "DELETED" : "DELETE FAILED")
+      }
+    } else {
+      activeProjects.remove(projectName)
+      logger.atFine().log("Project %s removed from the active list", projectName)
+    }
+  }
+
+  static long fileCreationTimeMillis(File file) {
+    Files.readAttributes(file.toPath(), BasicFileAttributes.class).creationTime().toMillis()
+  }
+}
