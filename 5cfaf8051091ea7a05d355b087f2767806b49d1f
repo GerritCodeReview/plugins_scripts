@@ -110,6 +110,30 @@
       },
       "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f32f608_3ada06f8",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1155610
+      },
+      "writtenOn": "2023-11-18T01:53:32Z",
+      "side": 1,
+      "message": "\u003eIf there isn\u0027t any lock file, it means that the packed-refs file is not being \u003ewritten and therefore there isn\u0027t any pending operation.\n\nI don\u0027t think the above is correct. Even the most active repos will sometimes not have said file, this shouldn\u0027t be what determines if a repo is active or not, IMHO",
+      "parentUuid": "e4d0ae9f_bdc85c11",
+      "range": {
+        "startLine": 102,
+        "startChar": 6,
+        "endLine": 102,
+        "endChar": 40
+      },
+      "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
