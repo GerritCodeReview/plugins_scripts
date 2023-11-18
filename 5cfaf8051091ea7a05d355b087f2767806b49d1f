@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4adf14cb_f9c5bb46",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-18T01:42:47Z",
+      "side": 1,
+      "message": "Checking for the existence of a file on all repositories is expensive and may slowdown the overall filesystem, having consequences on the incoming traffic.\n\nIf we see activity on the repository, we can consider it active and check for staleness. However, if a repository doesn\u0027t show activity, it will be checked only once at startup and then removed from the list.\n\nSee L102.",
+      "parentUuid": "9ecc703b_2650a943",
+      "range": {
+        "startLine": 67,
+        "startChar": 2,
+        "endLine": 67,
+        "endChar": 43
+      },
+      "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b196a0c6_3452aace",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-11-18T01:38:51Z",
       "side": 1,
       "message": "Why consider a project inactive if no packedRefsLock file exists?",
+      "range": {
+        "startLine": 102,
+        "startChar": 6,
+        "endLine": 102,
+        "endChar": 40
+      },
+      "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4d0ae9f_bdc85c11",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-18T01:42:47Z",
+      "side": 1,
+      "message": "If there isn\u0027t any lock file, it means that the packed-refs file is not being written and therefore there isn\u0027t any pending operation.\n\nIf there aren\u0027t further ref-updates, there\u0027s no need to keep on checking it.",
+      "parentUuid": "b196a0c6_3452aace",
       "range": {
         "startLine": 102,
         "startChar": 6,
