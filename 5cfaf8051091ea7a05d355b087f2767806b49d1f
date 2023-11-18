@@ -134,6 +134,30 @@
       },
       "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e15081c2_fae3676d",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-18T02:28:31Z",
+      "side": 1,
+      "message": "OK, changed the approach and I just filter for a set of project prefixes.",
+      "parentUuid": "6f32f608_3ada06f8",
+      "range": {
+        "startLine": 102,
+        "startChar": 6,
+        "endLine": 102,
+        "endChar": 40
+      },
+      "revId": "5cfaf8051091ea7a05d355b087f2767806b49d1f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
