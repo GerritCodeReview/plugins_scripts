@@ -89,6 +89,91 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "86f1d376_446dff86",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-11-20T09:39:58Z",
+      "side": 1,
+      "message": "How is the pluginName inferred, since it\u0027s a groovy script? The only thing I can think of is that its using the script name without the `-1.0.groovy` suffix, is that the case?",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6aca018_1342d8bc",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-11-20T09:39:58Z",
+      "side": 1,
+      "message": "is `.scheduleAtFixedRate` the right thing to do here? This will will keep increasing the time between two executions.",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9d3122c_58e149cd",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-11-20T09:39:58Z",
+      "side": 1,
+      "message": "why are you renaming the thread?",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb27d4dd_819a2a33",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-11-20T09:39:58Z",
+      "side": 1,
+      "message": "The error could be whilst checking for the presence of the lock file, or whilst deleting it. These are different cases and we should be more clear in our message. Although if you refactor this method then this wont be a problem.",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4319a606_596fb180",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1157810
+      },
+      "writtenOn": "2023-11-20T09:39:58Z",
+      "side": 1,
+      "message": "this method not only checks for the presence of the lock file, but also deletes it if present. We should break it up and name it better so its clear what its doing.",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bb7b86de_6af05aa5",
         "filename": "admin/stale-packed-refs-1.0.groovy",
         "patchSetId": 3
