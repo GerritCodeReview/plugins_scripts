@@ -197,6 +197,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "338d8898_0494b5d0",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-20T23:09:56Z",
+      "side": 1,
+      "message": "Yes, there is the risk of assuming that the packed-refs.lock was stale, whilst it was just being held for a very long time and then removed.\n\nAre you proposing to perhaps doing a move and then a delete afterwards?",
+      "parentUuid": "bb7b86de_6af05aa5",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 55
+      },
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c2866efc_4fe46eb9",
         "filename": "admin/stale-packed-refs-1.0.groovy",
         "patchSetId": 3
@@ -208,6 +232,24 @@
       "writtenOn": "2023-11-19T21:28:17Z",
       "side": 1,
       "message": "you may consider to use org.eclipse.jgit.util.FileUtils#lastModifiedInstant",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "765e065e_5b4a5b26",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-20T23:09:56Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "c2866efc_4fe46eb9",
       "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
