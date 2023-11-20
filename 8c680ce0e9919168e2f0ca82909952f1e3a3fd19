@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "734f255e_fec27742",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-20T23:12:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "678797c1_fd64c04f",
+      "range": {
+        "startLine": 9,
+        "startChar": 27,
+        "endLine": 9,
+        "endChar": 33
+      },
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70cf5ad5_97e616ad",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-11-19T21:28:17Z",
       "side": 1,
       "message": "doesn\u0027t",
+      "range": {
+        "startLine": 10,
+        "startChar": 18,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39739b32_91e3f962",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-20T23:12:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70cf5ad5_97e616ad",
       "range": {
         "startLine": 10,
         "startChar": 18,
@@ -250,6 +298,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "c2866efc_4fe46eb9",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "557e3157_0b19266c",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-20T23:12:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "765e065e_5b4a5b26",
       "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
