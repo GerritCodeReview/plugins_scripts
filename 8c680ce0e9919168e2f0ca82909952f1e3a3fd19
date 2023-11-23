@@ -246,6 +246,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e80e233_3d5ae0d9",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-23T17:05:30Z",
+      "side": 1,
+      "message": "For visibility in the `gerrit show-queue` command.",
+      "parentUuid": "e9d3122c_58e149cd",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eb27d4dd_819a2a33",
@@ -277,6 +295,24 @@
       "side": 1,
       "message": "Hopefully having the `withCause` should be enough to figure out why the method call failed.",
       "parentUuid": "eb27d4dd_819a2a33",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8be4bd5f_55ff66ed",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-11-23T17:05:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "92b32751_40b77ae7",
       "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
