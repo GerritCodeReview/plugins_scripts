@@ -176,6 +176,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3bd6828_6c742988",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-11-23T02:14:03Z",
+      "side": 1,
+      "message": "Yep, the `-1.0` then becomes the version, minus the `-`.",
+      "parentUuid": "86f1d376_446dff86",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6aca018_1342d8bc",
@@ -189,6 +207,24 @@
       "writtenOn": "2023-11-20T09:39:58Z",
       "side": 1,
       "message": "is `.scheduleAtFixedRate` the right thing to do here? This will will keep increasing the time between two executions.",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f2a5ea5_3ff4f45d",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-11-23T02:14:03Z",
+      "side": 1,
+      "message": "My understanding is that `scheduleAtFixedRate` does exactly the opposite, and will run at a fixed interval.\n\nMaybe you\u0027re referring to `scheduleAtFixedDelay`? Which does what you mention, I would argue that it\u0027s a better solution, as it insures we never overlap the 2 tasks. Although we\u0027re not running this often enough for it to be a worry.",
+      "parentUuid": "c6aca018_1342d8bc",
       "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -229,6 +265,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "92b32751_40b77ae7",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-11-23T02:14:03Z",
+      "side": 1,
+      "message": "Hopefully having the `withCause` should be enough to figure out why the method call failed.",
+      "parentUuid": "eb27d4dd_819a2a33",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4319a606_596fb180",
         "filename": "admin/stale-packed-refs-1.0.groovy",
         "patchSetId": 3
@@ -240,6 +294,24 @@
       "writtenOn": "2023-11-20T09:39:58Z",
       "side": 1,
       "message": "this method not only checks for the presence of the lock file, but also deletes it if present. We should break it up and name it better so its clear what its doing.",
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19485e5b_6aaf1028",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-11-23T02:14:03Z",
+      "side": 1,
+      "message": "Tried breaking it up a few ways, don\u0027t think it makes much sense tbh as the return types between the methods would be a bit ugly, as we don\u0027t want to reliquish the lock on the file. I\u0027ll rename it so it\u0027s clearer what its doing.",
+      "parentUuid": "4319a606_596fb180",
       "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
