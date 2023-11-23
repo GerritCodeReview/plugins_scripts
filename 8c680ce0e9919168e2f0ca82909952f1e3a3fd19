@@ -401,6 +401,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b4975f2_8fa0b974",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1004034
+      },
+      "writtenOn": "2023-11-23T21:11:15Z",
+      "side": 1,
+      "message": "I think this is safe on the PackedBatchRefUpdate side. \n\nIt packs refs twice, the first pass is done to ensure none of the refs being updated is stored as a loose ref. In the second pass the ref update is done by updating packed-refs which allows to implement update of multiple refs in one transaction.\n\nDuring the first pass the old state is kept in eventually existing loose refs and `packed-refs`. Then `packed-refs.lock` is created to signal other git processes they must not try to pack refs concurrently. Then all refs are written to the lock file. To commit the transaction the lock file is atomically renamed to `packed-refs`. If this succeeds the loose refs which were added to the packed-refs are deleted.\n\nDuring the 2nd pass all refs from the pre-refupdate state are initially stored in `packed-refs`. The updated refs are written to the initially empty `packed-refs.lock`. The transaction is committed by atomically renaming the lock file to `packed-refs` which overwrites the old file. If the attempt to delete the assumingly stale lock file happens immediately before this atomic rename the BatchRefUpdate should fail with a FileNotFoundException since the lock file doesn\u0027t exist anymore. Hence the client of the BatchRefUpdate should notice that it failed. Otherwise the lock file deletion would fail since the lock file doesn\u0027t exist anymore if the ref update won the race.",
+      "parentUuid": "338d8898_0494b5d0",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 55
+      },
+      "revId": "8c680ce0e9919168e2f0ca82909952f1e3a3fd19",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c2866efc_4fe46eb9",
         "filename": "admin/stale-packed-refs-1.0.groovy",
         "patchSetId": 3
