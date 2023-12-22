@@ -39,6 +39,30 @@
       },
       "revId": "098e2e20df53be7371025ef4f1e35d4270806ab4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aab6493c_53062e60",
+        "filename": "multi-primary/localrefdb.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2023-12-22T02:52:19Z",
+      "side": 1,
+      "message": "Unsure if I\u0027m honest, I believe we decided that user edits should be short lived anyway and someone shouldn\u0027t expect them to still be available out of the browser session he\u0027s currently in, so replicating them is quite pointless.",
+      "parentUuid": "42c9b4f8_691a15f1",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "098e2e20df53be7371025ef4f1e35d4270806ab4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
