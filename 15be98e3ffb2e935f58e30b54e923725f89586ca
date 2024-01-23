@@ -16,6 +16,24 @@
       "message": "Do not include the version in the filename, otherwise we\u0027ll make the `git log` history a bit messy.",
       "revId": "15be98e3ffb2e935f58e30b54e923725f89586ca",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a154548_beb67a82",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2024-01-23T14:04:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93ad476f_1b5d2a14",
+      "revId": "15be98e3ffb2e935f58e30b54e923725f89586ca",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
