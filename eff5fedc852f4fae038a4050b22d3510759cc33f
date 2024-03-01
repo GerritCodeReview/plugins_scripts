@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53365ae3_9ebdbc51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-01T18:22:59Z",
+      "side": 1,
+      "message": "Very clever use of the Group backend, well done 👍",
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f80c8069_aedddc26",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-01T18:22:59Z",
+      "side": 1,
+      "message": "Should we define some _common sense_ defaults here? Example: 50k users, 3 months TTL.",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 34
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bcc2024_1da651ed",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-01T18:22:59Z",
+      "side": 1,
+      "message": "It would be best to not rely on Java serialisation for the persistent cache but just track the long Epoch here, which is more than enough.",
+      "range": {
+        "startLine": 56,
+        "startChar": 52,
+        "endLine": 56,
+        "endChar": 62
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7436da64_d8fdd055",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-01T18:22:59Z",
+      "side": 1,
+      "message": "This won\u0027t work in general: if `CurrentUser` isn\u0027t an identified user, it would throw an exception.\n\n```\n  public Account.Id getAccountId() {\n    throw new UnsupportedOperationException(\n        getClass().getSimpleName() + \" is not an IdentifiedUser\");\n  }\n```\n\nWe need to condition this to `user.isIdentifiedUser()`",
+      "range": {
+        "startLine": 56,
+        "startChar": 30,
+        "endLine": 56,
+        "endChar": 50
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
