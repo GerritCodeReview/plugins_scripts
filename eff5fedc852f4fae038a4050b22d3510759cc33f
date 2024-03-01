@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "08bd3d3d_40b49f80",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-01T18:35:09Z",
+      "side": 1,
+      "message": "shouldn\u0027t it be only TTL, eg, a month, without an entry limit? As we probably want to know how many users were active in a given period, adding an entry limit would mean we cap the active users count and never exceed that value.\n\nWDYT?",
+      "parentUuid": "f80c8069_aedddc26",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 34
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0bcc2024_1da651ed",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
@@ -77,6 +101,54 @@
       "writtenOn": "2024-03-01T18:22:59Z",
       "side": 1,
       "message": "This won\u0027t work in general: if `CurrentUser` isn\u0027t an identified user, it would throw an exception.\n\n```\n  public Account.Id getAccountId() {\n    throw new UnsupportedOperationException(\n        getClass().getSimpleName() + \" is not an IdentifiedUser\");\n  }\n```\n\nWe need to condition this to `user.isIdentifiedUser()`",
+      "range": {
+        "startLine": 56,
+        "startChar": 30,
+        "endLine": 56,
+        "endChar": 50
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8877b851_4e7a0369",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-01T18:35:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0bcc2024_1da651ed",
+      "range": {
+        "startLine": 56,
+        "startChar": 52,
+        "endLine": 56,
+        "endChar": 62
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "157515d3_4a79bd7b",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-01T18:35:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7436da64_d8fdd055",
       "range": {
         "startLine": 56,
         "startChar": 30,
