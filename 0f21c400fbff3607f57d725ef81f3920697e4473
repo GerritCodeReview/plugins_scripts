@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "450bdd49_3927f5ad",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-02T08:53:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b548793c_accf2d4b",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 2
+      },
+      "revId": "0f21c400fbff3607f57d725ef81f3920697e4473",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f321e789_88871170",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-02T02:12:21Z",
       "side": 1,
       "message": "This looks a bit too strict: it could be quite normal for someone to be off for a month over the summer. What about a 3 months default?",
+      "range": {
+        "startLine": 33,
+        "startChar": 52,
+        "endLine": 33,
+        "endChar": 71
+      },
+      "revId": "0f21c400fbff3607f57d725ef81f3920697e4473",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5004cca4_8e49c98c",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-02T08:53:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f321e789_88871170",
       "range": {
         "startLine": 33,
         "startChar": 52,
