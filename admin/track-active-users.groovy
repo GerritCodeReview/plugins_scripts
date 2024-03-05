@@ -13,17 +13,30 @@
 // limitations under the License.
 
 import com.google.common.cache.*
+import com.google.common.flogger.*
 import com.google.gerrit.common.*
 import com.google.gerrit.entities.*
-import com.google.gerrit.extensions.registration.*
+import com.google.gerrit.extensions.annotations.*
+import com.google.gerrit.extensions.events.*
+import com.google.gerrit.extensions.registration.DynamicSet
+import com.google.gerrit.lifecycle.*
 import com.google.gerrit.server.*
 import com.google.gerrit.server.account.*
 import com.google.gerrit.server.cache.*
+import com.google.gerrit.server.config.*
+import com.google.gerrit.server.git.*
 import com.google.gerrit.server.project.*
 import com.google.inject.*
 import com.google.inject.name.*
+import org.eclipse.jgit.lib.*
 
+import java.nio.file.*
+import java.nio.file.attribute.*
 import java.time.*
+import java.util.concurrent.*
+import java.util.function.*
+
+import static java.util.concurrent.TimeUnit.*
 
 class TrackActiveUsersCache extends CacheModule {
   static final NAME = "users_cache"
@@ -91,10 +104,159 @@ class TrackingGroupBackend implements GroupBackend {
   }
 }
 
-class TrackActiveUsersModule extends AbstractModule {
+class AutoDisableInactiveUsersConfig {
+  final long gracePeriodEnd
+  final Duration inactivityCutOff
+  final boolean autoDisableInactive
+  final long autoDisableInterval
+
+  private final PluginConfig config
+
+  @Inject
+  AutoDisableInactiveUsersConfig(
+      SitePaths sitePaths,
+      PluginConfigFactory configFactory,
+      @PluginName String pluginName,
+      @GerritServerConfig Config gerritConfig) {
+    config = configFactory.getFromGerritConfig(pluginName)
+
+    def cachePath = sitePaths.site_path.resolve("cache")
+        .resolve("${pluginName}.${TrackActiveUsersCache.NAME}.h2.db")
+    def cacheCreationTime = cachePath.toFile().exists() ?
+        Files.readAttributes(cachePath, BasicFileAttributes.class).creationTime().toMillis()
+        : System.currentTimeMillis()
+    def cacheTtl = gerritConfig.getTimeUnit(
+        "cache",
+        "${pluginName}.${TrackActiveUsersCache.NAME}",
+        "maxAge",
+        TrackActiveUsersCache.DEFAULT_CACHE_TTL.toMillis(), MILLISECONDS)
+    inactivityCutOff = Duration.ofMillis(cacheTtl)
+    gracePeriodEnd = cacheCreationTime + cacheTtl
+    autoDisableInactive = config.getBoolean("autoDisableInactive", false)
+    autoDisableInterval = timeUnitFromConfig("autoDisableInterval", Duration.ofHours(1))
+  }
+
+  private long timeUnitFromConfig(String name, Duration defaultValue) {
+    def value = config.getString(name)
+    ConfigUtil.getTimeUnit(value, defaultValue.toMillis(), MILLISECONDS)
+  }
+}
+
+class AutoDisableInactiveUsersExecutor implements Runnable {
+  static final FluentLogger logger = FluentLogger.forEnclosingClass()
+
+  @Inject
+  Accounts accounts
+
+  @Inject
+  @PluginName
+  String pluginName
+
+  @Inject
+  @ServerInitiated
+  Provider<AccountsUpdate> accountsUpdate
+
+  @Inject
+  @Named(TrackActiveUsersCache.NAME)
+  Cache<Integer, Long> trackActiveUsersCache
+
+  @Inject
+  AutoDisableInactiveUsersConfig autoDisableConfig
+
+  @Override
+  void run() {
+    try {
+      def now = System.currentTimeMillis()
+      if (autoDisableConfig.gracePeriodEnd > now) {
+        return
+      }
+
+      def accountsToDisable = new HashSet<Account>()
+      def allActiveAccounts = accounts.all().findAll {it.account().isActive() }
+      for (def accountState : allActiveAccounts) {
+        def account = accountState.account()
+
+        def lastUserActivity = trackActiveUsersCache.getIfPresent(account.id().get())
+        if (!lastUserActivity) {
+          accountsToDisable.add(account)
+        }
+      }
+
+      if (!accountsToDisable.isEmpty() && accountsToDisable.size() != allActiveAccounts.size()) {
+        for (def toDisable : accountsToDisable) {
+          disableAccount(toDisable)
+        }
+
+        logger.atInfo().log(
+            "Automatically disabled %d user(s) after %d days of inactivity",
+            accountsToDisable.size(),
+            autoDisableConfig.inactivityCutOff.toDays())
+      }
+    } catch (Exception e) {
+      logger.atSevere().withCause(e).log("Automatic disablement of inactive users failed")
+    }
+  }
+
+  private void disableAccount(Account account) {
+    def accountId = account.id()
+    accountsUpdate.get().update(
+        """Automatically disabling after inactivity
+
+Disabled by ${pluginName} Groovy plugin""",
+        accountId,
+        new Consumer<AccountDelta.Builder>() {
+          @Override
+          void accept(AccountDelta.Builder builder) {
+            builder.setActive(false)
+          }
+        })
+  }
+}
+
+@Singleton
+class AutoDisableInactiveUsersListener implements LifecycleListener {
+  private static final def INITIAL_DELAY = Duration.ofSeconds(60).toMillis()
+
+  @Inject
+  WorkQueue workQueue
+
+  @Inject
+  AutoDisableInactiveUsersExecutor autoDisableExecutor
+
+  @Inject
+  AutoDisableInactiveUsersConfig autoDisableConfig
+
+  ScheduledExecutorService queue
+
+  @Override
+  void start() {
+    queue = workQueue.createQueue(1, "autoDisableInactiveUsers")
+    queue.scheduleAtFixedRate(
+        autoDisableExecutor,
+        INITIAL_DELAY,
+        autoDisableConfig.autoDisableInterval,
+        MILLISECONDS)
+  }
+
+  @Override
+  void stop() {
+    if (!queue) {
+      queue.shutdown()
+    }
+  }
+}
+
+class TrackActiveUsersModule extends LifecycleModule {
+  @Inject
+  AutoDisableInactiveUsersConfig autoDisableConfig
+
   @Override
   void configure() {
     install(new TrackActiveUsersCache())
+
+    if (autoDisableConfig.autoDisableInactive) {
+      listener().to(AutoDisableInactiveUsersListener)
+    }
 
     DynamicSet.bind(binder(), GroupBackend).to(TrackingGroupBackend)
   }
