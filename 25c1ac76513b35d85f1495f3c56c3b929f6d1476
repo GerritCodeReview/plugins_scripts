@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e93795cb_9bcb26a9",
+        "filename": "replication/replication-config-from-git.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-05T22:45:54Z",
+      "side": 1,
+      "message": "unrelated: this should be aligned left, maybe a separate change?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 36
+      },
+      "revId": "25c1ac76513b35d85f1495f3c56c3b929f6d1476",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5d57aaf_8c0284c5",
+        "filename": "replication/replication-config-from-git.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-05T22:45:54Z",
+      "side": 1,
+      "message": "You can use wildcard imports in Groovy, which makes it easier to manage",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 55
+      },
+      "revId": "25c1ac76513b35d85f1495f3c56c3b929f6d1476",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
