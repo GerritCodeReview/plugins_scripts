@@ -16,22 +16,22 @@ import com.google.gerrit.common.Nullable
 import com.google.gerrit.server.update.context.RefUpdateContext
 import com.googlesource.gerrit.plugins.replication.*
 
-  import com.google.common.collect.*
-  import com.google.common.flogger.*
-  import com.google.common.io.*
-  import com.google.gerrit.entities.*
-  import com.google.gerrit.extensions.registration.*
-  import com.google.gerrit.server.config.*
-  import com.google.gerrit.server.git.*
-  import com.google.gerrit.server.*
-  import com.google.inject.*
+import com.google.common.collect.*
+import com.google.common.flogger.*
+import com.google.common.io.*
+import com.google.gerrit.entities.*
+import com.google.gerrit.extensions.registration.*
+import com.google.gerrit.server.config.*
+import com.google.gerrit.server.git.*
+import com.google.gerrit.server.*
+import com.google.inject.*
 
-  import org.eclipse.jgit.errors.*
-  import org.eclipse.jgit.dircache.*
-  import org.eclipse.jgit.lib.*
+import org.eclipse.jgit.errors.*
+import org.eclipse.jgit.dircache.*
+import org.eclipse.jgit.lib.*
 
-  import org.eclipse.jgit.revwalk.*
-  import org.eclipse.jgit.treewalk.*
+import org.eclipse.jgit.revwalk.*
+import org.eclipse.jgit.treewalk.*
 
 import static java.nio.charset.StandardCharsets.*
 import static org.eclipse.jgit.dircache.DirCacheEntry.*
