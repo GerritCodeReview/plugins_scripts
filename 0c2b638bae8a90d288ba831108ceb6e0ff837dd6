@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a64a110_a3a44e59",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0a91f94_d702bec5",
+      "range": {
+        "startLine": 9,
+        "startChar": 56,
+        "endLine": 9,
+        "endChar": 67
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f15ea25e_81935832",
@@ -47,6 +71,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a7366af_47560cb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f15ea25e_81935832",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37ed0da0_7c0c1011",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-03-07T17:58:43Z",
       "side": 1,
       "message": "groovy",
+      "range": {
+        "startLine": 29,
+        "startChar": 56,
+        "endLine": 29,
+        "endChar": 62
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e735999d_5f351367",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37ed0da0_7c0c1011",
       "range": {
         "startLine": 29,
         "startChar": 56,
@@ -95,6 +167,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "672fcd7d_788638b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "There\u0027s that initial 1 min delay before we first run the activity check. Then it also depends on how fast one is with signing in and off as a user ;)\n\nWhen `maxAge` and `autoDisableInterval` are equal it will take up to two * `maxAge` time to disable the account eg. with our 1min TTL, when Gerrit is started at T0s, then the user signs in at T15s, the cache entry will be invalidated at T75s; the first run of the auto-disable will be at T60s (the account will still be active), the second run at T120s will disable the account.\n\nI preferred to stay on the safe side with a bit more time tolerance.\n\nHTH",
+      "parentUuid": "14537a99_f09a6488",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 14
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f9e22879_3679c85a",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -106,6 +202,30 @@
       "writtenOn": "2024-03-07T17:58:43Z",
       "side": 1,
       "message": "won\u0027t",
+      "range": {
+        "startLine": 42,
+        "startChar": 54,
+        "endLine": 42,
+        "endChar": 58
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99f60d64_ab1c15d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9e22879_3679c85a",
       "range": {
         "startLine": 42,
         "startChar": 54,
@@ -141,6 +261,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3fd74c1c_2d0486ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "You\u0027re right, I didn\u0027t know where to put it so that it would be seen by reviewers, so it went into the commit. I can remove it.",
+      "parentUuid": "dbb266d3_2685ed10",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d71053ab_0f79452a",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
@@ -152,6 +296,30 @@
       "writtenOn": "2024-03-07T17:58:43Z",
       "side": 1,
       "message": "I guess we are skipping to avoid disabling all the users?\nShall we warn if that\u0027s the case?",
+      "range": {
+        "startLine": 176,
+        "startChar": 11,
+        "endLine": 176,
+        "endChar": 63
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22375177_cf4baf64",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "\u003e I guess we are skipping to avoid disabling all the users?\n\nYes, that was the initial idea.\n\nBut now, I opted to always keep the _default admin_ account active (see L#164-166), so this makes this condition irrelevant, as the `accountsToDisable` will never be equal to `allActiveAccounts`. We can either remove this check or rather exclude _default admin_ from `allActiveAccounts`. WDYT?\n\n\u003e Shall we warn if that\u0027s the case?\n\nWe\u0027ll still have the _info_ log with the total number of accounts, so don\u0027t think we should have a separate warning message. But don\u0027t mind adding it more people think it\u0027s useful.",
+      "parentUuid": "d71053ab_0f79452a",
       "range": {
         "startLine": 176,
         "startChar": 11,
@@ -187,6 +355,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "645a9ccc_5c5eed7e",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "Is there any helper for nicely formatting `Duration`? the `Duration.toString()` is returning an _odd_ ISO notation :D \n\nFor now, I\u0027ll opt for `Duration.toDays()`, this should be _good enough_ for now.",
+      "parentUuid": "21415b7d_4c7c7b97",
+      "range": {
+        "startLine": 182,
+        "startChar": 66,
+        "endLine": 182,
+        "endChar": 68
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a44b7693_2212930a",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
@@ -198,6 +390,30 @@
       "writtenOn": "2024-03-07T17:58:43Z",
       "side": 1,
       "message": "What about also mentioning the plugin name, so we know where the action is coming from",
+      "range": {
+        "startLine": 189,
+        "startChar": 8,
+        "endLine": 189,
+        "endChar": 9
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b643b3a_668d0b86",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "Good point!",
+      "parentUuid": "a44b7693_2212930a",
       "range": {
         "startLine": 189,
         "startChar": 8,
@@ -221,6 +437,30 @@
       "writtenOn": "2024-03-07T17:58:43Z",
       "side": 1,
       "message": "what about moving it out with the other constants?",
+      "range": {
+        "startLine": 218,
+        "startChar": 8,
+        "endLine": 218,
+        "endChar": 41
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94104d90_90652f19",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:51:01Z",
+      "side": 1,
+      "message": "well, other constants are used as default values for the configuration options. This one is just a hardcoded value that is not supposed to be configurable.\n\nI can extract this to a private constant so that it\u0027s more descriptive.",
+      "parentUuid": "3458bef8_e27c285d",
       "range": {
         "startLine": 218,
         "startChar": 8,
