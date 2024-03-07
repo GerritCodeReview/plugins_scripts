@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2b542e4_5bfd5b4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:08:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dd6d626_3e2360d4",
+      "range": {
+        "startLine": 10,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "85030bd4880ebddbf67ca2f36b951e0c66d41687",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2cbdf9f5_e3243b21",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-07T17:58:48Z",
       "side": 1,
       "message": "not needed",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 2
+      },
+      "revId": "85030bd4880ebddbf67ca2f36b951e0c66d41687",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ad3960c_33332858",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:08:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cbdf9f5_e3243b21",
       "range": {
         "startLine": 15,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd24dafb_50017b5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:08:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f4d6673_d7dc7917",
+      "range": {
+        "startLine": 17,
+        "startChar": 22,
+        "endLine": 17,
+        "endChar": 28
+      },
+      "revId": "85030bd4880ebddbf67ca2f36b951e0c66d41687",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a6fe1e59_6ea61347",
@@ -93,6 +165,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d9f438a_ddfc3e2a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:08:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6fe1e59_6ea61347",
+      "range": {
+        "startLine": 20,
+        "startChar": 30,
+        "endLine": 20,
+        "endChar": 38
+      },
+      "revId": "85030bd4880ebddbf67ca2f36b951e0c66d41687",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75dee048_329ad7f6",
@@ -106,6 +202,30 @@
       "writtenOn": "2024-03-07T17:58:48Z",
       "side": 1,
       "message": "What about moving it out in a constant as you did for the name?",
+      "range": {
+        "startLine": 36,
+        "startChar": 26,
+        "endLine": 36,
+        "endChar": 45
+      },
+      "revId": "85030bd4880ebddbf67ca2f36b951e0c66d41687",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "654e702f_c3e52f0f",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-07T18:08:37Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "75dee048_329ad7f6",
       "range": {
         "startLine": 36,
         "startChar": 26,
