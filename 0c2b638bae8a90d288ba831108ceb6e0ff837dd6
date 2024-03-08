@@ -189,6 +189,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a991663b_1df4e053",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-03-08T15:20:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "672fcd7d_788638b0",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 14
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9e22879_3679c85a",
@@ -285,6 +309,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dbd48fb9_a6031c34",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-03-08T15:20:30Z",
+      "side": 1,
+      "message": "What about putting it in the issue tracker in the issue description?",
+      "parentUuid": "3fd74c1c_2d0486ee",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d71053ab_0f79452a",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
@@ -332,6 +380,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b09eca9e_aa711942",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-03-08T15:20:30Z",
+      "side": 1,
+      "message": "\u003e But now, I opted to always keep the default admin account active (see L#164-166), so this makes this condition irrelevant, as the accountsToDisable will never be equal to allActiveAccounts. We can either remove this check or rather exclude default admin from allActiveAccounts. WDYT?\n\nI would remove this condition. Something we could consider as a followup is, instead of just whitelisting the default admin user, to whitelist a group of users.\nIf we go ahead with that the logic will be added around L#170, hence this check wont\u0027t be needed.",
+      "parentUuid": "22375177_cf4baf64",
+      "range": {
+        "startLine": 176,
+        "startChar": 11,
+        "endLine": 176,
+        "endChar": 63
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21415b7d_4c7c7b97",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
@@ -367,6 +439,30 @@
       "side": 1,
       "message": "Is there any helper for nicely formatting `Duration`? the `Duration.toString()` is returning an _odd_ ISO notation :D \n\nFor now, I\u0027ll opt for `Duration.toDays()`, this should be _good enough_ for now.",
       "parentUuid": "21415b7d_4c7c7b97",
+      "range": {
+        "startLine": 182,
+        "startChar": 66,
+        "endLine": 182,
+        "endChar": 68
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90ffe402_62229c50",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-03-08T15:20:30Z",
+      "side": 1,
+      "message": "\u003e For now, I\u0027ll opt for Duration.toDays(), this should be good enough for now.\n\n👍",
+      "parentUuid": "645a9ccc_5c5eed7e",
       "range": {
         "startLine": 182,
         "startChar": 66,
