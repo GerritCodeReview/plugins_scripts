@@ -333,6 +333,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bd69de23_aa03cab5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-08T17:00:48Z",
+      "side": 1,
+      "message": "it doesn\u0027t feel like testing steps belong in the issue, now everyone is looking at the issue when doing core review and testing. Also during the code review configuration keys can change, which will leave a comment on the issue with broken config.",
+      "parentUuid": "dbd48fb9_a6031c34",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d71053ab_0f79452a",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
@@ -392,6 +416,30 @@
       "side": 1,
       "message": "\u003e But now, I opted to always keep the default admin account active (see L#164-166), so this makes this condition irrelevant, as the accountsToDisable will never be equal to allActiveAccounts. We can either remove this check or rather exclude default admin from allActiveAccounts. WDYT?\n\nI would remove this condition. Something we could consider as a followup is, instead of just whitelisting the default admin user, to whitelist a group of users.\nIf we go ahead with that the logic will be added around L#170, hence this check wont\u0027t be needed.",
       "parentUuid": "22375177_cf4baf64",
+      "range": {
+        "startLine": 176,
+        "startChar": 11,
+        "endLine": 176,
+        "endChar": 63
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef04fab9_2e74a1cc",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-08T17:00:48Z",
+      "side": 1,
+      "message": "Sure we can drop the code that is ignoring the _default Gerrit admin_ and add support for a list of always active accounts later.\n\nI\u0027ll keep the equal size check in place so that we _actidentally_ won\u0027t disable all users on the instance.",
+      "parentUuid": "b09eca9e_aa711942",
       "range": {
         "startLine": 176,
         "startChar": 11,
