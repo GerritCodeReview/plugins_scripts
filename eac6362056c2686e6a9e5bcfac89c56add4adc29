@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec02573a_a0cc0e3e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-18T13:53:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "371ad673_ef4a8ac6",
+      "range": {
+        "startLine": 9,
+        "startChar": 48,
+        "endLine": 9,
+        "endChar": 68
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5fa8306d_bbc277a5",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-18T08:48:31Z",
       "side": 1,
       "message": "Clever idea indeed! Have you measured the performance impact _just-in-case_ ?",
+      "range": {
+        "startLine": 15,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb94dc9a_6b3e3690",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-18T13:53:00Z",
+      "side": 1,
+      "message": "Nope, I have not measured the performance impact, but it should be neglectable, and equal to the performance of the `PersistentCache.put()` operation.\n\nI can add this to the commit message if you think it\u0027s helpful.",
+      "parentUuid": "5fa8306d_bbc277a5",
       "range": {
         "startLine": 15,
         "startChar": 12,
@@ -70,6 +118,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "136f13bb_b86a00f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-18T13:53:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1878b5e8_e2a2b846",
+      "range": {
+        "startLine": 17,
+        "startChar": 69,
+        "endLine": 17,
+        "endChar": 74
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29a5b023_b43c1fa1",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-03-18T08:48:31Z",
       "side": 1,
       "message": "Nit: wrap long line",
+      "range": {
+        "startLine": 20,
+        "startChar": 61,
+        "endLine": 20,
+        "endChar": 74
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64cd1137_e6aa3e7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-18T13:53:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29a5b023_b43c1fa1",
       "range": {
         "startLine": 20,
         "startChar": 61,
@@ -123,6 +219,30 @@
       "writtenOn": "2024-03-18T08:48:31Z",
       "side": 1,
       "message": "If the `membershipOf()` is called 1k times per second, we should perform this put to the cache 1k times per second as well, which is:\n- Unneeded (it is unlikely that anyone would mark inactive a user at msec level)\n- Expensive (the cache is persistent, therefore the put will be done to the underlying filesystem or other storage)\n\nWe should store the new value with some throttling (e.g. store at most once per minute)\n\nAlso, we do not need the activity precision at msec level on the cache.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37c9a851_d01dda61",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-18T13:53:00Z",
+      "side": 1,
+      "message": "For a single user the `membershipsOf` is called:\n* 6x during the UI sign in\n* 17x when navigating to an open change in UI\n* 1x during SSH clone\n\nIn a single request, we won\u0027t call it thousands of times for the same user.\n\nBear in mind, that any _complexity_ we add to `membershipsOf` will have a negative performance effect on the overall group resolution. That\u0027s why I went with such a simplistic implementation.\n\nSure we can add throttling to limit the load on cache. I\u0027m concerned that it could be a premature optimization, as we don\u0027t know how this will perform in real instances and if it will have any noticeable impact on the performance.\n\nbtw. Isn\u0027t the persistent caching using batching to flush data to the persistent cache?",
+      "parentUuid": "0808e827_083880ea",
       "range": {
         "startLine": 64,
         "startChar": 0,
