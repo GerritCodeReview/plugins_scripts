@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25531374_4dcd0fb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-18T09:00:50Z",
+      "side": 1,
+      "message": "Why 4? I believe 2 minutes should be enough isn\u0027t it?",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 14
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab6d8d05_983183a6",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-18T09:00:50Z",
+      "side": 1,
+      "message": "This is tightly couple with the H2 storage, whilst in Gerrit the cache persistent storage could be different.",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 36
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52745120_6cee4311",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-18T09:00:50Z",
+      "side": 1,
+      "message": "Get this ones in the constructor?",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 3
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1caa1b58_0ce70fff",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-18T09:00:50Z",
+      "side": 1,
+      "message": "This is only used at L155, inline?",
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f284e547_cd330006",
+        "filename": "admin/track-active-users.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-18T09:00:50Z",
+      "side": 1,
+      "message": "Why two settings? If you set the interval it means that you want this feature enabled.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

@@ -357,6 +357,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "391a6e8d_6e996420",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-18T09:00:50Z",
+      "side": 1,
+      "message": "@ponch78@gmail.com when there are unit tests or IT tests, like in this case, we typically add the \"How to test\" in the commit message, as a way to document how the feature *should* be working, for the _future generations_ of developers wondering how the developer developed and tested it.",
+      "parentUuid": "bd69de23_aa03cab5",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "0c2b638bae8a90d288ba831108ceb6e0ff837dd6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d71053ab_0f79452a",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
