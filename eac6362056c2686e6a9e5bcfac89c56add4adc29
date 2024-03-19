@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "08611c4a_23a7243c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-19T23:54:33Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "bb94dc9a_6b3e3690",
+      "range": {
+        "startLine": 15,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1878b5e8_e2a2b846",
         "filename": "/COMMIT_MSG",
         "patchSetId": 10
@@ -243,6 +267,30 @@
       "side": 1,
       "message": "For a single user the `membershipsOf` is called:\n* 6x during the UI sign in\n* 17x when navigating to an open change in UI\n* 1x during SSH clone\n\nIn a single request, we won\u0027t call it thousands of times for the same user.\n\nBear in mind, that any _complexity_ we add to `membershipsOf` will have a negative performance effect on the overall group resolution. That\u0027s why I went with such a simplistic implementation.\n\nSure we can add throttling to limit the load on cache. I\u0027m concerned that it could be a premature optimization, as we don\u0027t know how this will perform in real instances and if it will have any noticeable impact on the performance.\n\nbtw. Isn\u0027t the persistent caching using batching to flush data to the persistent cache?",
       "parentUuid": "0808e827_083880ea",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b22fde3_cabd741d",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-19T23:54:33Z",
+      "side": 1,
+      "message": "\u003e btw. Isn\u0027t the persistent caching using batching to flush data to the persistent cache?\n\nWell, you don\u0027t know the implementation: it is pluggable. 17 times a 100msec latency is 1.7s added latency to open a change in the UI, which is significant.\n\nAlso tracking a msec activity isn\u0027t really useful: it is very unlikely that a user will be flagged as inactive after 100 msec of inactivity.",
+      "parentUuid": "37c9a851_d01dda61",
       "range": {
         "startLine": 64,
         "startChar": 0,
