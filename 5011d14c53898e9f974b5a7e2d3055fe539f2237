@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4ef97084_52600f34",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-19T09:45:05Z",
+      "side": 1,
+      "message": "please see my [resolved comment](https://gerrit-review.googlesource.com/c/plugins/scripts/+/411977/comment/14537a99_f09a6488/) about this.",
+      "parentUuid": "25531374_4dcd0fb3",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 14
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ab6d8d05_983183a6",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 4
@@ -37,6 +61,30 @@
       "writtenOn": "2024-03-18T09:00:50Z",
       "side": 1,
       "message": "This is tightly couple with the H2 storage, whilst in Gerrit the cache persistent storage could be different.",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 36
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87cdbc8c_4bd6771e",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-19T09:45:05Z",
+      "side": 1,
+      "message": "Yes, it is highly coupled. To decouple it we need to find another way to find when the cache was introduced. The other options that I can think of are:\n* `All-Users` git repo\n* plugin config file\n\nAny other ideas?",
+      "parentUuid": "ab6d8d05_983183a6",
       "range": {
         "startLine": 103,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "282e42ff_afa29131",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-19T09:45:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52745120_6cee4311",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 3
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1caa1b58_0ce70fff",
@@ -87,6 +159,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71b19ce4_675fa0c6",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-19T09:45:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1caa1b58_0ce70fff",
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f284e547_cd330006",
@@ -100,6 +190,30 @@
       "writtenOn": "2024-03-18T09:00:50Z",
       "side": 1,
       "message": "Why two settings? If you set the interval it means that you want this feature enabled.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39658196_e1a92bc8",
+        "filename": "admin/track-active-users.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-19T09:45:05Z",
+      "side": 1,
+      "message": "The user disablement bit feels like an additional (side) feature for tracking user activity. Also, the script file is called `track-active-users` and doesn\u0027t mention anything about disabling them. That\u0027s why I thought that having a separate flag makes sense. Don\u0027t mind removing it if you feel it\u0027s excessive.",
+      "parentUuid": "f284e547_cd330006",
       "range": {
         "startLine": 17,
         "startChar": 0,
