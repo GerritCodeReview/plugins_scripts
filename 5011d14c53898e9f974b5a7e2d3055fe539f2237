@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "64fe9739_ddfc05c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-20T00:00:55Z",
+      "side": 1,
+      "message": "OK, I would then just say _up to 4 minutes_, and put the explanation you\u0027ve included in the review comments as part of the commit message.",
+      "parentUuid": "4ef97084_52600f34",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 14
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ab6d8d05_983183a6",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 4
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "Yes, it is highly coupled. To decouple it we need to find another way to find when the cache was introduced. The other options that I can think of are:\n* `All-Users` git repo\n* plugin config file\n\nAny other ideas?",
       "parentUuid": "ab6d8d05_983183a6",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 36
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47ef83c6_3f7f347d",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-20T00:00:55Z",
+      "side": 1,
+      "message": "Also, when the cache was flushed, not just when it was introduced.\nI would just leave to the plugin to manage that, by storing that timestamp on its plugin data area:\n- stored if not present (when the plugin was first introduced)\n- updated if the cache is flushed",
+      "parentUuid": "87cdbc8c_4bd6771e",
       "range": {
         "startLine": 103,
         "startChar": 0,
@@ -214,6 +262,30 @@
       "side": 1,
       "message": "The user disablement bit feels like an additional (side) feature for tracking user activity. Also, the script file is called `track-active-users` and doesn\u0027t mention anything about disabling them. That\u0027s why I thought that having a separate flag makes sense. Don\u0027t mind removing it if you feel it\u0027s excessive.",
       "parentUuid": "f284e547_cd330006",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f720ddd7_ec49ade5",
+        "filename": "admin/track-active-users.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-20T00:00:55Z",
+      "side": 1,
+      "message": "Good point, the script needs to be renamed IMHO to `track-and-disable-inactive-users.groovy`",
+      "parentUuid": "39658196_e1a92bc8",
       "range": {
         "startLine": 17,
         "startChar": 0,
