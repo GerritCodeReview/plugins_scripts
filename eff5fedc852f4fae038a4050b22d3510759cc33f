@@ -163,6 +163,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0e151f41_e8180978",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-20T10:33:37Z",
+      "side": 1,
+      "message": "\u003e Is this really a problem?\n\nYes, some cache backends do a preallocation of the file.\n\n\u003e than the space it consumes on the disk.\n\nUntil you run out of disk space, isn\u0027t it?\n\n\u003e Also, this being a Groovy script means that one can tailor it to their needs and configure \"proper\" limits.\n\nTrue, but I would still use my common-sense for defaults.",
+      "parentUuid": "f8439578_45de3755",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 34
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0bcc2024_1da651ed",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
