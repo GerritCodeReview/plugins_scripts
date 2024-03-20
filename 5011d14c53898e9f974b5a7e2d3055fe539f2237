@@ -145,6 +145,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e9085996_33f7874d",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-20T00:20:42Z",
+      "side": 1,
+      "message": "The _plugin area_ means `$gerrit_site/etc/@PLUGIN_NAME@.config`, for what I can think of. Don\u0027t know about any other place where we can store plugin data, without anyone ales accessing it.",
+      "parentUuid": "47ef83c6_3f7f347d",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 36
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "52745120_6cee4311",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 4
