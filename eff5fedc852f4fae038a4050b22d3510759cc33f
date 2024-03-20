@@ -139,6 +139,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8439578_45de3755",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-20T09:36:05Z",
+      "side": 1,
+      "message": "Is this really a problem? The cache entries are tiny, with only two integers (one for the key and one for the timestamp). From the perspective of a Gerrit admin, I\u0027d be more concerned about users being evicted from this cache when it reaches the limit, than the space it consumes on the disk. Also, this being a Groovy script means that one can tailor it to their needs and configure \"proper\" limits.",
+      "parentUuid": "e1705ca2_1f7fbd9f",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 34
+      },
+      "revId": "eff5fedc852f4fae038a4050b22d3510759cc33f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0bcc2024_1da651ed",
         "filename": "admin/track-active-users.groovy",
         "patchSetId": 2
