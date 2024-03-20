@@ -72,6 +72,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8caaf88e_2f250f58",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-20T10:42:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64fe9739_ddfc05c6",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 14
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab6d8d05_983183a6",
@@ -181,6 +205,30 @@
       "side": 1,
       "message": "All plugins have `$GERRIT_SITE/data/@PLUGIN_NAME@/` available for them to store their data. See for instance the JavaMelody, the healthcheck, the high-availability and many other plugins as a blueprint of how to do it.",
       "parentUuid": "e9085996_33f7874d",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 36
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67dadc6b_c40523d5",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-20T10:42:51Z",
+      "side": 1,
+      "message": "Good point, Done",
+      "parentUuid": "88ebd881_ec7ecf62",
       "range": {
         "startLine": 103,
         "startChar": 0,
@@ -334,6 +382,30 @@
       "side": 1,
       "message": "Good point, the script needs to be renamed IMHO to `track-and-disable-inactive-users.groovy`",
       "parentUuid": "39658196_e1a92bc8",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "5011d14c53898e9f974b5a7e2d3055fe539f2237",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84931e31_f606315a",
+        "filename": "admin/track-active-users.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-20T10:42:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f720ddd7_ec49ade5",
       "range": {
         "startLine": 17,
         "startChar": 0,
