@@ -299,6 +299,30 @@
       },
       "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4406e0ab_543aba41",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-20T00:07:41Z",
+      "side": 1,
+      "message": "\u003e Well, you don\u0027t know the implementation: it is pluggable. 17 times a 100msec latency is 1.7s added latency to open a change in the UI, which is significant.\n\nBTW. the latest implementation is using a private cache for throttling calls to the persistent cache, so this should not be a concern now.\n\n \u003e Also tracking a msec activity isn\u0027t really useful: it is very unlikely that a user will be flagged as inactive after 100 msec of inactivity.\n\nRight, it isn\u0027t _useful_, but it also doesn\u0027t cost us anything. We can divide the `currentTimeMillis` by `60_000` but that would add a neglectable CPU cycle ;). Sure _nobody_ cares about the milliseconds, but it\u0027s no cost for us IMO.",
+      "parentUuid": "9b22fde3_cabd741d",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
