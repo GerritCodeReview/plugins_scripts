@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "417fb586_7d7e314b",
+        "filename": "admin/track-and-disable-inactive-users.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-27T00:16:53Z",
+      "side": 1,
+      "message": "nit: empty space",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 2
+      },
+      "revId": "d62384d2a2fa07d2ff09cef0369b3f78dc6effbd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fd5c334_d6f40a3a",
+        "filename": "admin/track-and-disable-inactive-users.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-27T00:16:53Z",
+      "side": 1,
+      "message": "nit: empty space",
+      "range": {
+        "startLine": 50,
+        "startChar": 19,
+        "endLine": 50,
+        "endChar": 20
+      },
+      "revId": "d62384d2a2fa07d2ff09cef0369b3f78dc6effbd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
