@@ -371,6 +371,30 @@
       },
       "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6899a246_1b4d8fd6",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-03-27T06:51:45Z",
+      "side": 1,
+      "message": "\u003e Well, that looks overkill IMHO. If you just reduce the precision to minutes, then you just don\u0027t store anything new if the latest activity time did not change. That effectively does throttling as you did already, but without introducing yet another cache.\n\nSure, but wouldn\u0027t that hammer the persistent cache anyway? Like, wouldn\u0027t it store the entry without checking if it\u0027s equal, this way we\u0027ll have the same IO load, but the values we store will be the same.",
+      "parentUuid": "40a7e07b_1846e32d",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
