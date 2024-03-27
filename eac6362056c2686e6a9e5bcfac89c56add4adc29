@@ -347,6 +347,30 @@
       },
       "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40a7e07b_1846e32d",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-03-27T00:18:51Z",
+      "side": 1,
+      "message": "\u003e \u003e Well, you don\u0027t know the implementation: it is pluggable. 17 times a 100msec latency is 1.7s added latency to open a change in the UI, which is significant.\n\u003e \n\u003e BTW. the latest implementation is using a private cache for throttling calls to the persistent cache, so this should not be a concern now.\n\nWell, that looks overkill IMHO. If you just reduce the precision to minutes, then you just don\u0027t store anything new if the latest activity time did not change. That effectively does throttling as you did already, but without introducing yet another cache.",
+      "parentUuid": "4406e0ab_543aba41",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
