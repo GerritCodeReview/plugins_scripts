@@ -198,6 +198,12 @@ class MetricsModule extends LifecycleModule {
 }
 
 class LocalRefDbCommandModule extends PluginCommandModule {
+
+  @Inject
+  LocalRefDbCommandModule(@PluginName String pluginName) {
+    super(pluginName);
+  }
+
   protected void configureCommands() {
     command(CountRefs)
     command(Sha1AllRefs)
