@@ -16,6 +16,24 @@
       "message": "It would be easier to review if you could split this into two changes 🙏:\n- Change #1: Pure renaming\n- Change #2: Adding the new functionality",
       "revId": "6cb4a19c428869a86d29826f1105ba2c0b1a75fa",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "637c249f_addd77fb",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-04-17T18:30:41Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "a9cf7886_156803c3",
+      "revId": "6cb4a19c428869a86d29826f1105ba2c0b1a75fa",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
