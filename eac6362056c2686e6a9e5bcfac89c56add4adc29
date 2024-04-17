@@ -443,6 +443,30 @@
       },
       "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d49e3fd_946fa058",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-17T12:57:35Z",
+      "side": 1,
+      "message": "\u003e \u003e Please look at the implementation of persistent caches 🙏 and see if that really applies or not.\n\u003e \n\u003e Sure, looking at `H2CacheImpl.put(K key, V val)`, in L#183, it will put the value into the memory cache, but then in L#184 it will _put value into H2 in background_. I don\u0027t see any code that would read and compare the current value with the value that is being set.\n\nI am referring to get, not to put. If you get from the persistent cache, you\u0027ll get from memory, not from disk.\n\nYou put on the cache only if:\n- it isn\u0027t in the cache yet, get() returns null\n- the current value is greater than the one of the get()\n\nThen, because there isn\u0027t anyone willing to disable a user inactive by 1 msec, you just approximate (e.g. timestamp / 60000), and there will be at most one update per minute per user.\n\n\u003e \u003e Every persistent cache has also an in-memory cache: reading is from memory, storing is on disk.\n\u003e \n\u003e Yes, it has an in-memory cache, but it won\u0027t prevent executing a `put` operation into the cache. Also, as the persistent part needs to track the last read/write, even when we insert the same value, the write timestamp will be updated, resulting in an IO.\n\u003e \n\u003e From that investigation, it\u0027s clear that we need to keep that in-memory cache here to prevent hammering the persistence layer with updates.\n\nNot really, do you want me to provide an example?",
+      "parentUuid": "e0e90740_80e00006",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
