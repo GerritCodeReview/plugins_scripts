@@ -467,6 +467,30 @@
       },
       "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb8e9a9a_588567a9",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-04-17T13:19:23Z",
+      "side": 1,
+      "message": "\u003e \u003e \u003e Please look at the implementation of persistent caches 🙏 and see if that really applies or not.\n\u003e \u003e \n\u003e \u003e Sure, looking at `H2CacheImpl.put(K key, V val)`, in L#183, it will put the value into the memory cache, but then in L#184 it will _put value into H2 in background_. I don\u0027t see any code that would read and compare the current value with the value that is being set.\n\u003e \n\u003e I am referring to get, not to put. If you get from the persistent cache, you\u0027ll get from memory, not from disk.\n\u003e \n\u003e You put on the cache only if:\n\u003e - it isn\u0027t in the cache yet, get() returns null\n\u003e - the current value is greater than the one of the get()\n\u003e \n\u003e Then, because there isn\u0027t anyone willing to disable a user inactive by 1 msec, you just approximate (e.g. timestamp / 60000), and there will be at most one update per minute per user.\n\nYou\u0027re right, if we\u0027re talking about the \"read first, and compare\" approach. The only downside that I can think of, is the fact that \"now and then\" we\u0027ll do an IO-read from the persisted cache. That\u0027s probably \"implementation\" and \"system\" detail, what\u0027s _cheaper_ either do the IO or keep a throttling cache in memory ;)\n\nI\u0027ll refactor this to use the \"get and compare\" approach with one minute resolution.",
+      "parentUuid": "9d49e3fd_946fa058",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "eac6362056c2686e6a9e5bcfac89c56add4adc29",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
