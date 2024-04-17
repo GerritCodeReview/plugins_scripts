@@ -80,7 +80,7 @@ class TrackingGroupBackend implements GroupBackend {
   }
 }
 
-class TrackActiveUsersModule extends AbstractModule {
+class TrackAndDisableInactiveUsersModule extends AbstractModule {
   @Override
   void configure() {
     install(new TrackActiveUsersCache())
@@ -89,4 +89,4 @@ class TrackActiveUsersModule extends AbstractModule {
   }
 }
 
-modules = [TrackActiveUsersModule]
+modules = [TrackAndDisableInactiveUsersModule]
