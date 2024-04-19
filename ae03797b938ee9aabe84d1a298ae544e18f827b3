@@ -22,6 +22,30 @@
       },
       "revId": "ae03797b938ee9aabe84d1a298ae544e18f827b3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58e678a7_49257398",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-19T19:50:27Z",
+      "side": 1,
+      "message": "\u003e nit: perhaps `com.google.gerrit.entities.RefNames.REFS_VERSION` could be used instead?\n\nNo, this is the `refs/multi-site/version` and not `refs/meta/version`",
+      "parentUuid": "3158be87_f4463d3f",
+      "range": {
+        "startLine": 115,
+        "startChar": 25,
+        "endLine": 115,
+        "endChar": 50
+      },
+      "revId": "ae03797b938ee9aabe84d1a298ae544e18f827b3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
