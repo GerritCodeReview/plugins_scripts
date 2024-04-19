@@ -111,6 +111,11 @@ class ProjectRefsCheck extends BaseSshCommand {
 
   boolean checkRef(Project.NameKey projectName, Repository repo, Ref ref)
   {
+    // refs/multi-site/version is just a tracking of the update ts of the repo
+    if (ref.getName() == "refs/multi-site/version") {
+      return true;
+    }
+
     def isUpToDate = globalRefDb.get().isUpToDate(projectName, ref)
 
     if (verbose && isUpToDate) {
