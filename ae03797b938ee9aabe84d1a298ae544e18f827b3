@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3158be87_f4463d3f",
+        "filename": "multi-primary/globalrefdb.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2024-04-19T19:48:37Z",
+      "side": 1,
+      "message": "nit: perhaps `com.google.gerrit.entities.RefNames.REFS_VERSION` could be used instead?",
+      "range": {
+        "startLine": 115,
+        "startChar": 25,
+        "endLine": 115,
+        "endChar": 50
+      },
+      "revId": "ae03797b938ee9aabe84d1a298ae544e18f827b3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
