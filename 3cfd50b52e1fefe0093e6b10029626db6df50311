@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e490b26d_0f5b84da",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-23T22:08:43Z",
+      "side": 1,
+      "message": "What if the cache is cleared? Should that also trigger the update of the install timestamp?",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 69
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369c36ac_6dad7d19",
         "filename": "admin/track-and-disable-inactive-users.groovy",
         "patchSetId": 10
@@ -19,6 +42,69 @@
         "startChar": 0,
         "endLine": 20,
         "endChar": 58
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2049448a_e49c9e9b",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-23T22:08:43Z",
+      "side": 1,
+      "message": "This looks a filtering operation, have you thought about using the Groovy\u0027s `findAll`?\n\nThe result is way smaller and more functional / readable IMHO.\n\n\n```suggestion\n      def accountsToDisable \u003d allActiveAccounts.findAll( accountState -\u003e {\n          trackActiveUsersCache.getIfPresent(accountState.account().id().get())\n      }\n```",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 7
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc5961b1_2cac0ec3",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-23T22:08:43Z",
+      "side": 1,
+      "message": "I am concerned that service accounts that aren\u0027t logging in interactively could also be disabled.\n\nE.g. the owners plugin uses an account id just for its own internal user, but that user will never login interactively.\n\nShould we exclude from the account to disable:\n- Service Users\n- Other \"allow-list\" groups of users?\n\nWDYT?",
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01557e53_b912fe56",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-23T22:08:43Z",
+      "side": 1,
+      "message": "Have you considered using the Groovy\u0027s `each`?\n\n\n```suggestion\n        accountsToDisable.each(disableAccount(it))\n```",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 9
       },
       "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
