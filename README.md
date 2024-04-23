@@ -23,3 +23,6 @@ and then copy the Scala scripts under your Gerrit /plugins directory.
 
 [Gerrit multi-primary Scripts](/multi-primary/)
 ------------------------
+
+[Custom Submit Requirements](/submit-requirements/)
+------------------------
