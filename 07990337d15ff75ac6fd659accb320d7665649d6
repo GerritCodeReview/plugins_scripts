@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8862f5cc_dca4e48f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2024-04-23T14:26:52Z",
+      "side": 1,
+      "message": "requirements",
+      "range": {
+        "startLine": 7,
+        "startChar": 32,
+        "endLine": 7,
+        "endChar": 43
+      },
+      "revId": "07990337d15ff75ac6fd659accb320d7665649d6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdacd701_cd9b7211",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2024-04-23T14:26:52Z",
+      "side": 1,
+      "message": "Should we link the change that adds this support too?",
+      "range": {
+        "startLine": 12,
+        "startChar": 52,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "07990337d15ff75ac6fd659accb320d7665649d6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f883502_3cbbf8df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2024-04-23T14:26:52Z",
+      "side": 1,
+      "message": "Worth pointing out that we\u0027re still missing verification that the certificate is valid with the central authority if I\u0027m not mistaken.",
+      "revId": "07990337d15ff75ac6fd659accb320d7665649d6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
