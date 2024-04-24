@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e719333_55c1ba4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1155610
+      },
+      "writtenOn": "2024-04-24T06:21:53Z",
+      "side": 1,
+      "message": "nit: If this is supposed to be a footer there should be a blank line above it?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 70
+      },
+      "revId": "183d9f2f07093f9745af94d49b95c1503e09cf08",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
