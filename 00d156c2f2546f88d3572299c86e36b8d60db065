@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6493e36b_9cd4ab55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-04-30T14:24:30Z",
+      "side": 1,
+      "message": "Are we tight to this version of bouncy castle or we can just put the link to the library and say you need version \u003e\u003d 1.72?\n\nOr if this is just to have this example working maybe we can specify for this example we used version 1.72.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 66
+      },
+      "revId": "00d156c2f2546f88d3572299c86e36b8d60db065",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f932d24_f8f794e9",
+        "filename": "submit-requirements/signed-commit.groovy",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-04-30T14:24:30Z",
+      "side": 1,
+      "message": "nit: Maybe call it `signed-commit-v1.groovy` so it will display the version when listing the plugins.",
+      "revId": "00d156c2f2546f88d3572299c86e36b8d60db065",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
