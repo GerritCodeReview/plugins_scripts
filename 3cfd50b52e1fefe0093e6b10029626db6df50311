@@ -243,6 +243,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d5ad4c3_8b369076",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-04-30T20:33:12Z",
+      "side": 1,
+      "message": "created:\n* https://issues.gerritcodereview.com/issues/338071090\n* https://issues.gerritcodereview.com/issues/338071091",
+      "parentUuid": "4f7e8908_981568a2",
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "01557e53_b912fe56",
