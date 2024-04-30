@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "58fede61_73358541",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-30T20:11:33Z",
+      "side": 1,
+      "message": "OK with documenting the risk. I would stay that the file should always be removed if:\n- Removing or clearing the cache\n- Performing any upgrade that could wipe out caches",
+      "parentUuid": "c6494cc8_776dc981",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 69
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369c36ac_6dad7d19",
         "filename": "admin/track-and-disable-inactive-users.groovy",
         "patchSetId": 10
@@ -177,6 +201,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f7e8908_981568a2",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-30T20:11:33Z",
+      "side": 1,
+      "message": "Yep, a follow-up would do.",
+      "parentUuid": "b1c6ed11_f5d0eaaa",
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "01557e53_b912fe56",
@@ -214,6 +256,30 @@
       "side": 1,
       "message": "I\u0027m not fond of `each` as it inherently introduces a side-effect and prefer the imperative approach. But, sure, can change this to `each`.",
       "parentUuid": "01557e53_b912fe56",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 9
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0360b6bb_f5a847b8",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-04-30T20:11:33Z",
+      "side": 1,
+      "message": "\u003e I\u0027m not fond of `each` as it inherently introduces a side-effect and prefer the imperative approach. But, sure, can change this to `each`.",
+      "parentUuid": "6942f4d8_eb019cfb",
       "range": {
         "startLine": 185,
         "startChar": 0,
