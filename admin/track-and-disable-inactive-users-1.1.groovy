@@ -145,6 +145,9 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
   Accounts accounts
 
   @Inject
+  ServiceUserClassifier serviceUserClassifier
+
+  @Inject
   @Named(TrackActiveUsersCache.NAME)
   Cache<Integer, Long> trackActiveUsersCache
 
@@ -152,7 +155,11 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
   void start() {
     def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
     accounts.all()
-        .findAll { it.account().isActive() && !trackActiveUsersCache.getIfPresent(it.account().id().get()) }
+        .findAll {
+          it.account().isActive()
+              && !serviceUserClassifier.isServiceUser(it.account().id()
+              && !trackActiveUsersCache.getIfPresent(it.account().id().get())
+        }
         .each { trackActiveUsersCache.put(it.account().id().get(), currentMinutes) }
   }
 
