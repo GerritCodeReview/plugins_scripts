@@ -156,6 +156,9 @@ class AutoDisableInactiveUsersExecutor implements Runnable {
   Provider<AccountsUpdate> accountsUpdate
 
   @Inject
+  ServiceUserClassifier serviceUserClassifier
+
+  @Inject
   @Named(TrackActiveUsersCache.NAME)
   Cache<Integer, Long> trackActiveUsersCache
 
@@ -170,12 +173,14 @@ class AutoDisableInactiveUsersExecutor implements Runnable {
         return
       }
 
-      def allActiveAccounts = accounts.all().findAll { it.account().isActive() }
-      def accountsToDisable = allActiveAccounts.findAll { accountState ->
+      def allInteractiveActiveAccounts = accounts.all().findAll {
+        it.account().isActive() && !serviceUserClassifier.isServiceUser(it.account().id())
+      }
+      def accountsToDisable = allInteractiveActiveAccounts.findAll { accountState ->
         !trackActiveUsersCache.getIfPresent(accountState.account().id().get())
       }.collect { it.account() }
 
-      if (!accountsToDisable.isEmpty() && accountsToDisable.size() != allActiveAccounts.size()) {
+      if (!accountsToDisable.isEmpty() && accountsToDisable.size() != allInteractiveActiveAccounts.size()) {
         accountsToDisable.each { disableAccount(it) }
 
         logger.atInfo().log(
