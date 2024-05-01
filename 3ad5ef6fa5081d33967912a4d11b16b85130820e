@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48be712d_a96e8feb",
+        "filename": "admin/track-active-users.groovy",
+        "patchSetId": 15
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-01T21:18:21Z",
+      "side": 1,
+      "message": "this is breaking group suggestion and causes a server exception:\n\n```\n[2024-05-01T22:15:11.023+01:00] [HTTP-127] ERROR com.google.gerrit.pgm.http.jetty.HiddenErrorHandler : Error in GET /groups/?owned\u0026g\u003dService%20Users\njava.lang.IncompatibleClassChangeError: Method \u0027java.util.List java.util.List.of()\u0027 must be InterfaceMethodref constant\n\tat java_util_List$of$0.call(Unknown Source)\n\tat TrackingGroupBackend.suggest(track-and-disable-inactive-users.groovy:73)\n\tat com.google.gerrit.server.account.UniversalGroupBackend.lambda$suggest$6(UniversalGroupBackend.java:153)\n\tat com.google.gerrit.server.plugincontext.PluginContext.runLogExceptions(PluginContext.java:214)\n\tat com.google.gerrit.server.plugincontext.PluginSetContext.lambda$runEach$1(PluginSetContext.java:148)\n\tat java.base/java.lang.Iterable.forEach(Iterable.java:75)\n\tat com.google.gerrit.server.plugincontext.PluginSetContext.runEach(PluginSetContext.java:148)\n\tat com.google.gerrit.server.account.UniversalGroupBackend.suggest(UniversalGroupBackend.java:151)\n\tat com.google.gerrit.server.account.GroupBackends.findExactSuggestion(GroupBackends.java:95)\n\tat com.google.gerrit.server.account.GroupBackends.findExactSuggestion(GroupBackends.java:80)\n\tat com.google.gerrit.server.args4j.AccountGroupUUIDHandler.parseArguments(AccountGroupUUIDHandler.java:80)\n\tat org.kohsuke.args4j.CmdLineParser.parseArgument(CmdLineParser.java:520)\n\tat com.google.gerrit.util.cli.CmdLineParser.parseOptionMap(CmdLineParser.java:340)\n\tat com.google.gerrit.httpd.restapi.ParameterParser.parse(ParameterParser.java:190)\n\tat com.google.gerrit.httpd.restapi.RestApiServlet.service(RestApiServlet.java:511)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:790)\n\tat com.google.inject.servlet.ServletDefinition.doServiceImpl(ServletDefinition.java:293)\n\t...\n```",
+      "range": {
+        "startLine": 62,
+        "startChar": 11,
+        "endLine": 62,
+        "endChar": 20
+      },
+      "revId": "3ad5ef6fa5081d33967912a4d11b16b85130820e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
