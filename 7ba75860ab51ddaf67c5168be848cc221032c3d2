@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13673cc9_d1781108",
+        "filename": "admin/README.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2024-05-03T10:38:16Z",
+      "side": 1,
+      "message": "nit: consider adding a version suffix here (i.e. 1.0 or something).\nThe plugin loader uses the last `dash` (`-`) as a separator to identify the version.\n\nSo in this case, the version of this plugin will be the string `users` [1].\n\n[1] https://imgur.com/a/M79wiYb",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "7ba75860ab51ddaf67c5168be848cc221032c3d2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
