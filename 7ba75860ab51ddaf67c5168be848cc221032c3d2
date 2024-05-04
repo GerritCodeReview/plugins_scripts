@@ -22,6 +22,30 @@
       },
       "revId": "7ba75860ab51ddaf67c5168be848cc221032c3d2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "caaf40ad_0b9c29e7",
+        "filename": "admin/README.md",
+        "patchSetId": 16
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-04T17:41:35Z",
+      "side": 1,
+      "message": "That\u0027s a good idea, bu it will also make things a bit harder, as we\u0027d probably need to change the version number when we add new features.",
+      "parentUuid": "13673cc9_d1781108",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "7ba75860ab51ddaf67c5168be848cc221032c3d2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
