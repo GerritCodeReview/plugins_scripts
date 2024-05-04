@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce31c246_1257cdaf",
+        "filename": "admin/track-and-disable-inactive-users.groovy",
+        "patchSetId": 13
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-04T17:51:57Z",
+      "side": 1,
+      "message": "Good catch! Look like the `!` was lost in one of the refactors.",
+      "parentUuid": "bb4d1a3e_dedd90d5",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 176,
+        "endChar": 32
+      },
+      "revId": "8ed76a8d61d5c38fa4ff9d99d0ef36cafcf871bc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdc31eac_c04c1b86",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-03T12:09:35Z",
       "side": 1,
       "message": "typo: temporarily",
+      "range": {
+        "startLine": 25,
+        "startChar": 37,
+        "endLine": 25,
+        "endChar": 47
+      },
+      "revId": "8ed76a8d61d5c38fa4ff9d99d0ef36cafcf871bc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8eb06e16_92526919",
+        "filename": "admin/track-and-disable-inactive-users.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-04T17:51:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdc31eac_c04c1b86",
       "range": {
         "startLine": 25,
         "startChar": 37,
