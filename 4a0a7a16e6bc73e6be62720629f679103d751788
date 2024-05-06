@@ -39,6 +39,30 @@
       },
       "revId": "4a0a7a16e6bc73e6be62720629f679103d751788",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d25bf5e8_c26378c4",
+        "filename": "admin/track-and-disable-inactive-users-1.1.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-06T15:46:33Z",
+      "side": 1,
+      "message": "IMO it\u0027s better to filter out data as soon as possible, so that we don\u0027t hold too much data in the memory. Afterall the `finaAll` will build a list, which means every element will be held in the memory.",
+      "parentUuid": "d64a3867_2f1f3d0a",
+      "range": {
+        "startLine": 176,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 7
+      },
+      "revId": "4a0a7a16e6bc73e6be62720629f679103d751788",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
