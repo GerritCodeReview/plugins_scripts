@@ -41,6 +41,15 @@ Configuration parameters
    If a time unit suffix is not specified, `hours` is assumed.
    Default: 1 hour
 
+```plugin.@PLUGIN@.ignoredAccountId```
+:  Specify an account Id that should not be auto disabled.
+   May be specified more than once to specify multiple account Ids, for example:
+
+   ```
+   ignoredAccountId = 1000001
+   ignoredAccountId = 1000002
+   ```
+
 ```cache."@PLUGIN@.users_cache".maxAge```
 :  Maximum allowed inactivity time for user.
    Value should use common time unit suffixes to express their setting:
