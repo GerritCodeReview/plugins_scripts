@@ -35,6 +35,7 @@ import java.nio.file.*
 import java.time.*
 import java.util.concurrent.*
 import java.util.function.*
+import java.util.stream.Collectors
 
 import static java.util.concurrent.TimeUnit.*
 
@@ -95,6 +96,7 @@ class AutoDisableInactiveUsersConfig {
   final long gracePeriodEnd
   final Duration inactivityCutOff
   final long autoDisableInterval
+  final Set<Account.Id> ignoreAccountIds
 
   private final PluginConfig config
 
@@ -114,6 +116,7 @@ class AutoDisableInactiveUsersConfig {
         TrackActiveUsersCache.DEFAULT_CACHE_TTL.toMillis(), MILLISECONDS)
     inactivityCutOff = Duration.ofMillis(cacheTtl)
     gracePeriodEnd = scriptInstallDate + cacheTtl
+    ignoreAccountIds = ignoreAccountIdsFromConfig("ignoreAccountId")
     autoDisableInterval = timeUnitFromConfig("autoDisableInterval", Duration.ofHours(1))
   }
 
@@ -124,6 +127,15 @@ class AutoDisableInactiveUsersConfig {
     } else {
       defaultValue.toMillis()
     }
+  }
+
+  private Set<Account.Id> ignoreAccountIdsFromConfig(String name) {
+    def strings = config.getStringList(name) as Set
+    strings.stream()
+        .map(Account.Id.&tryParse)
+        .filter { it.isPresent() }
+        .map { it.get() }
+        .collect(Collectors.toSet())
   }
 
   private static long getScriptInstallDate(Path pluginData) {
@@ -169,15 +181,15 @@ class AutoDisableInactiveUsersExecutor implements Runnable {
   void run() {
     try {
       def now = System.currentTimeMillis()
-      if (autoDisableConfig.gracePeriodEnd > now) {
-        return
-      }
+//      if (autoDisableConfig.gracePeriodEnd > now) {
+//        return
+//      }
 
       def allActiveAccounts = accounts.all().findAll {
         it.account().isActive() && !serviceUserClassifier.isServiceUser(it.account().id())
       }
       def accountsToDisable = allActiveAccounts.findAll { accountState ->
-        !trackActiveUsersCache.getIfPresent(accountState.account().id().get())
+        !trackActiveUsersCache.getIfPresent(accountState.account().id().get()) && !isIgnored(accountState)
       }.collect { it.account() }
 
       if (!accountsToDisable.isEmpty() && accountsToDisable.size() != allActiveAccounts.size()) {
@@ -191,6 +203,10 @@ class AutoDisableInactiveUsersExecutor implements Runnable {
     } catch (Exception e) {
       logger.atSevere().withCause(e).log("Automatic disablement of inactive users failed")
     }
+  }
+
+  private boolean isIgnored(AccountState state) {
+    autoDisableConfig.ignoreAccountIds.contains(state.account().id())
   }
 
   private void disableAccount(Account account) {
@@ -211,7 +227,7 @@ Disabled by ${pluginName} Groovy plugin""",
 
 @Singleton
 class AutoDisableInactiveUsersListener implements LifecycleListener {
-  private static final def INITIAL_DELAY = Duration.ofSeconds(60).toMillis()
+  private static final def INITIAL_DELAY = Duration.ofSeconds(5).toMillis()
 
   @Inject
   WorkQueue workQueue
