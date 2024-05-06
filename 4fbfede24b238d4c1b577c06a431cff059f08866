@@ -22,6 +22,30 @@
       },
       "revId": "4fbfede24b238d4c1b577c06a431cff059f08866",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b711643c_9c52047b",
+        "filename": "admin/track-active-users-1.0.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-06T20:41:16Z",
+      "side": 1,
+      "message": "please see the previous converstaion on this topic https://gerrit-review.googlesource.com/c/plugins/scripts/+/411666/comment/f80c8069_aedddc26/",
+      "parentUuid": "d468d271_2be766b7",
+      "range": {
+        "startLine": 33,
+        "startChar": 26,
+        "endLine": 33,
+        "endChar": 33
+      },
+      "revId": "4fbfede24b238d4c1b577c06a431cff059f08866",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
