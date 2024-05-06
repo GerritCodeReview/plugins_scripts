@@ -23,12 +23,14 @@ import com.google.gerrit.lifecycle.*
 import com.google.gerrit.server.*
 import com.google.gerrit.server.account.*
 import com.google.gerrit.server.cache.*
+import com.google.gerrit.server.config.*
 import com.google.gerrit.server.project.*
 import com.google.inject.*
 import com.google.inject.name.*
 
 import java.time.*
 import java.util.function.*
+import java.util.stream.Collectors
 
 import static java.util.concurrent.TimeUnit.*
 
@@ -84,6 +86,30 @@ class TrackingGroupBackend implements GroupBackend {
     return false
   }
 }
+class AutoDisableInactiveUsersConfig {
+  final Set<Account.Id> ignoreAccountIds
+
+  private final PluginConfig config
+
+  @Inject
+  AutoDisableInactiveUsersConfig(
+      PluginConfigFactory configFactory,
+      @PluginName String pluginName
+  ) {
+    config = configFactory.getFromGerritConfig(pluginName)
+
+    ignoreAccountIds = ignoreAccountIdsFromConfig("ignoreAccountId")
+  }
+
+  private Set<Account.Id> ignoreAccountIdsFromConfig(String name) {
+    def strings = config.getStringList(name) as Set
+    strings.stream()
+        .map(Account.Id.&tryParse)
+        .filter { it.isPresent() }
+        .map { it.get() }
+        .collect(Collectors.toSet())
+  }
+}
 
 class AutoDisableInactiveUsersEvictionListener implements CacheRemovalListener<Integer, Long> {
   static final FluentLogger logger = FluentLogger.forEnclosingClass()
@@ -92,15 +118,18 @@ class AutoDisableInactiveUsersEvictionListener implements CacheRemovalListener<I
   private final String fullCacheName
   private final Cache<Integer, Long> trackActiveUsersCache
   private final Provider<AccountsUpdate> accountsUpdate
+  private final AutoDisableInactiveUsersConfig autoDisableConfig
 
   @Inject
   AutoDisableInactiveUsersEvictionListener(
       @PluginName String pluginName,
       @ServerInitiated Provider<AccountsUpdate> accountsUpdate,
-      @Named(TrackActiveUsersCache.NAME) Cache<Integer, Long> trackActiveUsersCache
+      @Named(TrackActiveUsersCache.NAME) Cache<Integer, Long> trackActiveUsersCache,
+      AutoDisableInactiveUsersConfig autoDisableConfig
   ) {
     this.pluginName = pluginName
     this.accountsUpdate = accountsUpdate
+    this.autoDisableConfig = autoDisableConfig
     this.trackActiveUsersCache = trackActiveUsersCache
     fullCacheName = "${pluginName}.${TrackActiveUsersCache.NAME}"
   }
@@ -121,8 +150,11 @@ class AutoDisableInactiveUsersEvictionListener implements CacheRemovalListener<I
   }
 
   private void disableAccount(Account.Id accountId) {
-    logger.atInfo().log("Automatically disabling user id: %d", accountId.get())
+    if (autoDisableConfig.ignoreAccountIds.contains(accountId)) {
+      return
+    }
 
+    logger.atInfo().log("Automatically disabling user id: %d", accountId.get())
     accountsUpdate.get().update(
         """Automatically disabling after inactivity
 

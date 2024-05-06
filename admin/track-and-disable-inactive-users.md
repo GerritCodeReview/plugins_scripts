@@ -20,6 +20,16 @@ $site_path/etc/gerrit.config` files, example:
 Configuration parameters
 ---------------------
 
+=======
+```plugin.@PLUGIN@.ignoreAccountId```
+:  Specify an account Id that should not be auto disabled.
+   May be specified more than once to specify multiple account Ids, for example:
+
+   ```
+   ignoreAccountId = 1000001
+   ignoreAccountId = 1000002
+   ```
+
 ```cache."@PLUGIN@.users_cache".maxAge```
 :  Maximum allowed inactivity time for user.
    Value should use common time unit suffixes to express their setting:
