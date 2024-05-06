@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "94ae7dc7_336c072e",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-05-06T18:01:54Z",
+      "side": 1,
+      "message": "nit: What about `ignoredAccountIds`?\n\nI think it will make more consistent the `isIgnored` method:\n\n```\n  private boolean isIgnored(AccountState state) {\n    autoDisableConfig.ignoredAccountIds.contains( state.account().id() )\n  }\n```",
+      "range": {
+        "startLine": 99,
+        "startChar": 24,
+        "endLine": 99,
+        "endChar": 40
+      },
+      "revId": "221cc000741d806db324fca12336e2922a94abe7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c571ca6_54db0180",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-05-06T18:01:54Z",
+      "side": 1,
+      "message": "nit: You might be able to simplify this way:\n\n```\nprivate Set\u003cAccount.Id\u003e ignoreAccountIdsFromConfig(String name) {\n    config.getStringList(name)\n        .findAll { Account.Id.tryParse(it) }\n        .collect(Collectors.toSet())\n}\n```\n\n`findAll` internally handle iterators [1].\n\n[1]: https://github.com/groovy/groovy-core/blob/master/src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java#L4253",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 3
+      },
+      "revId": "221cc000741d806db324fca12336e2922a94abe7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b9f04a0d_957751d1",
         "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
         "patchSetId": 5
@@ -14,6 +60,30 @@
       "writtenOn": "2024-05-06T15:53:59Z",
       "side": 1,
       "message": "nit: now about we move this to line 89 and rename the variable to something like `potentialAccountToDisable`? Then we won\u0027t hold those ignored accounts in the memory for that short while and also reduce iterations in this `findAll` call.",
+      "range": {
+        "startLine": 192,
+        "startChar": 79,
+        "endLine": 192,
+        "endChar": 106
+      },
+      "revId": "221cc000741d806db324fca12336e2922a94abe7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4d99901_42799c0e",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-05-06T18:01:54Z",
+      "side": 1,
+      "message": "I guess you meant line 189?",
+      "parentUuid": "b9f04a0d_957751d1",
       "range": {
         "startLine": 192,
         "startChar": 79,
