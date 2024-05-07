@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "769cb30e_52b655d6",
+        "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2024-05-07T09:59:32Z",
+      "side": 1,
+      "message": "why we cannot use `gerritConfig.getTimeUnit()`?",
+      "revId": "18cdbdf78bd4983fe353cf1feb4efb82a5f7551f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "df4a0530_21563d69",
         "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
         "patchSetId": 14
@@ -26,6 +43,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8beae411_73e1a61d",
+        "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2024-05-07T09:59:32Z",
+      "side": 1,
+      "message": "is the `Groovy` necessary. This is just implementation detail",
+      "range": {
+        "startLine": 196,
+        "startChar": 26,
+        "endLine": 196,
+        "endChar": 32
+      },
+      "revId": "18cdbdf78bd4983fe353cf1feb4efb82a5f7551f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00012e91_0e6a8b52",
         "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
         "patchSetId": 14
@@ -37,6 +77,30 @@
       "writtenOn": "2024-05-06T18:36:33Z",
       "side": 1,
       "message": "I think should document this initial delay",
+      "range": {
+        "startLine": 209,
+        "startChar": 27,
+        "endLine": 209,
+        "endChar": 40
+      },
+      "revId": "18cdbdf78bd4983fe353cf1feb4efb82a5f7551f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "141f6831_476c1c06",
+        "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2024-05-07T09:59:32Z",
+      "side": 1,
+      "message": "could you elaborate more what is the difference between  `INITIAL_DELAY` and `gracePeriodEnd` ?",
+      "parentUuid": "00012e91_0e6a8b52",
       "range": {
         "startLine": 209,
         "startChar": 27,

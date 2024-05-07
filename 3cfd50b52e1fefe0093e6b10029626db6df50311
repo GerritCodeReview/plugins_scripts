@@ -98,6 +98,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "43f86d16_1adfc328",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2024-05-07T09:59:32Z",
+      "side": 1,
+      "message": "I agree, that is super risky. If for any reason cache will be cleared all accounts will be disabled. Then restoring them to active state will be super difficult(we don\u0027t have script for that) so in practice we can cause a full outage.\n\nMaybe we can try different approach, for example to register `CacheRemovalListener`[1].\nWe could try:\n1. When the groovy script is loaded/reloaded. Populate all active accounts to the cache.\n2. React when account is removed from the cache due to expiration. `RemovalNotification` has the `getCause` method which can distinguish expiration from the manual cache cleanup.\n\nWith this approach we do not have to store any information in the local file and we can mitigate the risk when someone clear the cache\n\n1. Example of the `CacheRemovalListener` implementation: \nhttps://gerrit.googlesource.com/plugins/multi-site/+/refs/heads/master/src/main/java/com/googlesource/gerrit/plugins/multisite/cache/CacheEvictionHandler.java",
+      "parentUuid": "77e2706b_4dd9285b",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 69
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369c36ac_6dad7d19",
         "filename": "admin/track-and-disable-inactive-users.groovy",
         "patchSetId": 10
