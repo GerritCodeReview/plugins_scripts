@@ -46,6 +46,30 @@
       },
       "revId": "4fbfede24b238d4c1b577c06a431cff059f08866",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6eacaab9_9fb1b855",
+        "filename": "admin/track-active-users-1.0.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2024-05-07T09:04:24Z",
+      "side": 1,
+      "message": "maybe we should allow to change the defaults via config? Can be done as a follow up",
+      "parentUuid": "b711643c_9c52047b",
+      "range": {
+        "startLine": 33,
+        "startChar": 26,
+        "endLine": 33,
+        "endChar": 33
+      },
+      "revId": "4fbfede24b238d4c1b577c06a431cff059f08866",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
