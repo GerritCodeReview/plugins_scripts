@@ -70,6 +70,30 @@
       },
       "revId": "4fbfede24b238d4c1b577c06a431cff059f08866",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abaaeaa8_84d79713",
+        "filename": "admin/track-active-users-1.0.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-07T10:14:09Z",
+      "side": 1,
+      "message": "AFAIK, cache settings can be alrady modified from `gerrit.config` and that should work out of the box for Gerrit caches. Here we just provide the default values.",
+      "parentUuid": "6eacaab9_9fb1b855",
+      "range": {
+        "startLine": 33,
+        "startChar": 26,
+        "endLine": 33,
+        "endChar": 33
+      },
+      "revId": "4fbfede24b238d4c1b577c06a431cff059f08866",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
