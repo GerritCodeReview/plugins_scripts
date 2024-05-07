@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c4e58c2b_2969a79f",
+        "filename": "submit-requirements/README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2024-05-07T08:43:43Z",
+      "side": 1,
+      "message": "should we also mentioned that groovy provider plugin is required?",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 121
+      },
+      "revId": "00d156c2f2546f88d3572299c86e36b8d60db065",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7f932d24_f8f794e9",
         "filename": "submit-requirements/signed-commit.groovy",
         "patchSetId": 6
