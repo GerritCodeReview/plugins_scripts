@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55b64617_4c41c05b",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2024-05-07T10:43:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94ae7dc7_336c072e",
+      "range": {
+        "startLine": 99,
+        "startChar": 24,
+        "endLine": 99,
+        "endChar": 40
+      },
+      "revId": "221cc000741d806db324fca12336e2922a94abe7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c571ca6_54db0180",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-06T18:01:54Z",
       "side": 1,
       "message": "nit: You might be able to simplify this way:\n\n```\nprivate Set\u003cAccount.Id\u003e ignoreAccountIdsFromConfig(String name) {\n    config.getStringList(name)\n        .findAll { Account.Id.tryParse(it) }\n        .collect(Collectors.toSet())\n}\n```\n\n`findAll` internally handle iterators [1].\n\n[1]: https://github.com/groovy/groovy-core/blob/master/src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java#L4253",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 3
+      },
+      "revId": "221cc000741d806db324fca12336e2922a94abe7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33b1a973_512c0916",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2024-05-07T10:43:00Z",
+      "side": 1,
+      "message": "mmm, not sure this works (`tryParse` returns an `Optional`), and it definitely confuses the IDE.\n\nLet me see if I can reduce this down in some other way.",
+      "parentUuid": "2c571ca6_54db0180",
       "range": {
         "startLine": 132,
         "startChar": 0,
@@ -84,6 +132,30 @@
       "side": 1,
       "message": "I guess you meant line 189?",
       "parentUuid": "b9f04a0d_957751d1",
+      "range": {
+        "startLine": 192,
+        "startChar": 79,
+        "endLine": 192,
+        "endChar": 106
+      },
+      "revId": "221cc000741d806db324fca12336e2922a94abe7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b577cfaa_06cb296b",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2024-05-07T10:43:00Z",
+      "side": 1,
+      "message": "I am not sure we should move this to be honest.\n\nmoving the `isIgnored` filtering at `L189` would change the semantincs of `L195`, \n\n```\naccountsToDisable.size() !\u003d allInteractiveActiveAccounts.size()\n```\n\nimagine:\n`5` active/interactive users\n`2` needs to be disabled\n`3` are in the ignored list\n\nWith the current code, the condition:\n\n`accountsToDisable.size() !\u003d allInteractiveActiveAccounts.size() \u003d\u003d\u003e 2 !\u003d 5`\n\nevaluates to `True`, accounts will be (correctly) disabled.\n\nIf we moved the ignored list filtering at `L189`, the following expression:\n\n`accountsToDisable.size() !\u003d allInteractiveActiveAccounts.size()` \u003d\u003d\u003e 2 !\u003d 2`\n\nevaluates to `False`, accounts will not be disabled, which is incorrect.\n\nIf we are worried about memory utilization (perhaps prematurely?) we should aim at not keeping two lists `allInteractiveActiveAccounts` and `accountsToDisable` at all.\n\nAlso, I don\u0027t expect the `ignoredAccountList` to get so big to _actually_ make a difference.\n\nResolving this for now, please reopen if you disagree with the analysis.",
+      "parentUuid": "b4d99901_42799c0e",
       "range": {
         "startLine": 192,
         "startChar": 79,
