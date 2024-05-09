@@ -122,6 +122,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c1aec7c2_b1628991",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-09T20:49:20Z",
+      "side": 1,
+      "message": "\u003e With this approach we do not have to store any information in the local file and we can mitigate the risk when someone clear the cache\n\nNope, we still need to store the information that we \"loaded all users\" into the cache _somewhere_. As each Gerrit restart or plugin reload will refill the cache with all active accounts, and postpone account disablement plus scew the number of active accounts, which was the initial purpose of this script.\n\nThis then brings the case \"what when someone removes that file marker?\". The outcomes of is are less severe, but still would cause the script to not work as expected.",
+      "parentUuid": "43f86d16_1adfc328",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 69
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369c36ac_6dad7d19",
         "filename": "admin/track-and-disable-inactive-users.groovy",
         "patchSetId": 10
