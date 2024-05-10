@@ -146,6 +146,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9f06861e_f10aa77d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1083454
+      },
+      "writtenOn": "2024-05-10T10:13:19Z",
+      "side": 1,
+      "message": "But we can check if entry exits and if that\u0027s the case we do not load it. We can do it even more elegant with `Cache.asMap().putIfAbsent()`\nhttps://github.com/google/guava/wiki/CachesExplained#inserted-directly\n\nIn that case we will not load the same account multiple times during the restarts",
+      "parentUuid": "c1aec7c2_b1628991",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 69
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369c36ac_6dad7d19",
         "filename": "admin/track-and-disable-inactive-users.groovy",
         "patchSetId": 10
