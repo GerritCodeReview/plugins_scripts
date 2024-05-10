@@ -170,6 +170,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b671066a_d0ae0c87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1010134
+      },
+      "writtenOn": "2024-05-10T10:34:11Z",
+      "side": 1,
+      "message": "\u003e But we can check if entry exits and if that\u0027s the case we do not load it. We can do it even more elegant with Cache.asMap().putIfAbsent()\n\nThis doesn\u0027t work on persistent caches. That map will always be empty.\n\nAlso this cache has the \"active\" users, if an account is not there it should be disabled.\n\nIf you look at the code in `AutoDisableInactiveUsersExecutor.run()`, we get the list of active users from NoteDb and check if they are in the cache, if not, we disable that account.\n\nThose are the limitations of persistent caches in Gerrit.",
+      "parentUuid": "9f06861e_f10aa77d",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 25,
+        "endChar": 69
+      },
+      "revId": "3cfd50b52e1fefe0093e6b10029626db6df50311",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369c36ac_6dad7d19",
         "filename": "admin/track-and-disable-inactive-users.groovy",
         "patchSetId": 10
