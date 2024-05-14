@@ -76,6 +76,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49013df5_52276df9",
+        "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-05-14T08:01:49Z",
+      "side": 1,
+      "message": "I believe it\u0027s just personal preferences.",
+      "parentUuid": "df4a0530_21563d69",
+      "range": {
+        "startLine": 131,
+        "startChar": 8,
+        "endLine": 131,
+        "endChar": 37
+      },
+      "revId": "18cdbdf78bd4983fe353cf1feb4efb82a5f7551f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8beae411_73e1a61d",
@@ -113,6 +137,30 @@
       "side": 1,
       "message": "in the same way you can argue that _plugin_ is also an implementation detail and can be dropped from the commit message. I found both informative and those 11 characters in the commit message should not hurt us in anyway.\n\nI you feel strongly about this, I can remove both.",
       "parentUuid": "8beae411_73e1a61d",
+      "range": {
+        "startLine": 196,
+        "startChar": 26,
+        "endLine": 196,
+        "endChar": 32
+      },
+      "revId": "18cdbdf78bd4983fe353cf1feb4efb82a5f7551f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8723408a_53b4cf36",
+        "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-05-14T08:01:49Z",
+      "side": 1,
+      "message": "I believe this is just a nit, it\u0027s OK like this I believe.",
+      "parentUuid": "2443b0a9_44dddcc9",
       "range": {
         "startLine": 196,
         "startChar": 26,
@@ -184,6 +232,30 @@
       "side": 1,
       "message": "`INITIAL_DELAY` is the amount of time that needs to pas after plugin is loaded in order to first run the auto-disable executor. This is just a small amount of time for the Gerrit start process to settle down, before we check for the inactive users.\n\nThe `gracePeriodEnd` is based on the first script installation time and its a point in time from which the user disablement will be effective. As we don\u0027t want to disable accounts right after the script is installed, we need to give users some time to sign in and populate the cache.\n\nIn other words, the `gracePeriodEnd` is a timestamp after initial script installation when the user disablement will be effective. The `INITIAL_DELAY` is an initial delay for `AutoDisableInactiveUsersExecutor` after Gerrit starts.\n\nHTH",
       "parentUuid": "141f6831_476c1c06",
+      "range": {
+        "startLine": 209,
+        "startChar": 27,
+        "endLine": 209,
+        "endChar": 40
+      },
+      "revId": "18cdbdf78bd4983fe353cf1feb4efb82a5f7551f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d64c228c_2b29519b",
+        "filename": "admin/track-and-disable-inactive-users-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-05-14T08:01:49Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "f55e18bc_2a7ffb53",
       "range": {
         "startLine": 209,
         "startChar": 27,
