@@ -26,6 +26,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6a1e8258_7f6bfa5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2024-05-17T06:13:13Z",
+      "side": 1,
+      "message": "nit: perhaps add `Bug: Issue 422137` footer?",
+      "revId": "00d156c2f2546f88d3572299c86e36b8d60db065",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c4e58c2b_2969a79f",
         "filename": "submit-requirements/README.md",
         "patchSetId": 6
@@ -42,6 +59,29 @@
         "startChar": 2,
         "endLine": 15,
         "endChar": 121
+      },
+      "revId": "00d156c2f2546f88d3572299c86e36b8d60db065",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5435033a_f2bf4022",
+        "filename": "submit-requirements/README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2024-05-17T06:13:13Z",
+      "side": 1,
+      "message": "question: do we want to flag invalid signatures with a filed signing or as an _unsigned_? AFAIU the current condition it will only apply when commit is already properly signed IOW when verification fails it will be treated as _unsigned_ commit",
+      "range": {
+        "startLine": 21,
+        "startChar": 7,
+        "endLine": 21,
+        "endChar": 43
       },
       "revId": "00d156c2f2546f88d3572299c86e36b8d60db065",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
