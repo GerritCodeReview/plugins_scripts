@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a054bdd_071e8c6e",
+        "filename": "admin/stale-packed-refs-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2024-05-22T09:48:30Z",
+      "side": 1,
+      "message": "We should also remove the file here I assume.",
+      "range": {
+        "startLine": 119,
+        "startChar": 6,
+        "endLine": 119,
+        "endChar": 141
+      },
+      "revId": "28b7eac778d98b5f98a6506920ab2438aeac1bc2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
