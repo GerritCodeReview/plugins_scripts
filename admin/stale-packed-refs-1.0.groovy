@@ -8,6 +8,7 @@ import com.google.gerrit.metrics.CallbackMetric1
 import com.google.gerrit.metrics.Description
 import com.google.gerrit.metrics.Field
 import com.google.gerrit.metrics.MetricMaker
+import com.google.gerrit.server.config.ConfigUtil
 import com.google.gerrit.server.config.PluginConfig
 import com.google.gerrit.server.config.PluginConfigFactory
 import com.google.gerrit.server.git.GitRepositoryManager
@@ -45,6 +46,7 @@ class ProjectsPackedRefsStalenessCheckers implements LifecycleListener {
 
   private ScheduledFuture<?> scheduledCheckerTask
   private String[] projectPrefixes
+  private long removeAfter
 
   def CHECK_INTERVAL_SEC_DEFAULT = 10
 
@@ -59,10 +61,12 @@ class ProjectsPackedRefsStalenessCheckers implements LifecycleListener {
     PluginConfig pluginConfig = configFactory.getFromGerritConfig(pluginName)
     def checkInterval = pluginConfig.getInt("checkIntervalSec", CHECK_INTERVAL_SEC_DEFAULT)
     projectPrefixes = pluginConfig.getStringList("projectPrefix")
+    def staleRemovalTime = pluginConfig.getString("removeAfter")
+    removeAfter = staleRemovalTime ? ConfigUtil.getTimeUnit(staleRemovalTime, Long.MAX_VALUE, TimeUnit.MILLISECONDS) : Long.MAX_VALUE
 
     scheduledCheckerTask = workQueue.getDefaultQueue().scheduleAtFixedRate({ checkProjects() }, checkInterval, checkInterval, TimeUnit.SECONDS)
     logger.atInfo().log("packed-refs.lock staleness checker started for %d projects (checkIntervalSec=%d, projectPrefix=%s)",
-        allProjectsToCheck().size(), checkInterval, Arrays.copyOf(projectPrefixes, projectPrefixes.length))
+     allProjectsToCheck().size(), checkInterval, Arrays.copyOf(projectPrefixes, projectPrefixes.length))
   }
 
   private def allProjectsToCheck() {
@@ -86,7 +90,7 @@ class ProjectsPackedRefsStalenessCheckers implements LifecycleListener {
       allProjectsToCheck().each { String projectName ->
         repoMgr.openRepository(Project.nameKey(projectName)).with { Repository it ->
           try {
-            recordLockFileAgeMetric(it, projectName)
+            recordLockFileAgeMetricAndRemoveIfStale(it, projectName)
           } catch (Exception e) {
             logger.atSevere().withCause(e).log("Error whilst checking project %s", projectName)
           }
@@ -97,7 +101,7 @@ class ProjectsPackedRefsStalenessCheckers implements LifecycleListener {
     }
   }
 
-  private void recordLockFileAgeMetric(Repository repo, String projectName) {
+  private void recordLockFileAgeMetricAndRemoveIfStale(Repository repo, String projectName) {
     def repoDir = repo.getDirectory()
     logger.atFine().log("Checking project %s ... ", projectName)
     File packedRefsLock = new File(repoDir, "packed-refs.lock")
@@ -110,7 +114,14 @@ class ProjectsPackedRefsStalenessCheckers implements LifecycleListener {
     def packedRefsLockMillis = FileUtils.lastModified(packedRefsLock.getAbsolutePath())
     def lockFileAge = System.currentTimeMillis() - packedRefsLockMillis
     refdbMetrics.projectsAndLockFileAge.put(sanitizeProjectName.sanitize(projectName), lockFileAge)
-    logger.atFine().log("[%s] calculated age for lock file (creationMillis=%d)", projectName, lockFileAge)
+
+    if (lockFileAge > removeAfter) {
+      def deleteOk = packedRefsLock.delete()
+      logger.atWarning().log("[%] %s stale lock file (creationMillis=%d, ageMillis=%d): ",
+              deleteOk ? "deleted" : "*FAILED* to delete", projectName, packedRefsLockMillis, lockFileAge)
+    } else {
+      logger.atFine().log("[%s] calculated age for lock file (creationMillis=%d, ageMillis=%d)", projectName, packedRefsLockMillis, lockFileAge)
+    }
   }
 }
 
