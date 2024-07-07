@@ -14,7 +14,7 @@
 
 import com.google.gerrit.common.Nullable
 import com.google.gerrit.server.update.context.RefUpdateContext
-import com.googlesource.gerrit.plugins.replication.*
+import com.googlesource.gerrit.plugins.replication.api.*
 
 import com.google.common.collect.*
 import com.google.common.flogger.*
@@ -42,6 +42,8 @@ class GitReplicationConfigOverrides implements ReplicationConfigOverrides {
     static final FluentLogger logger = FluentLogger.forEnclosingClass()
     Config EMPTY_CONFIG = new Config()
 
+    def CONFIG_NAME = "replication.config"
+    def CONFIG_DIR = "replication"
     def REF_NAME = RefNames.REFS_META + "replication"
 
     @Inject
@@ -82,13 +84,13 @@ class GitReplicationConfigOverrides implements ReplicationConfigOverrides {
     }
 
     Config getBaseConfig(Repository repo, RevTree tree) {
-      TreeWalk tw = TreeWalk.forPath(repo, FileConfigResource.CONFIG_NAME, tree)
+      TreeWalk tw = TreeWalk.forPath(repo, CONFIG_NAME, tree)
       return tw ? new BlobBasedConfig(new Config(), repo, tw.getObjectId(0)) : EMPTY_CONFIG
     }
 
     Config addFanoutRemotes(Repository repo, RevTree tree, Config destination)
     throws IOException, ConfigInvalidException {
-      TreeWalk tw = TreeWalk.forPath(repo, FanoutConfigResource.CONFIG_DIR, tree)
+      TreeWalk tw = TreeWalk.forPath(repo, CONFIG_DIR, tree)
       if (tw) {
         removeRemotes(destination)
 
@@ -153,7 +155,7 @@ class GitReplicationConfigOverrides implements ReplicationConfigOverrides {
         ObjectId configHead = repo.resolve(REF_NAME)
         DirCache dirCache = readTree(repo, reader, configHead)
         DirCacheEditor editor = dirCache.editor()
-        Config rootConfig = readConfig(FileConfigResource.CONFIG_NAME, repo, rw, configHead)
+        Config rootConfig = readConfig(CONFIG_NAME, repo, rw, configHead)
 
         for (String section : config.getSections()) {
           if ("remote".equals(section)) {
@@ -162,7 +164,7 @@ class GitReplicationConfigOverrides implements ReplicationConfigOverrides {
             updateRootConfig(config, section, rootConfig)
           }
         }
-        insertConfig(FileConfigResource.CONFIG_NAME, rootConfig, editor, inserter)
+        insertConfig(CONFIG_NAME, rootConfig, editor, inserter)
         editor.finish()
 
         CommitBuilder cb = new CommitBuilder()
@@ -236,7 +238,7 @@ class GitReplicationConfigOverrides implements ReplicationConfigOverrides {
         ObjectInserter inserter)
         throws IOException {
       for (String remoteName : config.getSubsections("remote")) {
-        String configPath = String.format("%s/%s.config", FanoutConfigResource.CONFIG_DIR, remoteName)
+        String configPath = String.format("%s/%s.config", CONFIG_DIR, remoteName)
         Config baseConfig = readConfig(configPath, repo, rw, refId)
 
         updateConfigSubSections(config, "remote", remoteName, baseConfig)
