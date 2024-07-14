@@ -50,6 +50,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f4c7837c_e09f21f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3520137
+      },
+      "writtenOn": "2024-07-14T10:55:21Z",
+      "side": 1,
+      "message": "Activated\u003e Done\nseting this article for my main Branch Account to access for all account in One Platform.\nAccess connecting plugging my net other device",
+      "parentUuid": "0fb28d05_33034f08",
+      "range": {
+        "startLine": 11,
+        "startChar": 38,
+        "endLine": 11,
+        "endChar": 40
+      },
+      "revId": "c233ecb0342be27815ce160a355ec5c207ae22cf",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "1ee3418c_f607b5ad",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
