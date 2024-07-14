@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dbe3051_b8227cb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3520137
+      },
+      "writtenOn": "2024-07-14T10:43:35Z",
+      "side": 1,
+      "message": "Can be change for has been merged,voting for my account",
+      "revId": "16c138fe71f5b871becced4a7e7ccd31d81e2738",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
