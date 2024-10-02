@@ -188,9 +188,7 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
     def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
     accounts.all()
         .findAll {
-          it.account().isActive()
-              && !serviceUserClassifier.isServiceUser(it.account().id()
-              && !trackActiveUsersCache.getIfPresent(it.account().id().get())
+          it.account().isActive() && !serviceUserClassifier.isServiceUser(it.account().id()) && !trackActiveUsersCache.getIfPresent(it.account().id().get())
         }
         .each { trackActiveUsersCache.put(it.account().id().get(), currentMinutes) }
   }
