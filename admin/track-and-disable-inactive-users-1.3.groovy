@@ -19,6 +19,7 @@ import com.google.gerrit.entities.*
 import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.extensions.events.*
 import com.google.gerrit.extensions.registration.*
+import com.google.gerrit.metrics.*
 import com.google.gerrit.lifecycle.*
 import com.google.gerrit.server.*
 import com.google.gerrit.server.account.*
@@ -33,6 +34,23 @@ import java.util.function.*
 import java.util.stream.Collectors
 
 import static java.util.concurrent.TimeUnit.*
+
+@Singleton
+class ActiveUsersMetric {
+
+  static final NAME = "active_users"
+  static final DESCRIPTION = "Number of active users"
+
+  @Inject
+  public ActiveUsersMetric(MetricMaker metrics, @Named(TrackActiveUsersCache.NAME) Cache<Integer, Long> trackActiveUsersCache){
+    metrics.newCallbackMetric(
+      NAME,
+      Long.class,
+      new Description(DESCRIPTION).setGauge().setUnit("users"),
+      { -> trackActiveUsersCache.size() }
+    );
+  }
+}
 
 class TrackActiveUsersCache extends CacheModule {
   static final NAME = "users_cache"
@@ -203,6 +221,7 @@ class TrackAndDisableInactiveUsersModule extends LifecycleModule {
   @Override
   void configure() {
     install(new TrackActiveUsersCache())
+    bind(ActiveUsersMetric.class).asEagerSingleton()
     listener().to(AutoDisableInactiveUsersListener)
     DynamicSet.bind(binder(), CacheRemovalListener).to(AutoDisableInactiveUsersEvictionListener)
 
