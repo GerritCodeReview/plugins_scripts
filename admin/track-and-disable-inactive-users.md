@@ -42,3 +42,11 @@ Configuration parameters
 
    If a time unit suffix is not specified, `hours` is assumed.
    Default: 90 days
+
+Metrics
+---------------------
+Currently, the metrics exposed are the following:
+
+```groovy_track_and_disable_inactive_users_active_users```
+:  Indicates the number of active users.
+   A user is considered active when its inactivity period is not greater than `cache."@PLUGIN@.users_cache".maxAge` .
