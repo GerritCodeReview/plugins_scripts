@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be5d70af_9ff3afb0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-10-15T12:37:29Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 47
+      },
+      "revId": "bdf6f9f780277e4435bbc791784f49724dc7fdc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f42e738_68768dbb",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-10-15T12:37:29Z",
+      "side": 1,
+      "message": "You probably want to bump up the plugin minor version so it can be reloaded by Gerrit",
+      "revId": "bdf6f9f780277e4435bbc791784f49724dc7fdc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
