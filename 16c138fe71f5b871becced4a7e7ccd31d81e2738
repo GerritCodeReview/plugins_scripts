@@ -22,6 +22,30 @@
       },
       "revId": "16c138fe71f5b871becced4a7e7ccd31d81e2738",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1392964_4f5af84d",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2024-10-16T06:58:41Z",
+      "side": 0,
+      "message": "I think it is both the missing parenthesis and the alignement. @diego.sessona@gmail.com correct me if I am wrong. However, yes the commit message should be amended.",
+      "parentUuid": "7f5ec2f1_550ebc7e",
+      "range": {
+        "startLine": 192,
+        "startChar": 70,
+        "endLine": 192,
+        "endChar": 71
+      },
+      "revId": "16c138fe71f5b871becced4a7e7ccd31d81e2738",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
