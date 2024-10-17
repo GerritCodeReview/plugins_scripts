@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b264bb6_feedbef6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-10-17T07:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be5d70af_9ff3afb0",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 47
+      },
+      "revId": "bdf6f9f780277e4435bbc791784f49724dc7fdc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f42e738_68768dbb",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-10-15T12:37:29Z",
       "side": 1,
       "message": "You probably want to bump up the plugin minor version so it can be reloaded by Gerrit",
+      "revId": "bdf6f9f780277e4435bbc791784f49724dc7fdc6",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33e956b4_a851bf36",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-10-17T07:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f42e738_68768dbb",
       "revId": "bdf6f9f780277e4435bbc791784f49724dc7fdc6",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
