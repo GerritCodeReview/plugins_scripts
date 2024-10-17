@@ -46,6 +46,30 @@
       },
       "revId": "16c138fe71f5b871becced4a7e7ccd31d81e2738",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b7e75c4_6d2229f9",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-10-17T07:12:21Z",
+      "side": 0,
+      "message": "That is correct, just adding the parenthesis is not enough, the plugin will fail to load with the error:\n\n```\nunexpected token: \u0026\u0026 @ line 192, column 13.\n               \u0026\u0026 !serviceUserClassifier.isServiceUser(it.account().id())\n```\n\nAs described in the first paragraph of the commit message. Updating the message to also be explicit about the missing parenthesis.",
+      "parentUuid": "b1392964_4f5af84d",
+      "range": {
+        "startLine": 192,
+        "startChar": 70,
+        "endLine": 192,
+        "endChar": 71
+      },
+      "revId": "16c138fe71f5b871becced4a7e7ccd31d81e2738",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
