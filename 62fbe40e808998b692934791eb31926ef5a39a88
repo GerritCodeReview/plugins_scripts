@@ -22,6 +22,30 @@
       },
       "revId": "62fbe40e808998b692934791eb31926ef5a39a88",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c93aa40c_cadb6012",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2024-10-24T12:38:38Z",
+      "side": 1,
+      "message": "@diego.sessona@gmail.com, @luca.milanesio@gmail.com this is the underlying implementation used by the `CaffeinatedGuavaCache` [1].\n\nFrom the docs:\n\n```\nthe actual count may differ if there are concurrent insertions or removals, or if some entries are pending removal due to expiration or weak/soft reference collection. In the case of stale entries this inaccuracy can be mitigated by performing a cleanUp() first.\n```\n\nApparently we could call `cleanUp()` to minimise any discrepancy.\nWDYT?\n\n\n[1] https://javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/2.5.6/com/github/benmanes/caffeine/cache/Cache.html#estimatedSize--",
+      "parentUuid": "a7056b42_bbe3b19e",
+      "range": {
+        "startLine": 50,
+        "startChar": 11,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "62fbe40e808998b692934791eb31926ef5a39a88",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
