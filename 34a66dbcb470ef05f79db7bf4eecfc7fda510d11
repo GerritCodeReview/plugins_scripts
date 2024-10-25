@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "394c62e4_ef0ae193",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-10-25T07:49:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e83079d3_ad09a574",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 53
+      },
+      "revId": "34a66dbcb470ef05f79db7bf4eecfc7fda510d11",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "197762ed_ff433f8d",
@@ -89,6 +113,30 @@
       "writtenOn": "2024-10-15T12:53:50Z",
       "side": 1,
       "message": "If I get this correctly this is the number of active users in the last `DEFAULT_CACHE_TTL` days, correct? If so it is wort mentioning it in the commit message. And maybe in the metric description as well.",
+      "range": {
+        "startLine": 50,
+        "startChar": 11,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "34a66dbcb470ef05f79db7bf4eecfc7fda510d11",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d13486c2_5505d2b1",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-10-25T07:49:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8ca0975_ff7d70a5",
       "range": {
         "startLine": 50,
         "startChar": 11,
