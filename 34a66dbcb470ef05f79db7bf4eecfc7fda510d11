@@ -100,6 +100,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43cb824b_5f2b2cf3",
+        "filename": "admin/track-and-disable-inactive-users-1.2.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-10-25T08:03:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "455001e1_6981640c",
+      "revId": "34a66dbcb470ef05f79db7bf4eecfc7fda510d11",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d8ca0975_ff7d70a5",
