@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0905991_3898c706",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-06T08:50:51Z",
+      "side": 1,
+      "message": "Opening a repository is quite expensive: do we really need it?",
+      "range": {
+        "startLine": 87,
+        "startChar": 12,
+        "endLine": 87,
+        "endChar": 90
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29ded17f_53ec4ab2",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-06T08:50:51Z",
+      "side": 1,
+      "message": "The GC maybe running without having the GC pid on the filesystem.",
+      "range": {
+        "startLine": 105,
+        "startChar": 17,
+        "endLine": 105,
+        "endChar": 31
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9248d955_6f79ca85",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-06T08:50:51Z",
+      "side": 1,
+      "message": "This isn\u0027t a plugin but a script: this markdown won\u0027t be included in the script and therefore this tag isn\u0027t expanded.\n\nCan you put the real value here?",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 18
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b2e8f73_c8252560",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-06T08:50:51Z",
+      "side": 1,
+      "message": "Gerrit has already the mechanism to parse times: any reason for this constraint?",
+      "range": {
+        "startLine": 25,
+        "startChar": 48,
+        "endLine": 26,
+        "endChar": 21
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84477628_48003c6b",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-06T08:50:51Z",
+      "side": 1,
+      "message": "Projects may have a name that isn\u0027t compatible with the naming convention of the metric.",
+      "range": {
+        "startLine": 43,
+        "startChar": 52,
+        "endLine": 43,
+        "endChar": 61
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
