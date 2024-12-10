@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dcb28f8e_e9d209ac",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-10T08:51:45Z",
+      "side": 1,
+      "message": "There are a couple of situations:\n- The command executed is not *precisely* the GC but it is *effectively* a GC (repack with creation of bitmap)\n- The `gc.pid` may be there but stale, hence it isn\u0027t running",
+      "parentUuid": "7ec8ac9b_886b4665",
+      "range": {
+        "startLine": 105,
+        "startChar": 17,
+        "endLine": 105,
+        "endChar": 31
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9248d955_6f79ca85",
         "filename": "admin/repo-gc-tracker.md",
         "patchSetId": 2
