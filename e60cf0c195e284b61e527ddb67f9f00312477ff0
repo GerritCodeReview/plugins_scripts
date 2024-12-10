@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e00299e7_5f2325b1",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-12-10T08:20:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0905991_3898c706",
+      "range": {
+        "startLine": 87,
+        "startChar": 12,
+        "endLine": 87,
+        "endChar": 90
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29ded17f_53ec4ab2",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-06T08:50:51Z",
       "side": 1,
       "message": "The GC maybe running without having the GC pid on the filesystem.",
+      "range": {
+        "startLine": 105,
+        "startChar": 17,
+        "endLine": 105,
+        "endChar": 31
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ec8ac9b_886b4665",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-12-10T08:20:47Z",
+      "side": 1,
+      "message": "Can you point me to the case where gc.pid is not on the filesystem and the gc is running? I have checked in jgit and cgit and when the gc is running (even in background) it creates the gc.pid file.",
+      "parentUuid": "29ded17f_53ec4ab2",
       "range": {
         "startLine": 105,
         "startChar": 17,
@@ -70,6 +118,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b5bef1f_525e4ccc",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-12-10T08:20:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9248d955_6f79ca85",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 18
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7b2e8f73_c8252560",
@@ -93,6 +165,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33de132b_fecbba40",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-12-10T08:20:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b2e8f73_c8252560",
+      "range": {
+        "startLine": 25,
+        "startChar": 48,
+        "endLine": 26,
+        "endChar": 21
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84477628_48003c6b",
@@ -106,6 +202,30 @@
       "writtenOn": "2024-12-06T08:50:51Z",
       "side": 1,
       "message": "Projects may have a name that isn\u0027t compatible with the naming convention of the metric.",
+      "range": {
+        "startLine": 43,
+        "startChar": 52,
+        "endLine": 43,
+        "endChar": 61
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35a91ac1_274ce19c",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-12-10T08:20:47Z",
+      "side": 1,
+      "message": "Now the script is sanitizing the project name",
+      "parentUuid": "84477628_48003c6b",
       "range": {
         "startLine": 43,
         "startChar": 52,
