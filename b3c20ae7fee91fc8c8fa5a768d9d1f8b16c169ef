@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec634e39_b7bd79a7",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1155599
+      },
+      "writtenOn": "2024-12-12T15:00:28Z",
+      "side": 1,
+      "message": "should this be an `or`?",
+      "range": {
+        "startLine": 127,
+        "startChar": 28,
+        "endLine": 127,
+        "endChar": 29
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
