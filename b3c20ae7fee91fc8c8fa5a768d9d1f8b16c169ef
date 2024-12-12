@@ -22,6 +22,30 @@
       },
       "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95732736_9dcf608a",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2024-12-12T15:49:37Z",
+      "side": 1,
+      "message": "No, for jgit the two temp files should be there at the same time.\nBtw this only cover the case of running gc with jgit, not cgit. \n\nWith cgit than you are right and we should check the presence of either / or. \n\nBut if we agree that we should not look at the individual phases of the GC, than this code should be removed. \nOtherwise we should also add the checks for individual phases in the cgit scenario.",
+      "parentUuid": "ec634e39_b7bd79a7",
+      "range": {
+        "startLine": 127,
+        "startChar": 28,
+        "endLine": 127,
+        "endChar": 29
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
