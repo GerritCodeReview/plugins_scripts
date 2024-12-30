@@ -3,6 +3,201 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ae30e0df_23564f51",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "```suggestion\nAdded a groovy script plugin to check if repack is running\n```\n\nAt the end of the day, the most frequent operation we want to track is the repacking rather the execution of the \"full blown GC\" command.\n\nWhat it is interesting for the Gerrit admin is to track when we do:\n- removal of unreachable objects\n- consolidation of packfiles\n- removal of loose objects\n- creation of the bitmaps\n\nThe `git repack -a -d -b` won\u0027t be technically a `git gc` operation but it will definitely do what we want to check and track.",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 43
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1aef70d_3a8f30e3",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "Maybe calling `repo-repack-tracker`?",
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58ea85f3_0c69e8c2",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "`git` creates temporary files starting with `tmp` and `.tmp`",
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c27098b_94986520",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "This isn\u0027t exhaustive anyway, as you\u0027re missing the `.bitmap_tmp`. Why not simply checking for the files ending with `_tmp`?",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 52
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3340805d_1f82b003",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "Not sure I understand why we need a background thread, can you elaborate?\n\nBear in mind that if we check only once every 30s we may not know if we are really during a repacking phase or not, unless we are repacking *exactly* at that time.\n\nIt is typically the scraper that decides how often we want to calculate the metric.",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 155
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82a7d405_5a2244bc",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "After the discussions, I believe the tracking of `gc.pid` is too narrow and not representative of what we want to track.",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 46
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2112495d_67021066",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "Not relevant anymore IMHO.",
+      "range": {
+        "startLine": 115,
+        "startChar": 17,
+        "endLine": 115,
+        "endChar": 60
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8a07530_eada72e9",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "```suggestion\n  private boolean hasRepackTmpFiles(File repoDir) {\n```",
+      "range": {
+        "startLine": 119,
+        "startChar": 18,
+        "endLine": 119,
+        "endChar": 31
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f311289_2230aa2e",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "I don\u0027t believe we need to list *ALL* files here, but just look for the temporary ones. See https://blog.mrhaki.com/2010/04/groovy-goodness-traversing-directory.html",
+      "range": {
+        "startLine": 124,
+        "startChar": 4,
+        "endLine": 124,
+        "endChar": 35
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ec634e39_b7bd79a7",
         "filename": "admin/repo-gc-tracker-1.0.groovy",
         "patchSetId": 4
@@ -43,6 +238,69 @@
         "startChar": 28,
         "endLine": 127,
         "endChar": 29
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72aa2d08_ca2b754e",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "We should just check that the number of files starting with `tmp` or `.tmp` or ending with `tmp` should more than zero.",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 44
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "021036d1_cfc343e4",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "Maybe calling it `repo-repack-tracker` would be more appropriate IMHO.",
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41309d33_3efeb7c2",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-12-30T16:01:58Z",
+      "side": 1,
+      "message": "The default looks too high IMHO. If you have a temporary file running for 1h I believe we can already considering stale.",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 17
       },
       "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
