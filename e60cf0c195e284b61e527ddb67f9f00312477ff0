@@ -119,6 +119,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed4d8655_f9398293",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "dcb28f8e_e9d209ac",
+      "range": {
+        "startLine": 105,
+        "startChar": 17,
+        "endLine": 105,
+        "endChar": 31
+      },
+      "revId": "e60cf0c195e284b61e527ddb67f9f00312477ff0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9248d955_6f79ca85",

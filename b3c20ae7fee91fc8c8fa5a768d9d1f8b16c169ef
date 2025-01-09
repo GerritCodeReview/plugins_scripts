@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "378ebaf2_cd1acbf5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae30e0df_23564f51",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 43
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1aef70d_3a8f30e3",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-12-30T16:01:58Z",
       "side": 1,
       "message": "Maybe calling `repo-repack-tracker`?",
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d5e4311_29cbe7ea",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1aef70d_3a8f30e3",
       "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -81,6 +123,48 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "826ca0e5_6c48f9d2",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58ea85f3_0c69e8c2",
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ae2e75a_eeb26b48",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c27098b_94986520",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 52
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3340805d_1f82b003",
@@ -94,6 +178,30 @@
       "writtenOn": "2024-12-30T16:01:58Z",
       "side": 1,
       "message": "Not sure I understand why we need a background thread, can you elaborate?\n\nBear in mind that if we check only once every 30s we may not know if we are really during a repacking phase or not, unless we are repacking *exactly* at that time.\n\nIt is typically the scraper that decides how often we want to calculate the metric.",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 155
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "feaadc0a_38366f90",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3340805d_1f82b003",
       "range": {
         "startLine": 78,
         "startChar": 4,
@@ -127,6 +235,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8db5d75d_68927629",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "82a7d405_5a2244bc",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 46
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2112495d_67021066",
@@ -140,6 +272,30 @@
       "writtenOn": "2024-12-30T16:01:58Z",
       "side": 1,
       "message": "Not relevant anymore IMHO.",
+      "range": {
+        "startLine": 115,
+        "startChar": 17,
+        "endLine": 115,
+        "endChar": 60
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "081e7ff2_30cae32b",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2112495d_67021066",
       "range": {
         "startLine": 115,
         "startChar": 17,
@@ -173,6 +329,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26144207_92f2671d",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8a07530_eada72e9",
+      "range": {
+        "startLine": 119,
+        "startChar": 18,
+        "endLine": 119,
+        "endChar": 31
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f311289_2230aa2e",
@@ -186,6 +366,30 @@
       "writtenOn": "2024-12-30T16:01:58Z",
       "side": 1,
       "message": "I don\u0027t believe we need to list *ALL* files here, but just look for the temporary ones. See https://blog.mrhaki.com/2010/04/groovy-goodness-traversing-directory.html",
+      "range": {
+        "startLine": 124,
+        "startChar": 4,
+        "endLine": 124,
+        "endChar": 35
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea5d1ec9_fd10c97f",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f311289_2230aa2e",
       "range": {
         "startLine": 124,
         "startChar": 4,
@@ -266,6 +470,54 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcd9910a_d24f5618",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "95732736_9dcf608a",
+      "range": {
+        "startLine": 127,
+        "startChar": 28,
+        "endLine": 127,
+        "endChar": 29
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23fd4301_777734ab",
+        "filename": "admin/repo-gc-tracker-1.0.groovy",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72aa2d08_ca2b754e",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 44
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "021036d1_cfc343e4",
@@ -283,6 +535,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04a9a770_3ce9cb4a",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "021036d1_cfc343e4",
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41309d33_3efeb7c2",
@@ -296,6 +566,30 @@
       "writtenOn": "2024-12-30T16:01:58Z",
       "side": 1,
       "message": "The default looks too high IMHO. If you have a temporary file running for 1h I believe we can already considering stale.",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 17
+      },
+      "revId": "b3c20ae7fee91fc8c8fa5a768d9d1f8b16c169ef",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00f0cda9_54706532",
+        "filename": "admin/repo-gc-tracker.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-09T08:42:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41309d33_3efeb7c2",
       "range": {
         "startLine": 35,
         "startChar": 9,
