@@ -33,8 +33,11 @@ import static groovy.io.FileType.FILES
 class RepoRepackTracker implements LifecycleListener {
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass()
-  private static final NAME = "is_repack_running_per_project"
-  private static final DESCRIPTION = "Check repack running for the project"
+  private static final DESCRIPTION_GC = "Check gc running for the project"
+  private static final DESCRIPTION_REPACK = "Check repack running for the project"
+  private static final NAME_GC = "is_gc_running_per_project"
+  private static final NAME_REPACK = "is_repack_running_per_project"
+  private static final GC_PID_FILE = "gc.pid"
   private static final GIT_PACK_FOLDER = "objects/pack"
   private static final TMP_PREFIX = "tmp_"
   private static final TMP_SUFFIX = ".tmp"
@@ -50,26 +53,37 @@ class RepoRepackTracker implements LifecycleListener {
   LocalDiskRepositoryManager repoMgr
 
   private def tmpFilter = ~/^(${TMP_PREFIX}.*|.*${TMP_SUFFIX})$/
-  private long considerStaleAfterMs
-  CallbackMetric1<String, Long> projectsAndGcMetric
+  private long repackStalenessAfterMs
+  private long gcStalenessAfterMs
+  CallbackMetric1<String, Long> callbackMetricGc
+  CallbackMetric1<String, Long> callbackMetricRepack
   List<String> projects
 
   @Override
   void start() {
     PluginConfig pluginConfig = configFactory.getFromGerritConfig(pluginName)
-    long considerStaleAfter = ConfigUtil.getTimeUnit(
-        pluginConfig.getString("considerStaleAfter", "60 minutes"),
+    long repackStalenessAfter = ConfigUtil.getTimeUnit(
+        pluginConfig.getString("considerRepackStaleAfter", "60 minutes"),
         60L,
         TimeUnit.MINUTES)
-    considerStaleAfterMs = TimeUnit.MILLISECONDS.convert(considerStaleAfter, TimeUnit.MINUTES)
+    long gcStalenessAfter = ConfigUtil.getTimeUnit(
+        pluginConfig.getString("considerGcStaleAfter", "720 minutes"),
+        720L,
+        TimeUnit.MINUTES)
+    repackStalenessAfterMs = TimeUnit.MILLISECONDS.convert(repackStalenessAfter, TimeUnit.MINUTES)
+    gcStalenessAfterMs = TimeUnit.MILLISECONDS.convert(gcStalenessAfter, TimeUnit.MINUTES)
 
     projects = pluginConfig.getStringList("project")
-    projectsAndGcMetric = createCallbackMetric(NAME, DESCRIPTION)
-    addMetricsTrigger(projectsAndGcMetric, projects)
 
-    logger.atInfo().log("Plugin %s started (staleAfter %d minutes)",
+    callbackMetricGc = createCallbackMetric(NAME_GC, DESCRIPTION_GC)
+    callbackMetricRepack = createCallbackMetric(NAME_REPACK, DESCRIPTION_REPACK)
+    addMetricsTriggers()
+
+    logger.atInfo().log("Plugin %s started for %d projects (considering gc stale after %d minutes, repack after %d minutes)",
         pluginName,
-        considerStaleAfter)
+        projects.size(),
+        gcStalenessAfter,
+        repackStalenessAfter)
   }
 
   CallbackMetric1<String, Long> createCallbackMetric(String name, String description) {
@@ -83,18 +97,47 @@ class RepoRepackTracker implements LifecycleListener {
     )
   }
 
-  void addMetricsTrigger(CallbackMetric1<String, Long> projectsAndGcMetric, List<String> projects) {
+  void addMetricsTriggers() {
     metrics.newTrigger(
-        projectsAndGcMetric, {
+        callbackMetricRepack, {
       if (projects.isEmpty()) {
-        projectsAndGcMetric.forceCreate("")
+        callbackMetricRepack.forceCreate("")
       } else {
         projects.each { e ->
+<<<<<<< PATCH SET (356d19 Add `is_gc_running_per_project_<repo_name>` metric)
+          callbackMetricRepack.set(e, isRepackingRunningForProject(e))
+||||||| BASE
+          projectsAndGcMetric.set(e, isRepackingRunningForProject(e))
+=======
           projectsAndGcMetric.set(e, checkRepackingRunningForProject(e))
+>>>>>>> BASE      (e0be02 Added plugin repo-repack-tracker)
         }
-        projectsAndGcMetric.prune()
+        callbackMetricRepack.prune()
       }
     })
+    metrics.newTrigger(
+        callbackMetricGc, {
+      if (projects.isEmpty()) {
+        callbackMetricGc.forceCreate("")
+      } else {
+        projects.each { e ->
+          callbackMetricGc.set(e, isGCRunningForProject(e))
+        }
+        callbackMetricGc.prune()
+      }
+    })
+  }
+
+  long isGCRunningForProject(String projectName) {
+    def isGcRunning = 0L
+    try {
+      def repoDir = getRepoDir(projectName)
+      def gcPid = new File(repoDir, GC_PID_FILE)
+      isGcRunning = (gcPid.exists() && !isFileStale(gcPid))? 1L : 0L
+    } catch (Exception e) {
+      logger.atSevere().withCause(e).log("Could not check project %s",  projectName)
+    }
+    isGcRunning
   }
 
   long checkRepackingRunningForProject(String projectName) {
@@ -118,7 +161,13 @@ class RepoRepackTracker implements LifecycleListener {
   }
 
   boolean hasRepackTmpFiles(folder) {
+<<<<<<< PATCH SET (356d19 Add `is_gc_running_per_project_<repo_name>` metric)
+    def oneHourAgo = System.currentTimeMillis() - repackStalenessAfterMs
+||||||| BASE
+    def oneHourAgo = System.currentTimeMillis() - considerStaleAfterMs
+=======
     def modifiedCutoffTime = System.currentTimeMillis() - considerStaleAfterMs
+>>>>>>> BASE      (e0be02 Added plugin repo-repack-tracker)
     def tmpFileFound = false
 
     folder.traverse(type: FILES, nameFilter: tmpFilter) { file ->
@@ -127,6 +176,11 @@ class RepoRepackTracker implements LifecycleListener {
       }
     }
     return tmpFileFound
+  }
+
+  boolean isFileStale(File f) {
+    def fileExpiry = f.lastModified() + gcStalenessAfterMs
+    return System.currentTimeMillis() > fileExpiry
   }
 
   @Override
