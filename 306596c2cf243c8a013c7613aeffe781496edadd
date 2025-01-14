@@ -41,6 +41,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9a12ac8_8a890911",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9dd02c03_2322701a",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aadd0dfe_6b0385d7",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-01-14T08:42:47Z",
       "side": 1,
       "message": "In Groovy we typically use the wildcards imports, see the other Groovy scripts",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 60
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0b2beab_4d6fecf9",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "aadd0dfe_6b0385d7",
       "range": {
         "startLine": 17,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9b38f0f_91e39c3e",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63ebabf6_9db408bf",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 3
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a107ea0b_a81056d5",
@@ -100,6 +172,30 @@
       "writtenOn": "2025-01-14T08:42:47Z",
       "side": 1,
       "message": "Do we need this? Gerrit display the unloading of the plugin already in the error_log",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 60
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b0e31a7_d8ab58bb",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a107ea0b_a81056d5",
       "range": {
         "startLine": 73,
         "startChar": 0,
@@ -133,6 +229,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cef85f72_829106c9",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "True, a different class was added in the patchset 1 where the code was wrongly updating the metric in background. Removed.",
+      "parentUuid": "6beeacc8_9c6eb910",
+      "range": {
+        "startLine": 78,
+        "startChar": 6,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2b662f7_3c93b38c",
@@ -146,6 +266,30 @@
       "writtenOn": "2025-01-14T08:42:47Z",
       "side": 1,
       "message": "```suggestion\n  @Inject\n```",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 79,
+        "endChar": 27
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0933b9b6_6079b3ef",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2b662f7_3c93b38c",
       "range": {
         "startLine": 79,
         "startChar": 2,
@@ -179,6 +323,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bff74b9_8f0cea1b",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2fea4f9d_e8325414",
+      "range": {
+        "startLine": 164,
+        "startChar": 10,
+        "endLine": 164,
+        "endChar": 46
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "716f2cc3_83f30dc3",
@@ -202,6 +370,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "508ee7c4_05e7bdfc",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "L174 does not return false for the hasRepackTmpFiles function, but it does stop the traverse if a temp file is found. \nChanged this to return `tmpFileFound` for readability.",
+      "parentUuid": "716f2cc3_83f30dc3",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 20
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea3c2dab_8035d8c3",
@@ -215,6 +407,30 @@
       "writtenOn": "2025-01-14T08:42:47Z",
       "side": 1,
       "message": "You should mention that the `\u003crepo_name\u003e` is sanitised to prevent the introduction of invalid chars for a metric name.",
+      "range": {
+        "startLine": 44,
+        "startChar": 56,
+        "endLine": 44,
+        "endChar": 67
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19265a74_b2c77afc",
+        "filename": "admin/repo-repack-tracker.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:50:09Z",
+      "side": 1,
+      "message": "Do we need also to specify how?\n\n```\n- Leading `/` is replaced with `_`.\n- Doubled (or repeated more times) `/` are reduced to a single `/`.\n- Ending `/` is removed.\n- All characters that are not `/a-zA-Z0-9_-` are replaced with `_0x[HEX CODE]_` (code is capitalized).\n- The replacement prefix `_0x` is prepended with another replacement prefix.\n```",
+      "parentUuid": "ea3c2dab_8035d8c3",
       "range": {
         "startLine": 44,
         "startChar": 56,
