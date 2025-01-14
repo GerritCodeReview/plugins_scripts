@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec49d9cd_153a788e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1149185
+      },
+      "writtenOn": "2025-01-14T13:11:29Z",
+      "side": 1,
+      "message": "I have tested successfully with:\n- `git version 2.47.0`\n- `jgit version 6.8.0.202311291450-r`",
+      "revId": "356d199ca90021896b2d01fc0d46776fddae373d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
