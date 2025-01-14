@@ -22,6 +22,30 @@
       },
       "revId": "aa054cbcb20507598f394cbb50084ba59d349dad",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a58bfa09_dad6f855",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-14T11:51:53Z",
+      "side": 1,
+      "message": "Already addressed in parent change.\nL164 does not return false for the hasRepackTmpFiles function, but it does stop the traverse if a temp file is found.\nChanged this to return tmpFileFound for readability.",
+      "parentUuid": "59103348_c387ab55",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 23
+      },
+      "revId": "aa054cbcb20507598f394cbb50084ba59d349dad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
