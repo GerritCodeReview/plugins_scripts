@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59103348_c387ab55",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:55:56Z",
+      "side": 1,
+      "message": "See the comment on the parent change: I do not see how this can ever return `true`:\n- If it is returning at L200, it will return `false`\n- If it is returning at L203, it will return `tmpFileFound` that has been initialised as `false` at L195",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 23
+      },
+      "revId": "aa054cbcb20507598f394cbb50084ba59d349dad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
