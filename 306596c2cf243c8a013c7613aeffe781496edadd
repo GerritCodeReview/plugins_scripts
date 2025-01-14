@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9866c3e_89bf4038",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "@diego.sessona@gmail.com have you verified that this script works?",
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9dd02c03_2322701a",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "2025",
+      "range": {
+        "startLine": 1,
+        "startChar": 17,
+        "endLine": 1,
+        "endChar": 21
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aadd0dfe_6b0385d7",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "In Groovy we typically use the wildcards imports, see the other Groovy scripts",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 60
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63ebabf6_9db408bf",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "I find the units confusing:\n- The default is expressed in hours\n- The log is displayed in minutes\n- The variable is expressed in millis\n\nCan we just use one unit and keep it consistent?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 3
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a107ea0b_a81056d5",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "Do we need this? Gerrit display the unloading of the plugin already in the error_log",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 60
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6beeacc8_9c6eb910",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "Why two classes? What\u0027s the difference between this and the `RepoRepackTracker`?",
+      "range": {
+        "startLine": 78,
+        "startChar": 6,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2b662f7_3c93b38c",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "```suggestion\n  @Inject\n```",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 79,
+        "endChar": 27
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fea4f9d_e8325414",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "That\u0027s not true: the repository is there, but the structure on disk isn\u0027t what you\u0027d expect. Don\u0027t manage regular flow with Exceptions unless you really have something exceptional and you\u0027d like to end the flow.",
+      "range": {
+        "startLine": 164,
+        "startChar": 10,
+        "endLine": 164,
+        "endChar": 46
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "716f2cc3_83f30dc3",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "If you have found the temp file, then you return `false`. However, if you don\u0027t find the temp file, `tmpFileFound` stays false and you return `false` at L177.\n\nAre you sure this logic is correct?",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 20
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea3c2dab_8035d8c3",
+        "filename": "admin/repo-repack-tracker.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-14T08:42:47Z",
+      "side": 1,
+      "message": "You should mention that the `\u003crepo_name\u003e` is sanitised to prevent the introduction of invalid chars for a metric name.",
+      "range": {
+        "startLine": 44,
+        "startChar": 56,
+        "endLine": 44,
+        "endChar": 67
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
