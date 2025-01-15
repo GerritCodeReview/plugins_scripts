@@ -16,6 +16,29 @@
       "message": "I have tested successfully with:\n\n- `git version 2.47.0`\n- `jgit version 6.8.0.202311291450-r`",
       "revId": "a320e23ddd3bc6b5ad2b4a6bf98d06bf854b7317",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb765fa2_6e0cb2cb",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-15T08:51:15Z",
+      "side": 1,
+      "message": "I found confusing that a method that starts with `is` does not return a boolean.",
+      "range": {
+        "startLine": 100,
+        "startChar": 7,
+        "endLine": 100,
+        "endChar": 35
+      },
+      "revId": "a320e23ddd3bc6b5ad2b4a6bf98d06bf854b7317",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
