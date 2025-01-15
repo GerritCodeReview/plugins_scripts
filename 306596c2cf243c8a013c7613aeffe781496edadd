@@ -418,6 +418,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44f0f23d_6ceebbfc",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-15T09:43:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2c05ad9_fcfe488e",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 20
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea3c2dab_8035d8c3",
@@ -455,6 +479,30 @@
       "side": 1,
       "message": "Do we need also to specify how?\n\n```\n- Leading `/` is replaced with `_`.\n- Doubled (or repeated more times) `/` are reduced to a single `/`.\n- Ending `/` is removed.\n- All characters that are not `/a-zA-Z0-9_-` are replaced with `_0x[HEX CODE]_` (code is capitalized).\n- The replacement prefix `_0x` is prepended with another replacement prefix.\n```",
       "parentUuid": "ea3c2dab_8035d8c3",
+      "range": {
+        "startLine": 44,
+        "startChar": 56,
+        "endLine": 44,
+        "endChar": 67
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d45eabff_deafc153",
+        "filename": "admin/repo-repack-tracker.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-15T09:43:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19265a74_b2c77afc",
       "range": {
         "startLine": 44,
         "startChar": 56,

@@ -39,6 +39,30 @@
       },
       "revId": "a320e23ddd3bc6b5ad2b4a6bf98d06bf854b7317",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c322820_48da8fce",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1161425
+      },
+      "writtenOn": "2025-01-15T09:43:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb765fa2_6e0cb2cb",
+      "range": {
+        "startLine": 100,
+        "startChar": 7,
+        "endLine": 100,
+        "endChar": 35
+      },
+      "revId": "a320e23ddd3bc6b5ad2b4a6bf98d06bf854b7317",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
