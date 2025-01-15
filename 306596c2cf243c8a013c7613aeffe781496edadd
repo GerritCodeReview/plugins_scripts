@@ -396,6 +396,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d2c05ad9_fcfe488e",
+        "filename": "admin/repo-repack-tracker-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-01-15T08:49:10Z",
+      "side": 1,
+      "message": "\u003e L174 does not return false for the hasRepackTmpFiles function, but it does stop the traverse if a temp file is found. \n\nAFAIK the `return` inside a directory traversal doesn\u0027t really do anything.\n\nSee my example:\n```\ndef groovySrcDir \u003d new File(\u0027/Users/lucamilanesio/tmp/test\u0027)\n \ndef countFilesAndDirs \u003d 0\ngroovySrcDir.traverse {\n    countFilesAndDirs++\n    return false\n}\n\nSystem.out.println(\"Files: $countFilesAndDirs\")\n```\n\nI tried to return either `true` or `false` in the above lambda and the result is always the same. I\u0027d just remove the return statement here as it is misleading.\n\n\u003e Changed this to return `tmpFileFound` for readability.\n\nJust remove it, it isn\u0027t useful and it represent a distraction for the reader, assuming that the control flow ends here, which isn\u0027t true in any case.",
+      "parentUuid": "508ee7c4_05e7bdfc",
+      "range": {
+        "startLine": 173,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 20
+      },
+      "revId": "306596c2cf243c8a013c7613aeffe781496edadd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea3c2dab_8035d8c3",
         "filename": "admin/repo-repack-tracker.md",
         "patchSetId": 8
