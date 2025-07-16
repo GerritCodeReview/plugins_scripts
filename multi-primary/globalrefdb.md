@@ -13,6 +13,7 @@ SYNOPSIS
 --------
 >     ssh -p <port> <host> globalrefdb check PROJECT [--ref <ref name>] [--verbose]
 >     ssh -p <port> <host> globalrefdb update-ref PROJECT REF-NAME NEW-VALUE
+>     ssh -p <port> <host> globalrefdb show-ref PROJECT [--ref <ref name>]*
 
 DESCRIPTION
 -----------
@@ -26,6 +27,9 @@ a parameter.
 Update global-refdb in case we cannot automatically deduce which ref is
 the latest.
 This can happen if the global-refdb finds itself behind other nodes.
+
+## Show-ref
+Shows the global-refdb ref value, when present.
 
 ACCESS
 ------

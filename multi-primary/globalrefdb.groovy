@@ -174,5 +174,41 @@ class ProjectRefsUpdate extends BaseSshCommand {
   }
 }
 
-commands = [ ProjectRefsCheck, ProjectRefsUpdate ]
+@Export("show-ref")
+@CommandMetaData(description = "Get global-refdb refs values for a project")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class ProjectRefsGet extends BaseSshCommand {
+
+  @Argument(index = 0, usage = "Project name", metaVar = "PROJECT", required = true)
+  String projectName
+
+  @Option(name = "--ref", usage = "Global-refdb ref(s) requested", required = true)
+  ArrayList<String> refs
+
+  @Inject
+  GitRepositoryManager repoMgr
+
+  @Inject
+  DynamicItem<GlobalRefDatabase> globalRefDb
+
+  public void run() {
+    try {
+      def projectName = Project.nameKey(project)
+
+      repoMgr.openRepository(projectName).with { repo ->
+        def upToDate = true
+
+          refs.each { ref ->
+            def refValue = globalRefDb.get().get(projectName, ref, String.class)
+            if (refValue) {
+              println "${refValue} ${ref}"
+            }
+          }
+      }
+    } catch (RepositoryNotFoundException e) {
+      error "Project $project not found"
+    }
+  }
+
+commands = [ ProjectRefsCheck, ProjectRefsUpdate, ProjectRefsGet ]
 
