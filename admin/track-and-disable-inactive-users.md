@@ -30,6 +30,19 @@ Configuration parameters
    ignoreAccountId = 1000002
    ```
 
+```plugin.@PLUGIN@.ignoreGroup```
+:  Specify one group that includes directly or indirectly all the accounts that
+   should not be auto disabled.
+   May be specified more than once to specify multiple groups, for example:
+
+   ```
+   ignoreGroup = Active Developers
+   ignoreGroup = Administrators
+   ```
+
+   > **NOTE**: The `Service Users` group is always added to the list of groups of
+   > accounts to not disable.
+
 ```cache."@PLUGIN@.users_cache".maxAge```
 :  Maximum allowed inactivity time for user.
    Value should use common time unit suffixes to express their setting:

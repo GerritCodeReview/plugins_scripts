@@ -19,6 +19,7 @@ import com.google.gerrit.entities.*
 import com.google.gerrit.extensions.annotations.*
 import com.google.gerrit.extensions.events.*
 import com.google.gerrit.extensions.registration.*
+import com.google.gerrit.server.query.group.*
 import com.google.gerrit.metrics.*
 import com.google.gerrit.lifecycle.*
 import com.google.gerrit.server.*
@@ -104,19 +105,41 @@ class TrackingGroupBackend implements GroupBackend {
     return false
   }
 }
+
+@Singleton
 class AutoDisableInactiveUsersConfig {
+  static final FluentLogger logger = FluentLogger.forEnclosingClass()
+
   final Set<Account.Id> ignoreAccountIds
+  final Set<AccountGroup.UUID> ignoreGroupIds
 
   private final PluginConfig config
 
   @Inject
   AutoDisableInactiveUsersConfig(
       PluginConfigFactory configFactory,
+      GroupCache groupCache,
+      InternalGroupBackend internalGroupBackend,
+      IdentifiedUser.GenericFactory userFactory,
+      Accounts accounts,
       @PluginName String pluginName
   ) {
     config = configFactory.getFromGerritConfig(pluginName)
 
     ignoreAccountIds = ignoreAccountIdsFromConfig("ignoreAccountId")
+    ignoreGroupIds = ignoreGroupIdsFromConfig("ignoreGroup", groupCache)
+
+    logger.atInfo().log("Accounts ids ignored for inactivity: %s", ignoreAccountIds)
+    logger.atInfo().log("Group ids ignored for inactivity: %s", ignoreGroupIds)
+
+    def impliedAccountIds = accounts.all().findAll {
+      internalGroupBackend.membershipsOf(userFactory.create(it.account().id())).containsAnyOf(ignoreGroupIds)
+    }.collect { it.account.id() }
+
+    logger.atInfo().log("Implied accounts ids ignored for inactivity: %s", impliedAccountIds)
+    ignoreAccountIds += impliedAccountIds
+
+    logger.atInfo().log("Full list of accounts ids ignored for inactivity: %s", ignoreAccountIds)
   }
 
   private Set<Account.Id> ignoreAccountIdsFromConfig(String name) {
@@ -126,6 +149,16 @@ class AutoDisableInactiveUsersConfig {
         .filter { it.isPresent() }
         .map { it.get() }
         .collect(Collectors.toSet())
+  }
+
+  private Set<AccountGroup.UUID> ignoreGroupIdsFromConfig(String name, GroupCache groupCache) {
+    def groups = config.getStringList(name)
+    def groupNames = groups.collect { AccountGroup.nameKey(it)}
+    groupNames
+        .collect { groupCache.get(it) }
+        .findAll { it.present }
+        .collect { it.get().groupUUID }
+        .toSet()
   }
 }
 
@@ -200,6 +233,9 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
   @Inject
   @Named(TrackActiveUsersCache.NAME)
   Cache<Integer, Long> trackActiveUsersCache
+
+  @Inject
+  AutoDisableInactiveUsersConfig autoDisableConfig
 
   @Override
   void start() {
