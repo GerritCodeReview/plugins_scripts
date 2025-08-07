@@ -117,6 +117,7 @@ class AutoDisableInactiveUsersConfig {
 
   final Set<Account.Id> ignoreAccountIds
   final Set<AccountGroup.UUID> ignoreGroupIds
+  final boolean preloadAccounts
 
   private final PluginConfig config
 
@@ -133,6 +134,7 @@ class AutoDisableInactiveUsersConfig {
 
     ignoreAccountIds = ignoreAccountIdsFromConfig("ignoreAccountId")
     ignoreGroupIds = ignoreGroupIdsFromConfig("ignoreGroup", groupCache)
+    preloadAccounts = config.getBoolean("preloadAccounts", true)
 
     logger.atInfo().log("Accounts ids ignored for inactivity: %s", ignoreAccountIds)
     logger.atInfo().log("Group ids ignored for inactivity: %s", ignoreGroupIds)
@@ -258,12 +260,18 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
     } catch (Throwable t) {
     }
 
-    def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
-    accounts.all()
-        .findAll {
-          it.account().isActive() && !serviceUserClassifier.isServiceUser(it.account().id()) && !trackActiveUsersCache.getIfPresent(it.account().id().get())
-        }
-        .each { trackActiveUsersCache.put(it.account().id().get(), currentMinutes) }
+    if (autoDisableConfig.preloadAccounts) {
+      def accountsToPreload = accounts.all()
+                                .collect { it.account() }
+                                .findAll { it.isActive() }
+                                .findAll { !serviceUserClassifier.isServiceUser(it.id()) }
+                                .findAll { !trackActiveUsersCache.getIfPresent(it.id().get()) }
+
+      def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
+      def numAccountsToPreload = accountsToPreload.size()
+      logger.atInfo().log("Preloading $numAccountsToPreload accounts into ${TrackActiveUsersCache.NAME} with TS=$currentMinutes")
+      accountsToPreload.each { trackActiveUsersCache.put(it.id().get(), currentMinutes) }
+    }
   }
 
   @Override
