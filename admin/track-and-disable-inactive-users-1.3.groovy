@@ -73,6 +73,9 @@ class TrackingGroupBackend implements GroupBackend {
   @Named(TrackActiveUsersCache.NAME)
   Cache<Integer, Long> trackActiveUsersCache
 
+  @Inject
+  Provider<CurrentUser> currentUserProvider
+
   @Override
   boolean handles(AccountGroup.UUID uuid) {
     return true
@@ -90,8 +93,10 @@ class TrackingGroupBackend implements GroupBackend {
 
   @Override
   GroupMembership membershipsOf(CurrentUser user) {
-    if (user.identifiedUser) {
-      def accountId = user.accountId.get()
+    def currentUser = currentUserProvider.get()
+
+    if (currentUser.identifiedUser) {
+      def accountId = currentUser.accountId.get()
       def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
       if (trackActiveUsersCache.getIfPresent(accountId) != currentMinutes) {
         trackActiveUsersCache.put(accountId, currentMinutes)
