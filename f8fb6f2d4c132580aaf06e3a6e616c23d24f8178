@@ -65,6 +65,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce0fd3ec_1f0df5a5",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2025-08-07T13:33:31Z",
+      "side": 1,
+      "message": "Apologies, I got confused with the `membershipsOf` overridden by `TrackingGroupBackend`. Here we are using `InternalGroupBackend`.",
+      "parentUuid": "f7c08327_aa5be2ca",
+      "range": {
+        "startLine": 136,
+        "startChar": 27,
+        "endLine": 136,
+        "endChar": 40
+      },
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b1f4c3e_693458d8",
