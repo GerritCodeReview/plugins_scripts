@@ -53,6 +53,16 @@ Configuration parameters
 
    Default: true.
 
+```plugin.@PLUGIN@.disableAccounts```
+:  Allow to disable the users that have been evicted from the persistent cache because
+   of inactivity.
+
+   > **NOTE**: When this option is enabled, as soon as a user is evicted from the
+   > persistent cache is then flagged as inactive on All-Users and therefore will be
+   > unable to login or execute any operation until is manually reactivated.
+
+   Default: true.
+
 ```cache."@PLUGIN@.users_cache".maxAge```
 :  Maximum allowed inactivity time for user.
    Value should use common time unit suffixes to express their setting:
