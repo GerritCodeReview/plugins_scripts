@@ -197,8 +197,15 @@ class AutoDisableInactiveUsersEvictionListener implements CacheRemovalListener<I
       return
     }
 
+    def accountId = Account.id(notification.key)
+
     if (notification.cause == RemovalCause.EXPIRED) {
-      disableAccount(Account.id(notification.key))
+      if (autoDisableConfig.ignoreAccountIds.contains(accountId)) {
+         logger.atWarning().log("Account %s ignored from the auto-disable mechanism", accountId)
+         trackActiveUsersCache.put(notification.key, notification.value)
+      } else {
+         disableAccount(accountId)
+       }
     } else if (notification.cause == RemovalCause.EXPLICIT) {
       logger.atWarning().log(
           "cache %s do not support eviction, entry for user %d will be added back", fullCacheName, notification.key)
@@ -207,10 +214,6 @@ class AutoDisableInactiveUsersEvictionListener implements CacheRemovalListener<I
   }
 
   private void disableAccount(Account.Id accountId) {
-    if (autoDisableConfig.ignoreAccountIds.contains(accountId)) {
-      return
-    }
-
     logger.atInfo().log("Automatically disabling user id: %d", accountId.get())
     accountsUpdate.get().update(
         """Automatically disabling after inactivity
