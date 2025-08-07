@@ -43,6 +43,16 @@ Configuration parameters
    > **NOTE**: The `Service Users` group is always added to the list of groups of
    > accounts to not disable.
 
+```plugin.@PLUGIN@.preloadAccounts```
+:  Allow to preload the active users persistent cache with all the accounts that
+   are currently flagged as active on All-Users when the plugin starts.
+
+   > **NOTE**: When this option is enabled, all users configured in Gerrit will
+   > always be flagged as active when Gerrit or the plugin is started, even though
+   > they were not active for a long time.
+
+   Default: true.
+
 ```cache."@PLUGIN@.users_cache".maxAge```
 :  Maximum allowed inactivity time for user.
    Value should use common time unit suffixes to express their setting:
