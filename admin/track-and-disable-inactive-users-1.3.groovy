@@ -118,6 +118,7 @@ class AutoDisableInactiveUsersConfig {
   final Set<Account.Id> ignoreAccountIds
   final Set<AccountGroup.UUID> ignoreGroupIds
   final boolean preloadAccounts
+  final boolean disableAccounts
 
   private final PluginConfig config
 
@@ -135,6 +136,7 @@ class AutoDisableInactiveUsersConfig {
     ignoreAccountIds = ignoreAccountIdsFromConfig("ignoreAccountId")
     ignoreGroupIds = ignoreGroupIdsFromConfig("ignoreGroup", groupCache)
     preloadAccounts = config.getBoolean("preloadAccounts", true)
+    disableAccounts = config.getBoolean("disableAccounts", true)
 
     logger.atInfo().log("Accounts ids ignored for inactivity: %s", ignoreAccountIds)
     logger.atInfo().log("Group ids ignored for inactivity: %s", ignoreGroupIds)
@@ -214,7 +216,7 @@ class AutoDisableInactiveUsersEvictionListener implements CacheRemovalListener<I
   }
 
   private void disableAccount(Account.Id accountId) {
-    if (autoDisableConfig.ignoreAccountIds.contains(accountId)) {
+    if (!autoDisableConfig.disableAccounts || autoDisableConfig.ignoreAccountIds.contains(accountId)) {
       return
     }
 
