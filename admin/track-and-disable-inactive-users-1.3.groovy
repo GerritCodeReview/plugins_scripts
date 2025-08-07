@@ -122,6 +122,7 @@ class AutoDisableInactiveUsersConfig {
 
   final Set<Account.Id> ignoreAccountIds
   final Set<AccountGroup.UUID> ignoreGroupIds
+  final boolean preloadAccounts
 
   private final PluginConfig config
 
@@ -138,6 +139,7 @@ class AutoDisableInactiveUsersConfig {
 
     ignoreAccountIds = ignoreAccountIdsFromConfig("ignoreAccountId")
     ignoreGroupIds = ignoreGroupIdsFromConfig("ignoreGroup", groupCache)
+    preloadAccounts = config.getBoolean("preloadAccounts", true)
 
     logger.atInfo().log("Accounts ids ignored for inactivity: %s", ignoreAccountIds)
     logger.atInfo().log("Group ids ignored for inactivity: %s", ignoreGroupIds)
@@ -258,12 +260,50 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
 
   @Override
   void start() {
+<<<<<<< PATCH SET (239ab37131369943e385c421154931d9781899ec Enable/disable the accounts tracking preload mechanism)
+    // Workaround to trigger the creation of the persistent cache's BloomFilter
+    // which may not be initialised due to Issue 437141693
+    // See: https://issues.gerritcodereview.com/issues/437141693
+    try {
+      trackActiveUsersCache.start()
+    } catch (Throwable t) {
+    }
+
+    if (autoDisableConfig.preloadAccounts) {
+      def accountsToPreload = accounts.all()
+                                .collect { it.account() }
+                                .findAll { it.isActive() }
+                                .findAll { !serviceUserClassifier.isServiceUser(it.id()) }
+                                .findAll { !trackActiveUsersCache.getIfPresent(it.id().get()) }
+
+      def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
+      def numAccountsToPreload = accountsToPreload.size()
+      logger.atInfo().log("Preloading $numAccountsToPreload accounts into ${TrackActiveUsersCache.NAME} with TS=$currentMinutes")
+      accountsToPreload.each { trackActiveUsersCache.put(it.id().get(), currentMinutes) }
+    }
+||||||| BASE      (a8d1c48622d9306256abb883ddacbea01a5951c8 Introduce the list SSH command on accounts tracking)
+    // Workaround to trigger the creation of the persistent cache's BloomFilter
+    // which may not be initialised due to Issue 437141693
+    // See: https://issues.gerritcodereview.com/issues/437141693
+    try {
+      trackActiveUsersCache.start()
+    } catch (Throwable t) {
+    }
+
     def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
     accounts.all()
         .findAll {
           it.account().isActive() && !serviceUserClassifier.isServiceUser(it.account().id()) && !trackActiveUsersCache.getIfPresent(it.account().id().get())
         }
         .each { trackActiveUsersCache.put(it.account().id().get(), currentMinutes) }
+=======
+    def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
+    accounts.all()
+        .findAll {
+          it.account().isActive() && !serviceUserClassifier.isServiceUser(it.account().id()) && !trackActiveUsersCache.getIfPresent(it.account().id().get())
+        }
+        .each { trackActiveUsersCache.put(it.account().id().get(), currentMinutes) }
+>>>>>>> BASE      (8bebf83c5a89529f76480787043efd080bbbc513 Introduce the list SSH command on accounts tracking)
   }
 
   @Override
