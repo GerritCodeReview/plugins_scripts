@@ -63,3 +63,44 @@ Currently, the metrics exposed are the following:
 ```groovy_track_and_disable_inactive_users_active_users```
 :  Indicates the number of active users.
    A user is considered active when its inactivity period is not greater than `cache."@PLUGIN@.users_cache".maxAge` .
+
+SSH commands
+---------------------
+This script exposes the following SSH commands to the Gerrit administrator:
+
+## Name
+
+`list`, list active accounts
+
+## Synopsis
+
+````
+ssh -p <port> <host> track-and-disable-inactive-users list [--verbose]
+```
+
+## Description
+
+display the list of all account-ids that are considered active and
+their last activity timestamp.
+
+The `--verbose` option produces a more detailed progress of the extraction
+of the active accounts and is intended to be used for debugging purposes.
+
+## Access
+
+Any user who has been granted the ‘Administrate Server’ capability.
+
+## Scripting
+
+This command is intended to be used in scripts and not interactively, as it
+may return a very long list of accounts and doesn't do any pagination.
+
+## Examples
+
+List all the currently active accounts.
+
+```
+$ ssh -p 29418 review.example.com track-and-disable-inactive-users list
+
+SEE ALSO
+[source] (/admin/track-and-disable-inactive-users-1.3.groovy)

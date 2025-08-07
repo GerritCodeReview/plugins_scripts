@@ -13,7 +13,9 @@
 // limitations under the License.
 
 import com.google.common.cache.*
+import com.google.gerrit.common.data.*
 import com.google.common.flogger.*
+import com.google.common.util.concurrent.*
 import com.google.gerrit.common.*
 import com.google.gerrit.entities.*
 import com.google.gerrit.extensions.annotations.*
@@ -27,12 +29,15 @@ import com.google.gerrit.server.account.*
 import com.google.gerrit.server.cache.*
 import com.google.gerrit.server.config.*
 import com.google.gerrit.server.project.*
+import com.google.gerrit.sshd.*
 import com.google.inject.*
 import com.google.inject.name.*
 
 import java.time.*
 import java.util.function.*
 import java.util.stream.Collectors
+
+import org.kohsuke.args4j.*
 
 import static java.util.concurrent.TimeUnit.*
 
@@ -275,6 +280,59 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
   }
 }
 
+abstract class BaseSshCommand extends SshCommand {
+  void println(String msg, boolean verbose = false) {
+    if (verbose) {
+      stdout.println msg
+    }
+    stdout.flush()
+  }
+  void error(String msg) { println("[ERROR] $msg", true) }
+  void warning(String msg) { println("[WARNING] $msg", true) }
+}
+
+@CommandMetaData(name = "list", description = "List all the active accounts and their latest activity timestamp")
+@RequiresCapability(GlobalCapability.ADMINISTRATE_SERVER)
+class ListActiveAccountsCommand extends BaseSshCommand {
+
+  @Option(name = "--verbose", usage = "Display verbose output")
+  boolean verbose = false
+
+  @Inject
+  @Named(TrackActiveUsersCache.NAME)
+  private final Cache<Integer, Long> trackActiveUsersCache
+
+  @Inject
+  Accounts accounts
+
+  public void run() {
+    println("Fetching all active account ids ... ", verbose)
+    def allActiveAccountsIds = accounts.all()
+      .collect { it.account() }
+      .findAll { it.isActive() }
+      .collect { it.id().get() }
+    println("Number of active accounts fetched: ${allActiveAccountsIds.size()}", verbose)
+
+    println("AccountId | Last access [UTC]           ", true)
+    println("==========|=============================", true)
+    def numTrackedActiveAccounts = 0
+    allActiveAccountsIds.each { accountId ->
+        def ts = trackActiveUsersCache.getIfPresent(accountId)
+        if (ts != null) {
+          def epochTs = MINUTES.toMillis(ts)
+          def dateTime = new Date(epochTs)
+          def dateTimeString = dateTime.format("yyyy-MM-dd HH:mm:ss.SSSZ", TimeZone.getTimeZone('UTC'))
+          println("  $accountId | $dateTimeString", true)
+          numTrackedActiveAccounts += 1
+        } else {
+          warning("Active account id $accountId is not tracked", verbose)
+        }
+      }
+
+      println("Number of tracked active accounts: $numTrackedActiveAccounts", verbose)
+  }
+}
+
 class TrackAndDisableInactiveUsersModule extends LifecycleModule {
   @Override
   void configure() {
@@ -287,4 +345,18 @@ class TrackAndDisableInactiveUsersModule extends LifecycleModule {
   }
 }
 
-modules = [TrackAndDisableInactiveUsersModule]
+class TrackAndDisableInactiveUsersSshModule extends PluginCommandModule {
+
+  @Inject
+  TrackAndDisableInactiveUsersSshModule(@PluginName String pluginName) {
+    super(pluginName)
+  }
+
+  @Override
+  protected void configureCommands() {
+    command(ListActiveAccountsCommand.class);
+  }
+}
+
+
+modules = [TrackAndDisableInactiveUsersModule, TrackAndDisableInactiveUsersSshModule]
