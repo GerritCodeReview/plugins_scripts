@@ -20,7 +20,6 @@ $site_path/etc/gerrit.config` files, example:
 Configuration parameters
 ---------------------
 
-=======
 ```plugin.@PLUGIN@.ignoreAccountId```
 :  Specify an account Id that should not be auto disabled.
    May be specified more than once to specify multiple account Ids, for example:
