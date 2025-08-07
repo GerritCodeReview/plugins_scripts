@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f7c08327_aa5be2ca",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-08-07T13:25:17Z",
+      "side": 1,
+      "message": "Nope, it returns the membership resolver for that user.\n\nSee InternalGroupBackend.java:102:\n```\n  public GroupMembership membershipsOf(CurrentUser user) {\n    return groupMembershipFactory.create(user);\n  }\n```",
+      "parentUuid": "2a58e518_27fb004e",
+      "range": {
+        "startLine": 136,
+        "startChar": 27,
+        "endLine": 136,
+        "endChar": 40
+      },
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2b1f4c3e_693458d8",
         "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
         "patchSetId": 2
@@ -54,6 +78,30 @@
       "writtenOn": "2025-08-07T09:24:46Z",
       "side": 1,
       "message": "This can be verbose, raise to atFine()?",
+      "range": {
+        "startLine": 139,
+        "startChar": 11,
+        "endLine": 139,
+        "endChar": 19
+      },
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccd39cfc_3806e638",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-08-07T13:25:17Z",
+      "side": 1,
+      "message": "It is logged at startup and only once: it is important to display the account ids that *will never be disabled* for accounting purposes. If this list ends up being tens of thousands of users, then it\u0027s a very high warning sign.\n\nLogging `atFine()` won\u0027t help as it may pass unnoticed.",
+      "parentUuid": "2b1f4c3e_693458d8",
       "range": {
         "startLine": 139,
         "startChar": 11,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "622aca58_513e0238",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-08-07T13:25:17Z",
+      "side": 1,
+      "message": "\u003e nit: `ignoreAccountIds` is `final` but still we are mutating it here.\n\nThe variable is final but that doesn\u0027t mean that it is an immutable list.\n\n\u003e What about initializing it this way?\n\u003e \n\u003e ```\n\u003e ignoreAccountIds \u003d ignoreAccountIdsFromConfig(\"ignoreAccountId\") +\n\u003e                    impliedAccountIds\n\u003e ```\n\nThat would work, but doesn\u0027t allow me to log the ones directly added and the ones implied for group resolution as separate line items.",
+      "parentUuid": "eb1be05b_44182a35",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 20
+      },
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d0a19e7c_ad305d37",
         "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
         "patchSetId": 2
@@ -100,6 +172,30 @@
       "writtenOn": "2025-08-07T09:24:46Z",
       "side": 1,
       "message": "This can be verbose, raise to atFine()?",
+      "range": {
+        "startLine": 142,
+        "startChar": 11,
+        "endLine": 142,
+        "endChar": 17
+      },
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9f6c7ad_09496bd8",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-08-07T13:25:17Z",
+      "side": 1,
+      "message": "Same as before.",
+      "parentUuid": "d0a19e7c_ad305d37",
       "range": {
         "startLine": 142,
         "startChar": 11,
@@ -146,6 +242,24 @@
       "writtenOn": "2025-08-07T09:24:46Z",
       "side": 1,
       "message": "We are not using it here, or am I missing something?",
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f09443b_2e635cc0",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-08-07T13:25:17Z",
+      "side": 1,
+      "message": "This is done on purpose for triggering the load of configuration at startup.",
+      "parentUuid": "f7a6a83f_85d61d8b",
       "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
