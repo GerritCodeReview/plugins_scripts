@@ -253,6 +253,14 @@ class AutoDisableInactiveUsersListener implements LifecycleListener {
 
   @Override
   void start() {
+    // Workaround to trigger the creation of the persistent cache's BloomFilter
+    // which may not be initialised due to Issue 437141693
+    // See: https://issues.gerritcodereview.com/issues/437141693
+    try {
+      trackActiveUsersCache.start()
+    } catch (Throwable t) {
+    }
+
     def currentMinutes = MILLISECONDS.toMinutes(System.currentTimeMillis())
     accounts.all()
         .findAll {
