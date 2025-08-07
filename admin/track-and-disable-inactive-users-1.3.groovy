@@ -123,6 +123,7 @@ class AutoDisableInactiveUsersConfig {
   final Set<Account.Id> ignoreAccountIds
   final Set<AccountGroup.UUID> ignoreGroupIds
   final boolean preloadAccounts
+  final boolean disableAccounts
 
   private final PluginConfig config
 
@@ -140,6 +141,7 @@ class AutoDisableInactiveUsersConfig {
     ignoreAccountIds = ignoreAccountIdsFromConfig("ignoreAccountId")
     ignoreGroupIds = ignoreGroupIdsFromConfig("ignoreGroup", groupCache)
     preloadAccounts = config.getBoolean("preloadAccounts", true)
+    disableAccounts = config.getBoolean("disableAccounts", true)
 
     logger.atInfo().log("Accounts ids ignored for inactivity: %s", ignoreAccountIds)
     logger.atInfo().log("Group ids ignored for inactivity: %s", ignoreGroupIds)
@@ -226,6 +228,18 @@ class AutoDisableInactiveUsersEvictionListener implements CacheRemovalListener<I
   }
 
   private void disableAccount(Account.Id accountId) {
+<<<<<<< PATCH SET (fd99c81db896753e2a8c5f62f6f1ca365d3541a8 Allow using the account tracking without having to disable a)
+    if (!autoDisableConfig.disableAccounts || autoDisableConfig.ignoreAccountIds.contains(accountId)) {
+      return
+    }
+
+||||||| BASE      (92c7a13a6984ac18ff360debab9a589c0303c7cf Enable/disable the accounts tracking preload mechanism)
+    if (autoDisableConfig.ignoreAccountIds.contains(accountId)) {
+      return
+    }
+
+=======
+>>>>>>> BASE      (bccd652e68242bfd4d17a18c6f29c8a7fe635301 Enable/disable the accounts tracking preload mechanism)
     logger.atInfo().log("Automatically disabling user id: %d", accountId.get())
     accountsUpdate.get().update(
         """Automatically disabling after inactivity
