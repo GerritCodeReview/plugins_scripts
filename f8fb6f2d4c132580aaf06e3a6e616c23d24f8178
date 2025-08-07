@@ -183,6 +183,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55faa5b2_ac4765c5",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2025-08-07T13:38:00Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "622aca58_513e0238",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 20
+      },
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0a19e7c_ad305d37",
@@ -220,6 +244,30 @@
       "side": 1,
       "message": "Same as before.",
       "parentUuid": "d0a19e7c_ad305d37",
+      "range": {
+        "startLine": 142,
+        "startChar": 11,
+        "endLine": 142,
+        "endChar": 17
+      },
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7029130_a0a6a2ad",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2025-08-07T13:38:00Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c9f6c7ad_09496bd8",
       "range": {
         "startLine": 142,
         "startChar": 11,
@@ -284,6 +332,24 @@
       "side": 1,
       "message": "This is done on purpose for triggering the load of configuration at startup.",
       "parentUuid": "f7a6a83f_85d61d8b",
+      "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57926a05_d6c17f91",
+        "filename": "admin/track-and-disable-inactive-users-1.3.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2025-08-07T13:38:00Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0f09443b_2e635cc0",
       "revId": "f8fb6f2d4c132580aaf06e3a6e616c23d24f8178",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
