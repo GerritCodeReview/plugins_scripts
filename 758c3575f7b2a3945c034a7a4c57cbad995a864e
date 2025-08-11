@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27a36a37_bad52b33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2025-08-11T17:59:45Z",
+      "side": 1,
+      "message": "This might not be needed if I787c3ff7 will be merged.",
+      "revId": "758c3575f7b2a3945c034a7a4c57cbad995a864e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
