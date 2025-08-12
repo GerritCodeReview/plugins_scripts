@@ -22,6 +22,30 @@
       },
       "revId": "bccd652e68242bfd4d17a18c6f29c8a7fe635301",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7ab864d_29d93f3a",
+        "filename": "admin/track-and-disable-inactive-users.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2025-08-12T05:33:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4919466_908c1b29",
+      "range": {
+        "startLine": 51,
+        "startChar": 38,
+        "endLine": 51,
+        "endChar": 41
+      },
+      "revId": "bccd652e68242bfd4d17a18c6f29c8a7fe635301",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
