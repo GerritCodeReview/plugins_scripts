@@ -122,4 +122,4 @@ List all the currently active accounts.
 $ ssh -p 29418 review.example.com track-and-disable-inactive-users list
 
 SEE ALSO
-[source] (/admin/track-and-disable-inactive-users-1.3.groovy)
+[source] (/admin/track-and-disable-inactive-users-1.4.groovy)
