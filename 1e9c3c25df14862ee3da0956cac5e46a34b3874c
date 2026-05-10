@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d734f8a8_b5499cee",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-10T08:50:53Z",
+      "side": 1,
+      "message": "Missing license.",
+      "revId": "1e9c3c25df14862ee3da0956cac5e46a34b3874c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
