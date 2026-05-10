@@ -22,6 +22,30 @@
       },
       "revId": "4e54fb8a1cb3166319239aeded126a052b084a2b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87613f7a_3fd7ea4e",
+        "filename": "ai/ai-review-agent-claude-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-10T15:45:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9b9fa5c_dcc1e7f1",
+      "range": {
+        "startLine": 37,
+        "startChar": 31,
+        "endLine": 37,
+        "endChar": 114
+      },
+      "revId": "4e54fb8a1cb3166319239aeded126a052b084a2b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
