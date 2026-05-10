@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72c00784_9bf4bcde",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-10T16:03:27Z",
+      "side": 1,
+      "message": "This part is going to be common to all AI implementations, because is part of the HTTP client.\n\nIt is best to be removed from here and put into the AI Review Agent provider API module.",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 164,
+        "endChar": 1
+      },
+      "revId": "02904c67094a57423dd375cc2a337aa083755fe8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
