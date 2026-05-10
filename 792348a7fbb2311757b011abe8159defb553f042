@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c843e2a_bb5a23d2",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-10T16:26:03Z",
+      "side": 1,
+      "message": "This is redundant\n\n\n\n```suggestion\n                extractResponseText(body)\n```",
+      "range": {
+        "startLine": 89,
+        "startChar": 16,
+        "endLine": 89,
+        "endChar": 22
+      },
+      "revId": "792348a7fbb2311757b011abe8159defb553f042",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9e536f7_f58146f2",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-10T16:26:03Z",
+      "side": 1,
+      "message": "This is redundant.\n\n\n\n```suggestion\n        text\n```",
+      "range": {
+        "startLine": 133,
+        "startChar": 8,
+        "endLine": 133,
+        "endChar": 14
+      },
+      "revId": "792348a7fbb2311757b011abe8159defb553f042",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c73fd3cf_5a76cf4f",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-10T16:26:03Z",
+      "side": 1,
+      "message": "This is redundant.\n\n\n\n```suggestion\n        body.length() \u003e 500 ? \"${body.take(500)}...\" : body\n```",
+      "range": {
+        "startLine": 143,
+        "startChar": 8,
+        "endLine": 143,
+        "endChar": 14
+      },
+      "revId": "792348a7fbb2311757b011abe8159defb553f042",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
