@@ -16,6 +16,24 @@
       "message": "Missing license.",
       "revId": "7f52e58e0290d7901114af17660b9b5490612f17",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6049606_983c8329",
+        "filename": "ai/ai-review-agent-claude-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-10T08:52:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb0690bf_0a589dfa",
+      "revId": "7f52e58e0290d7901114af17660b9b5490612f17",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
