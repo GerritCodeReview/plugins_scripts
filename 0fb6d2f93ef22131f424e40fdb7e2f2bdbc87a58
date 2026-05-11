@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56c9b7df_4452fed9",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-05-11T12:22:39Z",
+      "side": 1,
+      "message": "nit: both can be private?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 0
+      },
+      "revId": "0fb6d2f93ef22131f424e40fdb7e2f2bdbc87a58",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
