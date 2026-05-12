@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8577251_db242562",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "Shall we enforce apiKey is defined and throw a clear error if not defined?",
+      "range": {
+        "startLine": 36,
+        "startChar": 33,
+        "endLine": 36,
+        "endChar": 39
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dcda305_ca8b07bf",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "Extract as constant",
+      "range": {
+        "startLine": 40,
+        "startChar": 45,
+        "endLine": 40,
+        "endChar": 61
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e76dce44_69e1975b",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "Extract as constant",
+      "range": {
+        "startLine": 41,
+        "startChar": 35,
+        "endLine": 41,
+        "endChar": 50
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e55e1371_2f89d316",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "```suggestion\n                    { it in Http.HTTP_OK..Http.HTTP_PARTIAL },\n```\n\nYou will also need to import the following:\n\n```\nimport java.net.HttpURLConnection as Http\n```",
+      "range": {
+        "startLine": 44,
+        "startChar": 28,
+        "endLine": 44,
+        "endChar": 36
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f8b1459_60a0a03b",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "This would not get JSON parsing errors. Do we want them to propagate?",
+      "range": {
+        "startLine": 47,
+        "startChar": 17,
+        "endLine": 47,
+        "endChar": 28
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59ea2c4c_774b50af",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "Same as line 44",
+      "range": {
+        "startLine": 64,
+        "startChar": 28,
+        "endLine": 64,
+        "endChar": 36
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d92ff13c_273de6f8",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "Join with no separator. Consider space or `\\n`",
+      "range": {
+        "startLine": 102,
+        "startChar": 73,
+        "endLine": 102,
+        "endChar": 75
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd0c5f41_632960e0",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "```suggestion\n        return body.length() \u003e Http.HTTP_SERVER_ERROR ? \"${body.take(Http.HTTP_SERVER_ERROR)}...\" : body\n```",
+      "range": {
+        "startLine": 115,
+        "startChar": 31,
+        "endLine": 115,
+        "endChar": 34
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "360da230_ac0602df",
+        "filename": "ai/ai-review-agent-gemini.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-12T07:32:00Z",
+      "side": 1,
+      "message": "or later ? So we won\u0027t have to update in the near future",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 12
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
