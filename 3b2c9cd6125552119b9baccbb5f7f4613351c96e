@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b06fd9fc_a6a43efb",
+        "filename": "ai/ai-review-agent-claude-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:49:40Z",
+      "side": 1,
+      "message": "Uneeded comment",
+      "revId": "3b2c9cd6125552119b9baccbb5f7f4613351c96e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73a6cb14_96f80719",
+        "filename": "ai/ai-review-agent-claude-1.0.groovy",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:49:40Z",
+      "side": 1,
+      "message": "Uneeded comment",
+      "revId": "3b2c9cd6125552119b9baccbb5f7f4613351c96e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
