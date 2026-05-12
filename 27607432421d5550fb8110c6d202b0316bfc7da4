@@ -206,6 +206,29 @@
       },
       "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ac7bfe2_30926b55",
+        "filename": "ai/ai-review-agent-gemini.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-12T10:28:24Z",
+      "side": 1,
+      "message": "Groovy scripting plugin is deprecated on googlesource.com. Should this be:\n\nhttps://github.com/GerritForge/groovy-provider\nor:\nhttps://review.gerrithub.io/admin/repos/GerritForge/groovy-provider,general",
+      "range": {
+        "startLine": 25,
+        "startChar": 30,
+        "endLine": 25,
+        "endChar": 96
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
