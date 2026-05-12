@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae614c87_f244363f",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "That\u0027s the responsibility of the caller, not the Groovy script.\nThe ai-review-agent-provider already ensures that this is called only when there is an apiKey.",
+      "parentUuid": "c8577251_db242562",
+      "range": {
+        "startLine": 36,
+        "startChar": 33,
+        "endLine": 36,
+        "endChar": 39
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2dcda305_ca8b07bf",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-05-12T07:32:00Z",
       "side": 1,
       "message": "Extract as constant",
+      "range": {
+        "startLine": 40,
+        "startChar": 45,
+        "endLine": 40,
+        "endChar": 61
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fccc07f1_19ef518c",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2dcda305_ca8b07bf",
       "range": {
         "startLine": 40,
         "startChar": 45,
@@ -70,6 +118,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07ff9367_7448e7c2",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e76dce44_69e1975b",
+      "range": {
+        "startLine": 41,
+        "startChar": 35,
+        "endLine": 41,
+        "endChar": 50
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e55e1371_2f89d316",
@@ -83,6 +155,30 @@
       "writtenOn": "2026-05-12T07:32:00Z",
       "side": 1,
       "message": "```suggestion\n                    { it in Http.HTTP_OK..Http.HTTP_PARTIAL },\n```\n\nYou will also need to import the following:\n\n```\nimport java.net.HttpURLConnection as Http\n```",
+      "range": {
+        "startLine": 44,
+        "startChar": 28,
+        "endLine": 44,
+        "endChar": 36
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ce6b73b_10dc26c5",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e55e1371_2f89d316",
       "range": {
         "startLine": 44,
         "startChar": 28,
@@ -116,6 +212,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78fe617c_e57fc451",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "Good catch! Done.",
+      "parentUuid": "3f8b1459_60a0a03b",
+      "range": {
+        "startLine": 47,
+        "startChar": 17,
+        "endLine": 47,
+        "endChar": 28
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59ea2c4c_774b50af",
@@ -129,6 +249,30 @@
       "writtenOn": "2026-05-12T07:32:00Z",
       "side": 1,
       "message": "Same as line 44",
+      "range": {
+        "startLine": 64,
+        "startChar": 28,
+        "endLine": 64,
+        "endChar": 36
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67620342_6a54b3a4",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59ea2c4c_774b50af",
       "range": {
         "startLine": 64,
         "startChar": 28,
@@ -208,6 +352,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9116586a_0e6cd73c",
+        "filename": "ai/ai-review-agent-gemini.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "360da230_ac0602df",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 12
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ac7bfe2_30926b55",
@@ -221,6 +389,30 @@
       "writtenOn": "2026-05-12T10:28:24Z",
       "side": 1,
       "message": "Groovy scripting plugin is deprecated on googlesource.com. Should this be:\n\nhttps://github.com/GerritForge/groovy-provider\nor:\nhttps://review.gerrithub.io/admin/repos/GerritForge/groovy-provider,general",
+      "range": {
+        "startLine": 25,
+        "startChar": 30,
+        "endLine": 25,
+        "endChar": 96
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a3026d2_25d4a2ad",
+        "filename": "ai/ai-review-agent-gemini.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ac7bfe2_30926b55",
       "range": {
         "startLine": 25,
         "startChar": 30,
