@@ -22,6 +22,30 @@
       },
       "revId": "0fb6d2f93ef22131f424e40fdb7e2f2bdbc87a58",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90debb08_e4b14067",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:14:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56c9b7df_4452fed9",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 0
+      },
+      "revId": "0fb6d2f93ef22131f424e40fdb7e2f2bdbc87a58",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }

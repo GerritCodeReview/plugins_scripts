@@ -306,6 +306,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a986396_5bf215b4",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-12T21:14:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d92ff13c_273de6f8",
+      "range": {
+        "startLine": 102,
+        "startChar": 73,
+        "endLine": 102,
+        "endChar": 75
+      },
+      "revId": "27607432421d5550fb8110c6d202b0316bfc7da4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd0c5f41_632960e0",
