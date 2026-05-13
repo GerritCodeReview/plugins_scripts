@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "425a28c8_830b59cd",
+        "filename": "ai/ai-review-agent-chatgpt-1.0.groovy",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T14:32:52Z",
+      "side": 1,
+      "message": "This is now redundant.",
+      "revId": "6080d86ddcc7e7a8421eca0a70094272bfc00ad8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
