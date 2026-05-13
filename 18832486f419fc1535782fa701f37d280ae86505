@@ -36,6 +36,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cb0ab47_57456908",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-13T10:59:39Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ebabaf66_782df214",
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc984932_cb8cdac1",
@@ -343,6 +361,30 @@
       "side": 1,
       "message": "Sure, but we do also use `candidate.finishReason` at L89, therefore we need `content` anyway.",
       "parentUuid": "5ff28ef4_9f97c70f",
+      "range": {
+        "startLine": 92,
+        "startChar": 41,
+        "endLine": 92,
+        "endChar": 47
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91a2bc3b_cf48235e",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-13T10:59:39Z",
+      "side": 1,
+      "message": "Sure, but `find()` without a predicate is effectively “first truthy element”, so it won’t check whether content exists.\n\nIf the first candidate has no content, `find()` will still return it and ignore later candidates that do contain content.\n\nSince we already rely on `candidate.finishReason` below, we do still need the full candidate object — but we should probably filter for candidates that actually have content, e.g. `find { it.content }`.",
+      "parentUuid": "3580802c_46955265",
       "range": {
         "startLine": 92,
         "startChar": 41,
