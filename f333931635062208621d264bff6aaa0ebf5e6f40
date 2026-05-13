@@ -33,6 +33,75 @@
       "message": "Works like a charm! 🎉",
       "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50ef2f4e_c0d85e8f",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T21:46:15Z",
+      "side": 1,
+      "message": "I don\u0027t believe this is needed: the caching should be transparent and the Gerrit caches statistics will show how many have been cached and their TTL.",
+      "range": {
+        "startLine": 94,
+        "startChar": 12,
+        "endLine": 94,
+        "endChar": 97
+      },
+      "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da311531_6e28a178",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T21:46:15Z",
+      "side": 1,
+      "message": "Apache HTTP client has all the support for retrying requests. This should be defined and supported in the `ai-review-agent-provider` plugin and shared across all implementations.",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 66
+      },
+      "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d71506a4_20d0407e",
+        "filename": "ai/ai-review-agent-openrouter.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T21:46:15Z",
+      "side": 1,
+      "message": "I believe this is a caching improvement that should be factored out into the ai-review-agent-provider plugin.",
+      "range": {
+        "startLine": 38,
+        "startChar": 64,
+        "endLine": 40,
+        "endChar": 68
+      },
+      "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
