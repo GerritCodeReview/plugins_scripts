@@ -16,6 +16,29 @@
       "message": "Works E2E",
       "revId": "eed17078567c9c73c1bc9de5a110e01fbd25ff7f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "993bb600_f4ce30c6",
+        "filename": "ai/ai-review-agent-claude-1.0.groovy",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-05-13T19:07:59Z",
+      "side": 1,
+      "message": "question: can you elaborate on this limit? Per [doc](https://platform.claude.com/docs/en/about-claude/models/overview) models can return way more (e.g. Opus 4.7 128k) - it varies between models but the lowest boundary as of today is 64k so perhaps setting this? The alternative would be to store limit along the returned model list in the plugin as mentioned in the [list API](https://platform.claude.com/docs/en/api/models/list)",
+      "range": {
+        "startLine": 64,
+        "startChar": 40,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "revId": "eed17078567c9c73c1bc9de5a110e01fbd25ff7f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
