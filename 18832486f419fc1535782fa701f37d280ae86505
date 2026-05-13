@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d0a9e9f9_83006391",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-13T07:59:42Z",
+      "side": 1,
+      "message": "There currently appear to be no tests covering several important cases:\n\n* model extraction\n* an empty model list\n* Gemini error-body parsing\n* a candidate with no content\n* multiple text parts\n* malformed JSON\n* API URL construction\n\nAt minimum, I think we should add unit tests for `extractModels()`, `extractResponseText()`, and `extractErrorMessage()`.\n\nAre Groovy-script tests supported in this project? Gerrit plugins are often Java-based and can use Mockito/JUnit-style testing, so one advantage of implementing this as a Java plugin may be better support for extensive unit tests.",
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc984932_cb8cdac1",
         "filename": "ai/ai-review-agent-gemini-1.0.groovy",
         "patchSetId": 10
@@ -49,6 +66,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6cfa8cd9_530e4c59",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-13T07:59:42Z",
+      "side": 1,
+      "message": "Should model be URL encoded, in case it contain character like \u0027/\u0027 or \u0027:\u0027?",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 54
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "04fd779d_c00817e5",
         "filename": "ai/ai-review-agent-gemini-1.0.groovy",
         "patchSetId": 10
@@ -88,6 +128,69 @@
         "startChar": 22,
         "endLine": 65,
         "endChar": 43
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89427a3b_b715720a",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-13T07:59:42Z",
+      "side": 1,
+      "message": "Is there any Groovy formatter available, similar to google-java-format. I find this line hard to read. May be reformat like this:\n\n```groovy\ndef fetchedModels \u003d json.models\n    ?.findAll { model -\u003e\n        model.supportedGenerationMethods?.contains(\u0027generateContent\u0027) \u0026\u0026\n                model.name?.startsWith(\u0027models/gemini\u0027)\n    }\n    ?.collect { it.name.replace(\u0027models/\u0027, \u0027\u0027) } as Set\n```",
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ff28ef4_9f97c70f",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-13T07:59:42Z",
+      "side": 1,
+      "message": "Use predicate: `find( it.content )` so that the first candidate with content returned?",
+      "range": {
+        "startLine": 92,
+        "startChar": 41,
+        "endLine": 92,
+        "endChar": 47
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07dce2c4_02990fe0",
+        "filename": "ai/ai-review-agent-gemini.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-05-13T07:59:42Z",
+      "side": 1,
+      "message": "Nit: Remove the.",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 21
       },
       "revId": "18832486f419fc1535782fa701f37d280ae86505",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
