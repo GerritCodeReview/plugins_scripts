@@ -39,6 +39,30 @@
       },
       "revId": "eed17078567c9c73c1bc9de5a110e01fbd25ff7f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80db404a_cdb98f78",
+        "filename": "ai/ai-review-agent-claude-1.0.groovy",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T19:48:19Z",
+      "side": 1,
+      "message": "\u003e question: can you elaborate on this limit?\n\nGood question, AI answers the following:\n\n_\"You are absolutely correct. The Claude model landscape has evolved significantly, and the 4,096-token limit I referenced is indeed tied to the legacy Claude 3 architecture. Based on the current Anthropic Models Documentation, the \"standard\" output limits have been massively expanded for the Claude 4 and 3.5 series. Hardcoding 4096 in today\u0027s context would unnecessarily truncate the model\u0027s capabilities, especially for complex agentic tasks or extensive code reviews.\"_\n\n\u003e Per [doc](https://platform.claude.com/docs/en/about-claude/models/overview) models can return way more (e.g. Opus 4.7 128k) - it varies between models but the lowest boundary as of today is 64k so perhaps setting this? The alternative would be to store limit along the returned model list in the plugin as mentioned in the [list API](https://platform.claude.com/docs/en/api/models/list)\n\nI\u0027d say for now it\u0027s good enough to have this as a constant in the script. Moving forward, Gerrit should have AI permission with the concept of limits, pretty much like we do with Lucene search results.",
+      "parentUuid": "993bb600_f4ce30c6",
+      "range": {
+        "startLine": 64,
+        "startChar": 40,
+        "endLine": 64,
+        "endChar": 44
+      },
+      "revId": "eed17078567c9c73c1bc9de5a110e01fbd25ff7f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
