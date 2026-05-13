@@ -397,6 +397,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48bb9351_8a35ec1d",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T12:26:12Z",
+      "side": 1,
+      "message": "You are right, at the end of the day, we only get the ones with content. That is also checked at L97.\n\nThe issue I see is that *IF* we only select the one with content, then we may not find the `candidate.finishReason` for those empty ones because the L97 would never be true, and therefore we won\u0027t know the reason returned by Gemini.\n\nHope that makes sense.",
+      "parentUuid": "91a2bc3b_cf48235e",
+      "range": {
+        "startLine": 92,
+        "startChar": 41,
+        "endLine": 92,
+        "endChar": 47
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "07dce2c4_02990fe0",
         "filename": "ai/ai-review-agent-gemini.md",
         "patchSetId": 10
