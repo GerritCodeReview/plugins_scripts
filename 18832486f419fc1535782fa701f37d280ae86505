@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ebabaf66_782df214",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "The endpoint API is so volatile, and the code is so small, that the time to write and maintain tests will be a lot longer than the stability or probability of errors.\n\nNone of the scripts in this repo have tests, and many other scripts are much bigger and more complex than this one.\n\nIf you have any scripting framework that would be usable and cheap for implementing tests on these lines of code, I\u0027d be happy to evaluate and adopt it.\n\nBear in mind that *tests aren\u0027t tested*, therefore, if the test is bigger and more complex than the code, what\u0027s the probability that the test is broken rather than the code being broken?",
+      "parentUuid": "d0a9e9f9_83006391",
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc984932_cb8cdac1",
         "filename": "ai/ai-review-agent-gemini-1.0.groovy",
         "patchSetId": 10
@@ -31,6 +49,30 @@
       "writtenOn": "2026-05-13T06:27:48Z",
       "side": 1,
       "message": "nit: trailing `;`",
+      "range": {
+        "startLine": 47,
+        "startChar": 42,
+        "endLine": 47,
+        "endChar": 43
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd03f2c0_52b201aa",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc984932_cb8cdac1",
       "range": {
         "startLine": 47,
         "startChar": 42,
@@ -64,6 +106,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "75e7fe0e_a438ea3b",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "That\u0027s a tricky point: yes, it would be best; however, it shouldn\u0027t be done by this Groovy script but by the `ai-review-agent-provider plugin`.",
+      "parentUuid": "b0d22307_a992363a",
+      "range": {
+        "startLine": 41,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 5
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6cfa8cd9_530e4c59",
@@ -77,6 +143,30 @@
       "writtenOn": "2026-05-13T07:59:42Z",
       "side": 1,
       "message": "Should model be URL encoded, in case it contain character like \u0027/\u0027 or \u0027:\u0027?",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 54
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5b9c982_cf2bf557",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "Gemini model names do not have special characters and therefore do not need encoding.",
+      "parentUuid": "6cfa8cd9_530e4c59",
       "range": {
         "startLine": 57,
         "startChar": 46,
@@ -110,6 +200,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0882a4f6_8e763c2d",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04fd779d_c00817e5",
+      "range": {
+        "startLine": 62,
+        "startChar": 48,
+        "endLine": 62,
+        "endChar": 49
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ffe90fb_0c911d9c",
@@ -133,6 +247,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d01540d6_569e6910",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "The `UncheckedIOException` can only wrap an `IOException` and not the `JsonException`.",
+      "parentUuid": "1ffe90fb_0c911d9c",
+      "range": {
+        "startLine": 65,
+        "startChar": 22,
+        "endLine": 65,
+        "endChar": 43
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89427a3b_b715720a",
@@ -146,6 +284,24 @@
       "writtenOn": "2026-05-13T07:59:42Z",
       "side": 1,
       "message": "Is there any Groovy formatter available, similar to google-java-format. I find this line hard to read. May be reformat like this:\n\n```groovy\ndef fetchedModels \u003d json.models\n    ?.findAll { model -\u003e\n        model.supportedGenerationMethods?.contains(\u0027generateContent\u0027) \u0026\u0026\n                model.name?.startsWith(\u0027models/gemini\u0027)\n    }\n    ?.collect { it.name.replace(\u0027models/\u0027, \u0027\u0027) } as Set\n```",
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "914a1292_24bc44b9",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89427a3b_b715720a",
       "revId": "18832486f419fc1535782fa701f37d280ae86505",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -175,6 +331,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3580802c_46955265",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "Sure, but we do also use `candidate.finishReason` at L89, therefore we need `content` anyway.",
+      "parentUuid": "5ff28ef4_9f97c70f",
+      "range": {
+        "startLine": 92,
+        "startChar": 41,
+        "endLine": 92,
+        "endChar": 47
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "07dce2c4_02990fe0",
         "filename": "ai/ai-review-agent-gemini.md",
         "patchSetId": 10
@@ -186,6 +366,30 @@
       "writtenOn": "2026-05-13T07:59:42Z",
       "side": 1,
       "message": "Nit: Remove the.",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "18832486f419fc1535782fa701f37d280ae86505",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c45fe0ee_6c47b649",
+        "filename": "ai/ai-review-agent-gemini.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-13T10:47:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07dce2c4_02990fe0",
       "range": {
         "startLine": 3,
         "startChar": 18,
