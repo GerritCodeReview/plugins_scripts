@@ -126,6 +126,30 @@
       },
       "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2d470b3_3348178e",
+        "filename": "ai/ai-review-agent-openrouter.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-14T17:46:42Z",
+      "side": 1,
+      "message": "Cache implemented with https://review.gerrithub.io/c/GerritForge/ai-review-agent-provider/+/1237234/3.",
+      "parentUuid": "d71506a4_20d0407e",
+      "range": {
+        "startLine": 38,
+        "startChar": 64,
+        "endLine": 40,
+        "endChar": 68
+      },
+      "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
