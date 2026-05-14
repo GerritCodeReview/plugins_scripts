@@ -73,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9783855f_fe408dee",
+        "filename": "ai/ai-review-agent-chatgpt-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-14T12:12:41Z",
+      "side": 1,
+      "message": "Good point about highlighting the `/chat/completions` endpoint: I did a bit of research, and the endpoint is deprecated and shouldn\u0027t be used anymore.\n\nI guess AI suggested that endpoint because there are more examples and code using it, however, it isn\u0027t a good idea to have a brand-new implementation using it.",
+      "parentUuid": "60f1ebb9_72fc4eac",
+      "range": {
+        "startLine": 57,
+        "startChar": 56,
+        "endLine": 57,
+        "endChar": 72
+      },
+      "revId": "8289171fb6631fe9b63ad5e8767c38d5b8f885ad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "822419f2_1633a7e5",
         "filename": "ai/ai-review-agent-chatgpt-1.0.groovy",
         "patchSetId": 14
