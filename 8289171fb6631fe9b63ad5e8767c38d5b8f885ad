@@ -150,6 +150,24 @@
       "parentUuid": "9ccd54c8_d58e859d",
       "revId": "8289171fb6631fe9b63ad5e8767c38d5b8f885ad",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8602e0b_0af7892c",
+        "filename": "ai/ai-review-agent-chatgpt.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-14T09:54:52Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "360cdc2d_1c550749",
+      "revId": "8289171fb6631fe9b63ad5e8767c38d5b8f885ad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
