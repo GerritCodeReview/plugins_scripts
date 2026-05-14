@@ -72,6 +72,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89b240d9_ae90edb1",
+        "filename": "ai/ai-review-agent-chatgpt-1.0.groovy",
+        "patchSetId": 14
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-14T08:18:00Z",
+      "side": 1,
+      "message": "In `choices` there is also a field called `finish_reason` which might be useful.\nWe could maybe consider it for a follow-up.\n\n\nhttps://docs.djl.ai/master/docs/serving/serving/docs/lmi/user_guides/chat_input_output_schema.html",
+      "range": {
+        "startLine": 93,
+        "startChar": 31,
+        "endLine": 93,
+        "endChar": 38
+      },
+      "revId": "8289171fb6631fe9b63ad5e8767c38d5b8f885ad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9ccd54c8_d58e859d",
         "filename": "ai/ai-review-agent-chatgpt.md",
         "patchSetId": 14
