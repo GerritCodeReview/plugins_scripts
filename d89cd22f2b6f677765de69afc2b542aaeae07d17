@@ -22,6 +22,30 @@
       },
       "revId": "d89cd22f2b6f677765de69afc2b542aaeae07d17",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cddd73e_f7d996bd",
+        "filename": "ai/ai-review-agent-chatgpt-1.0.groovy",
+        "patchSetId": 17
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-14T18:02:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe5e8ccb_a7867e17",
+      "range": {
+        "startLine": 63,
+        "startChar": 28,
+        "endLine": 63,
+        "endChar": 63
+      },
+      "revId": "d89cd22f2b6f677765de69afc2b542aaeae07d17",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
