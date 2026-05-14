@@ -108,6 +108,24 @@
       "message": "I think by using any of the `ai-review` plugins it is implicit that we are sending over data to a 3rd party. But I was wondering if we need to warn the admin explicitly in the README.\n\nMaybe it is not needed, but it is just paranoia that comes to my mind to ensure sending data to 3rd party is compatible with the company\u0027s policies.  \n\nWDYT?",
       "revId": "8289171fb6631fe9b63ad5e8767c38d5b8f885ad",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "360cdc2d_1c550749",
+        "filename": "ai/ai-review-agent-chatgpt.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-14T09:48:38Z",
+      "side": 1,
+      "message": "I don\u0027t believe it is relevant to any of the Groovy scripts; maybe it can be addressed in a follow-up change and by putting a README.md into the `ai/` folder.",
+      "parentUuid": "9ccd54c8_d58e859d",
+      "revId": "8289171fb6631fe9b63ad5e8767c38d5b8f885ad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
