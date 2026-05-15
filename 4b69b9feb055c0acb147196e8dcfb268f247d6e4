@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ba7b896_48c9a426",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-05-15T13:57:13Z",
+      "side": 1,
+      "message": "```suggestion\n        this.http \u003d http\n```",
+      "range": {
+        "startLine": 50,
+        "startChar": 24,
+        "endLine": 50,
+        "endChar": 25
+      },
+      "revId": "4b69b9feb055c0acb147196e8dcfb268f247d6e4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4e96e43c_53abd8b5",
         "filename": "ai/ai-review-agent-llama.md",
         "patchSetId": 10
@@ -17,6 +40,29 @@
       "range": {
         "startLine": 43,
         "startChar": 39,
+        "endLine": 43,
+        "endChar": 41
+      },
+      "revId": "4b69b9feb055c0acb147196e8dcfb268f247d6e4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11981631_79e812de",
+        "filename": "ai/ai-review-agent-llama.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-05-15T13:57:13Z",
+      "side": 1,
+      "message": "nit: this should be removed right? We enow ven strip it if it\u0027s there.\n```suggestion\n   baseUrl \u003d http://llama-server:11434\n```",
+      "range": {
+        "startLine": 43,
+        "startChar": 37,
         "endLine": 43,
         "endChar": 41
       },
