@@ -14,8 +14,6 @@
 
 import com.gerritforge.gerrit.plugins.ai.provider.api.*
 
-import com.google.common.base.Supplier
-import com.google.common.base.Suppliers
 import com.google.common.flogger.FluentLogger
 import com.google.gerrit.extensions.registration.DynamicSet
 import com.google.inject.*
@@ -25,7 +23,6 @@ import org.apache.http.message.*
 import org.apache.http.entity.StringEntity
 
 import java.nio.charset.StandardCharsets
-import java.util.concurrent.TimeUnit
 
 import groovy.json.*
 
@@ -37,10 +34,6 @@ class AiOpenRouterReviewProvider implements AiReviewProvider {
     private static final String ATTRIBUTION_REFERER = 'https://gerrit-review.googlesource.com/'
     private static final String ATTRIBUTION_TITLE = 'Gerrit AI Review'
     private static final int MAX_ERROR_LEN = 500
-
-    // Single flat-window retry on 429 (AiHttpClient hides Retry-After).
-    private static final int MAX_RETRIES = 1
-    private static final long RETRY_WAIT_MS = 5_000L
 
     // Floating aliases that always resolve to the latest vendor version.
     // DeepSeek (no `~latest` alias) is sourced dynamically below.
@@ -55,28 +48,18 @@ class AiOpenRouterReviewProvider implements AiReviewProvider {
     ]
 
     private static final int FREE_PICK_COUNT = 5
-    private static final long CACHE_TTL_DAYS = 1L
 
     final String displayName = 'OpenRouter'
 
     @Inject
     private AiHttpClient http
 
-    // Refreshed once per TTL, or when review() sees a 404 (slug gone upstream).
-    private volatile Supplier<LinkedHashSet<String>> modelsSupplier = newModelsSupplier()
-
-    private Supplier<LinkedHashSet<String>> newModelsSupplier() {
-        return Suppliers.memoizeWithExpiration(
-                { -> fetchAndMergeModels() } as Supplier,
-                CACHE_TTL_DAYS, TimeUnit.DAYS)
-    }
-
     @Override
     Set<String> getModels(String notUsed) {
-        return modelsSupplier.get()
+        return fetchAndMergeModels()
     }
 
-    // On failure, return paid-only fallback (also memoized for the TTL).
+    // On failure, return paid-only fallback. Caching handled by AiProvidersInfoCache.
     private LinkedHashSet<String> fetchAndMergeModels() {
         try {
             List<Map> catalog = http.get(
@@ -115,49 +98,17 @@ class AiOpenRouterReviewProvider implements AiReviewProvider {
                 ]).toString(),
                 StandardCharsets.UTF_8)
 
-        for (int attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-            try {
-                return http.post(
-                        OPENROUTER_API_URL,
-                        headers,
-                        entity,
-                        { extractErrorMessage(it) },
-                        { extractResponseText(it) }) as String
-            } catch (JsonException | IOException e) {
-                String msg = e.message ?: ''
-                if (msg.contains('[429]')) {
-                    if (attempt < MAX_RETRIES) {
-                        logger.atInfo().log(
-                                'OpenRouter 429 for model=%s, retrying after %d ms',
-                                model, RETRY_WAIT_MS)
-                        try {
-                            Thread.sleep(RETRY_WAIT_MS)
-                        } catch (InterruptedException ie) {
-                            Thread.currentThread().interrupt()
-                            throw new IllegalStateException(
-                                    'Interrupted while retrying OpenRouter call', ie)
-                        }
-                        continue
-                    }
-                    logger.atInfo().log('OpenRouter 429 exhausted for model=%s', model)
-                    return rateLimitMessage(model)
-                }
-                if (msg.contains('[404]')) {
-                    logger.atInfo().log(
-                            'OpenRouter 404 for model=%s; invalidating catalog cache', model)
-                    modelsSupplier = newModelsSupplier()
-                }
-                logger.atWarning().withCause(e).log('Failed to call OpenRouter API (model=%s)', model)
-                throw new IllegalStateException('Failed to call OpenRouter API', e)
-            }
+        try {
+            return http.post(
+                    OPENROUTER_API_URL,
+                    headers,
+                    entity,
+                    { extractErrorMessage(it) },
+                    { extractResponseText(it) }) as String
+        } catch (JsonException | IOException e) {
+            logger.atWarning().withCause(e).log('Failed to call OpenRouter API (model=%s)', model)
+            throw new IllegalStateException('Failed to call OpenRouter API', e)
         }
-        throw new IllegalStateException('OpenRouter API: retry budget exhausted')
-    }
-
-    private static String rateLimitMessage(String model) {
-        return "\n⚠️ **OpenRouter rate limit**\n\n" +
-                "Model `$model` is temporarily rate-limited by the upstream provider. " +
-                "Try again shortly, or pick a different model from the list."
     }
 
     private static String extractResponseText(String body) {
