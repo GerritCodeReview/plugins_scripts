@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3575e76d_0769d5b0",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T12:53:45Z",
+      "side": 1,
+      "message": "Renamed to `(Native)`",
+      "parentUuid": "a68d14d9_38a4b458",
+      "range": {
+        "startLine": 37,
+        "startChar": 39,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cdc069a_c2144302",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-05-15T07:58:32Z",
       "side": 1,
       "message": "Any reason why this is injected separately from the other injected constructor\u0027s dependencies?",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd4fe084_9d2940ca",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T12:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cdc069a_c2144302",
       "range": {
         "startLine": 40,
         "startChar": 0,
@@ -93,6 +141,54 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91add2eb_0d86ab7a",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T12:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c9957d7_683c054c",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 64
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7892f5c3_45b222d2",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T12:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46d3469a_0ba78cf4",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 64
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2372789_8c9aaaa5",
@@ -106,6 +202,30 @@
       "writtenOn": "2026-05-15T07:58:32Z",
       "side": 1,
       "message": "At L77 we throw `IllegalStateException` when failing to call the API, while here we swallow the error and default to an empty set.\n\nShould we not throw here as well?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80211d18_3a321724",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T12:53:45Z",
+      "side": 1,
+      "message": "No, because failing to fetch the list of models would break the UI. A provider without models won\u0027t break the UI and will not populate the models in the drop-down list. The approach is the same for all other AI LLMs API scripts.",
+      "parentUuid": "a2372789_8c9aaaa5",
       "range": {
         "startLine": 59,
         "startChar": 0,
@@ -139,6 +259,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd9232a3_03705ac1",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T12:53:45Z",
+      "side": 1,
+      "message": "True, but we can\u0027t really account for any potential proxies that anyone could put between Gerrit and the LLM backend.\n\nThis code is for fetching the LLM errors, and that\u0027s what it does.\nIt wouldn\u0027t be realistic to account for any potential syntax in this implementation.",
+      "parentUuid": "78fab718_850819b4",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 52
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c2052781_0630d05a",
@@ -152,6 +296,30 @@
       "writtenOn": "2026-05-15T07:58:32Z",
       "side": 1,
       "message": "This implementation targets Ollama’s _OpenAI-compatible_ API (`/v1/...`) [[1]](https://ollama.com/blog/openai-compatibility) rather than Ollama’s *native* API (`/api/...`) [[2]](https://docs.ollama.com/api/introduction). I think is fine, especially since it allows the provider to work with other OpenAI-compatible Llama servers as well.\n\nHowever, I think the documentation should make this explicit so users do not configure a native Ollama endpoint such as http://localhost:11434/api and expect it to work.\n\nWDYT?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 79
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "289bde52_3e62962d",
+        "filename": "ai/ai-review-agent-llama.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T12:53:45Z",
+      "side": 1,
+      "message": "I\u0027ve adapted the code to use the native API syntax instead.",
+      "parentUuid": "c2052781_0630d05a",
       "range": {
         "startLine": 3,
         "startChar": 0,
