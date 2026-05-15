@@ -68,6 +68,30 @@
       },
       "revId": "4b69b9feb055c0acb147196e8dcfb268f247d6e4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb1dc183_05c12c81",
+        "filename": "ai/ai-review-agent-llama.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T14:13:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11981631_79e812de",
+      "range": {
+        "startLine": 43,
+        "startChar": 37,
+        "endLine": 43,
+        "endChar": 41
+      },
+      "revId": "4b69b9feb055c0acb147196e8dcfb268f247d6e4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
