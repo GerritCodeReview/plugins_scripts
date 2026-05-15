@@ -58,6 +58,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1d28a35_e8f42c6f",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T11:56:00Z",
+      "side": 1,
+      "message": "Let\u0027s merge this one and once the `ai-review-agent-provider` will be merged, we can remove it later.",
+      "parentUuid": "50ef2f4e_c0d85e8f",
+      "range": {
+        "startLine": 94,
+        "startChar": 12,
+        "endLine": 94,
+        "endChar": 97
+      },
+      "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da311531_6e28a178",
@@ -105,6 +129,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18112269_9c17890c",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T11:56:00Z",
+      "side": 1,
+      "message": "Let\u0027s merge this one and once the `ai-review-agent-provider` will be merged, we can remove it later.",
+      "parentUuid": "799c1ddf_6449930b",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 66
+      },
+      "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d71506a4_20d0407e",
@@ -142,6 +190,30 @@
       "side": 1,
       "message": "Cache implemented with https://review.gerrithub.io/c/GerritForge/ai-review-agent-provider/+/1237234/3.",
       "parentUuid": "d71506a4_20d0407e",
+      "range": {
+        "startLine": 38,
+        "startChar": 64,
+        "endLine": 40,
+        "endChar": 68
+      },
+      "revId": "f333931635062208621d264bff6aaa0ebf5e6f40",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c829173_8c98c243",
+        "filename": "ai/ai-review-agent-openrouter.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-15T11:56:00Z",
+      "side": 1,
+      "message": "Let\u0027s merge this one and once the `ai-review-agent-provider` will be merged, we can remove it later.",
+      "parentUuid": "b2d470b3_3348178e",
       "range": {
         "startLine": 38,
         "startChar": 64,
