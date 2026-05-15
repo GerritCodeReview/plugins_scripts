@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a68d14d9_38a4b458",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-15T07:45:20Z",
+      "side": 1,
+      "message": "Why local?",
+      "range": {
+        "startLine": 37,
+        "startChar": 39,
+        "endLine": 37,
+        "endChar": 44
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46d3469a_0ba78cf4",
+        "filename": "ai/ai-review-agent-llama-1.0.groovy",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-15T07:45:20Z",
+      "side": 1,
+      "message": "Supeflous comment",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 64
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e5ef492_83755742",
+        "filename": "ai/ai-review-agent-llama.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054778
+      },
+      "writtenOn": "2026-05-15T07:45:20Z",
+      "side": 1,
+      "message": "```suggestion\nGerrit v3.14 or later with the following additional plugins:\n```",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 23,
+        "endChar": 13
+      },
+      "revId": "40125a816847116494129f4cce93821f76787a8d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
