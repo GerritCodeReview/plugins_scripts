@@ -16,6 +16,24 @@
       "message": "This method can be inlined.",
       "revId": "ac7c3a6f7f5a7390a52527889a676f8653e3d50e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "036837a1_a0c83af6",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-05-16T07:30:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ec3b010_5cafacd6",
+      "revId": "ac7c3a6f7f5a7390a52527889a676f8653e3d50e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
