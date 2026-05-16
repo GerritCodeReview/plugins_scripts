@@ -1,5 +1,29 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7ba16e2_468a2b6c",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-16T08:15:33Z",
+      "side": 1,
+      "message": "Are we OK to then have this static list cached for 1 day?",
+      "range": {
+        "startLine": 78,
+        "startChar": 12,
+        "endLine": 78,
+        "endChar": 54
+      },
+      "revId": "d5b7f223f0abdaa335718b1911cad9a774184439",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
