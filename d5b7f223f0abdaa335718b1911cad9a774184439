@@ -46,6 +46,30 @@
       },
       "revId": "d5b7f223f0abdaa335718b1911cad9a774184439",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c47824b4_535c5914",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-05-18T07:12:42Z",
+      "side": 1,
+      "message": "Makes sense",
+      "parentUuid": "096aa552_763ae0e5",
+      "range": {
+        "startLine": 78,
+        "startChar": 12,
+        "endLine": 78,
+        "endChar": 54
+      },
+      "revId": "d5b7f223f0abdaa335718b1911cad9a774184439",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
