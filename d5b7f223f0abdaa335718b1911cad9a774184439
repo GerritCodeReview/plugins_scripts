@@ -22,6 +22,30 @@
       },
       "revId": "d5b7f223f0abdaa335718b1911cad9a774184439",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "096aa552_763ae0e5",
+        "filename": "ai/ai-review-agent-openrouter-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-05-18T07:06:54Z",
+      "side": 1,
+      "message": "Let\u0027s revisit if there are any requests to improve it. In reality there are 5 retries before it would fall back to it so it shouldn\u0027t be sth that happens too often 😊. WDYT?",
+      "parentUuid": "c7ba16e2_468a2b6c",
+      "range": {
+        "startLine": 78,
+        "startChar": 12,
+        "endLine": 78,
+        "endChar": 54
+      },
+      "revId": "d5b7f223f0abdaa335718b1911cad9a774184439",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
