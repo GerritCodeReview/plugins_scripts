@@ -27,7 +27,6 @@ import com.google.gerrit.server.git.WorkQueue
 import com.google.gerrit.server.logging.Metadata
 import com.google.inject.Inject
 import com.google.inject.Singleton
-import sun.security.x509.GeneralNameInterface
 
 import javax.net.ssl.SSLSocket
 import javax.net.ssl.SSLSocketFactory
@@ -43,7 +42,9 @@ import static java.util.concurrent.TimeUnit.SECONDS
 @Singleton
 @Listen
 class CertificatesValidityChecker implements LifecycleListener {
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass()
   private static final int DEFAULT_CHECK_INTERVAL_HOURS = 24
+  private static final int DEFAULT_CHECK_TIMEOUT_MSEC = 1000
   private final WorkQueue queue
   private final PluginConfigFactory config
   private final String pluginName
@@ -51,7 +52,7 @@ class CertificatesValidityChecker implements LifecycleListener {
 
   private ScheduledFuture<?> certificatesValidityChecksTask
   private List<String> endpoints
-  private Long checkIntervalInMillis
+  private boolean started
 
   @Inject
   CertificatesValidityChecker(WorkQueue queue, PluginConfigFactory cfg,
@@ -65,14 +66,24 @@ class CertificatesValidityChecker implements LifecycleListener {
 
   @Override
   void start() {
+    if (started) {
+      logger.atWarning().log("Plugin already started: ignoring duplicate start")
+      return
+    }
+
     endpoints = getEndpointsList(config, pluginName)
-    checkIntervalInMillis = getCheckIntervalMillis(config, pluginName)
+    long checkIntervalInHours = getCheckIntervalHours(config, pluginName)
+    int timeout = config.getGlobalPluginConfig(pluginName).getInt("validation",null,"timeout", DEFAULT_CHECK_TIMEOUT_MSEC)
+    logger.atInfo().log("Checking certificates expiry date every %d hours (timeout=%d msec) for %s",
+      checkIntervalInHours, timeout, endpoints)
+
     certificatesValidityChecksTask = queue.getDefaultQueue()
         .scheduleAtFixedRate(
-            new CheckCertificatesValidityTask(metrics, endpoints),
+            new CheckCertificatesValidityTask(metrics, endpoints, timeout),
             SECONDS.toMillis(1),
-            checkIntervalInMillis,
+            HOURS.toMillis(checkIntervalInHours),
             MILLISECONDS)
+    started = true
   }
 
   @Override
@@ -83,10 +94,10 @@ class CertificatesValidityChecker implements LifecycleListener {
     }
   }
 
-  private Long getCheckIntervalMillis(PluginConfigFactory cfg, String pluginName) {
+  private Long getCheckIntervalHours(PluginConfigFactory cfg, String pluginName) {
     String fromConfig =
         Strings.nullToEmpty(cfg.getGlobalPluginConfig(pluginName).getString("validation",null,"checkInterval"))
-    return HOURS.toMillis(ConfigUtil.getTimeUnit(fromConfig, DEFAULT_CHECK_INTERVAL_HOURS, HOURS))
+    return ConfigUtil.getTimeUnit(fromConfig, DEFAULT_CHECK_INTERVAL_HOURS, HOURS)
   }
 
   private List<String> getEndpointsList(PluginConfigFactory cfg, String pluginName) {
@@ -117,36 +128,57 @@ class CertificatesValidityChecker implements LifecycleListener {
 
   private static class CheckCertificatesValidityTask implements Runnable {
     private static final FluentLogger logger = FluentLogger.forEnclosingClass()
+    private static final int DNS_TYPE = 2 // The GeneralNameInterface.NAME_DNS value, inaccessible because of being an internal package
+
     private final CertificatesCheckMetrics metrics
     private final List<String> endpoints
+    private final int timeout
 
-    CheckCertificatesValidityTask(CertificatesCheckMetrics metrics, List<String> endpoints) {
+    CheckCertificatesValidityTask(CertificatesCheckMetrics metrics, List<String> endpoints, int timeout) {
       this.endpoints = endpoints
       this.metrics = metrics
+      this.timeout = timeout
     }
 
     @Override
     void run() {
       for (String endpoint : endpoints) {
-        logger.atInfo().log("Checking certificate expiry date for %s endpoint", endpoint)
+        logger.atFine().log("Checking certificate expiry date for %s endpoint", endpoint)
         SSLSocket conn
         try {
           def (hostname, port) = parseEndpoint(endpoint)
           conn = openConnection(hostname as String, port as int)
-          conn.startHandshake();
-          Certificate[] certs = conn.getSession().getPeerCertificates();
-          for (Certificate cert : certs) {
-            if (cert instanceof X509Certificate &&
-              cert.getSubjectAlternativeNames().findAll{it[0] == GeneralNameInterface.NAME_DNS}
-                  .any {isHostnameMatching(hostname as String, it.get(1) as String) }) {
-              def numberOfDaysToExpire = Duration
-                  .between(new Date().toInstant(), cert.notAfter.toInstant()).toDays()
-              metrics
-                  .setMetric(
-                      hostname as String,
-                      numberOfDaysToExpire.intValue())
+          conn.setSoTimeout(timeout)
+          conn.startHandshake()
+          X509Certificate[] certs = conn.getSession().getPeerCertificates().findAll {it instanceof X509Certificate}
+
+          for (X509Certificate cert : certs) {
+            def certsAlternativeNames = cert.subjectAlternativeNames
+            def certsDnsNames = certsAlternativeNames.findAll{it[0] == DNS_TYPE}.collect{it[1]}
+            if (certsDnsNames.empty) {
+              logger.atFine().log("Skipping X.509 Certificate %s because there are no subjectAlternativeNames of DNS type", cert)
+              continue
+            }
+
+            logger.atFine().log("Checking X.509 DNS names %s against %s:%d", certsDnsNames, hostname, port)
+            def certsMatchingDnsNames = certsDnsNames.findAll{isHostnameMatching(hostname as String, it as String)}
+            if (certsMatchingDnsNames.empty) {
+              logger.atWarning().log("Skipping X.509 Certificate %s because none of the certificate DNS names %s are matching the hostname %s", cert, certsDnsNames, hostname)
+              continue
+            }
+
+            logger.atFine().log("X.509 Certificate %s has expiry date %s", cert.subjectDN, cert.notAfter)
+            def numberOfDaysToExpire = Duration
+                .between(new Date().toInstant(), cert.notAfter.toInstant()).toDays()
+            metrics
+                .setMetric(
+                    hostname as String,
+                    numberOfDaysToExpire.intValue())
+
+            if (numberOfDaysToExpire >= 0) {
+              logger.atInfo().log("X.509 Certificate %s is valid and has %d days left", cert.subjectDN, numberOfDaysToExpire)
             } else {
-              logger.atFine().log("Certificate type %s is not a valid X.509 certificate for the specified endpoint: %s. Skipping!", cert.getType(), endpoint)
+              logger.atWarning().log("X.509 Certificate for %s **EXPIRED**", cert.subjectDN)
             }
           }
         } catch(e) {
@@ -175,10 +207,6 @@ class CertificatesValidityChecker implements LifecycleListener {
     }
 
     private SSLSocket openConnection(String hostname, int port) {
-      logger
-          .atInfo()
-          .log("Opening connection for %s endpoint successful",
-              hostname)
       (SSLSocket) SSLSocketFactory.getDefault()
           .createSocket(hostname, port);
     }
