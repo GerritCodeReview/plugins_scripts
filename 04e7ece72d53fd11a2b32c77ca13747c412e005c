@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a2c8eae_8b121db5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da753427_ee42eea3",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 7
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc69aefb_738d663f",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-08-05T13:44:29Z",
       "side": 1,
       "message": "nit: we don\u0027t access the private constant (that\u0027s private); we duplicate it.\nConsider rephrasing.",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 8
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fb87c1c_e3e3448f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc69aefb_738d663f",
       "range": {
         "startLine": 10,
         "startChar": 11,
@@ -81,6 +129,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "385ef4ee_bbd0f664",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Not here, otherwise the differences will be difficult to track.",
+      "parentUuid": "8b2005b0_7b73d061",
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "624742a1_daa35e20",
@@ -94,6 +160,30 @@
       "writtenOn": "2026-08-05T13:44:29Z",
       "side": 1,
       "message": "This is no longer used.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 36
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8daf8fed_7030aadb",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "624742a1_daa35e20",
       "range": {
         "startLine": 55,
         "startChar": 0,
@@ -129,6 +219,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8852bb60_acfc3f78",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "That\u0027s an interesting point: I\u0027ve noticed that the plugins receive a double start()",
+      "parentUuid": "cc7c144f_9825f878",
+      "range": {
+        "startLine": 70,
+        "startChar": 3,
+        "endLine": 74,
+        "endChar": 0
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6889f16f_46aa11b2",
         "filename": "admin/certificates-validity-checker-1.0.groovy",
         "patchSetId": 1
@@ -140,6 +254,30 @@
       "writtenOn": "2026-08-05T19:18:32Z",
       "side": 1,
       "message": "Is this related to this change?",
+      "range": {
+        "startLine": 76,
+        "startChar": 9,
+        "endLine": 76,
+        "endChar": 29
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ee65cf2_c6bf4d97",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Yes, it is used at L78",
+      "parentUuid": "6889f16f_46aa11b2",
       "range": {
         "startLine": 76,
         "startChar": 9,
@@ -173,6 +311,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af6719e0_e6a4ca9e",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "830a5725_d7ed99d6",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 122
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f666343_5a671ed1",
@@ -186,6 +348,30 @@
       "writtenOn": "2026-08-05T19:18:32Z",
       "side": 1,
       "message": "I think this should be reset on `stop()`",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 11
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28f556fe_0d4271e2",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f666343_5a671ed1",
       "range": {
         "startLine": 87,
         "startChar": 4,
@@ -219,6 +405,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3a0578c_7d09bf8a",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21890ca4_6265642e",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 5
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "657e65a7_d9177162",
@@ -232,6 +442,30 @@
       "writtenOn": "2026-08-05T13:44:29Z",
       "side": 1,
       "message": "At `L152`, we set the read timeout, but here, when opening the TCP connection we don\u0027t have any explicit timeout set, so an unreachable endpoint can still block?\n\nConsider setting a `connect` timeout as well.",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 64
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccf89511_c786bd45",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "The timeout value is for all phases. The method name `openConnection` is just a bad choice: the method doesn\u0027t open any connection but simply creates a socket.",
+      "parentUuid": "657e65a7_d9177162",
       "range": {
         "startLine": 151,
         "startChar": 0,
@@ -265,6 +499,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f13f269_a85432f4",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "This is a debug log. Then, yes, we want to have the full certificate for debugging purposes.",
+      "parentUuid": "f60efc6a_65d09599",
+      "range": {
+        "startLine": 160,
+        "startChar": 124,
+        "endLine": 160,
+        "endChar": 128
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bea8b9fb_da3e17e8",
@@ -288,6 +546,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c61a14c4_dc70e66c",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bea8b9fb_da3e17e8",
+      "range": {
+        "startLine": 165,
+        "startChar": 0,
+        "endLine": 166,
+        "endChar": 46
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f69abf6c_ece076c8",
@@ -301,6 +583,30 @@
       "writtenOn": "2026-08-05T13:44:29Z",
       "side": 1,
       "message": "nit: Consider `Instant.now()`",
+      "range": {
+        "startLine": 173,
+        "startChar": 25,
+        "endLine": 173,
+        "endChar": 47
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57a04683_552f22fe",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-05T22:22:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f69abf6c_ece076c8",
       "range": {
         "startLine": 173,
         "startChar": 25,
