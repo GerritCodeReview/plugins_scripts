@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc69aefb_738d663f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-08-05T13:44:29Z",
+      "side": 1,
+      "message": "nit: we don\u0027t access the private constant (that\u0027s private); we duplicate it.\nConsider rephrasing.",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 8
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "d022604f_66c5a862",
@@ -14,6 +37,144 @@
       "writtenOn": "2026-08-03T21:34:06Z",
       "side": 1,
       "message": "351522",
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "624742a1_daa35e20",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-08-05T13:44:29Z",
+      "side": 1,
+      "message": "This is no longer used.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 36
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "830a5725_d7ed99d6",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-08-05T13:44:29Z",
+      "side": 1,
+      "message": "nit: I know we don\u0027t format grooby, but this is a long line imho.\n\nConsider:\n\n```\nint timeout \u003d\n    config\n        .getGlobalPluginConfig(pluginName)\n        .getInt(\"validation\", null, \"timeout\", DEFAULT_CHECK_TIMEOUT_MS)\n```",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 122
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21890ca4_6265642e",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-08-05T13:44:29Z",
+      "side": 1,
+      "message": "We should set `started` to `false` here, so that we can reload the plugin?",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 5
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "657e65a7_d9177162",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-08-05T13:44:29Z",
+      "side": 1,
+      "message": "At `L152`, we set the read timeout, but here, when opening the TCP connection we don\u0027t have any explicit timeout set, so an unreachable endpoint can still block?\n\nConsider setting a `connect` timeout as well.",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 64
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bea8b9fb_da3e17e8",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-08-05T13:44:29Z",
+      "side": 1,
+      "message": "nit: you could use `any` rather than building a list only to test emptiness, since the list is never used elsewhere.\n\nSomething like:\n\n```\nif (!dnsNames.any { isHostnameMatching(hostname as String, it as String) }) {\n```",
+      "range": {
+        "startLine": 165,
+        "startChar": 0,
+        "endLine": 166,
+        "endChar": 46
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f69abf6c_ece076c8",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1072905
+      },
+      "writtenOn": "2026-08-05T13:44:29Z",
+      "side": 1,
+      "message": "nit: Consider `Instant.now()`",
+      "range": {
+        "startLine": 173,
+        "startChar": 25,
+        "endLine": 173,
+        "endChar": 47
+      },
       "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
