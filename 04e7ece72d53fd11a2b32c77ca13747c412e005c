@@ -478,6 +478,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6800fb28_b4a21b2f",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-06T06:38:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53e0aae4_c7587361",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 11
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21890ca4_6265642e",
