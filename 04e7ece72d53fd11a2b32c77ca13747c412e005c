@@ -336,6 +336,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d23fe470_f36b2527",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-06T06:37:47Z",
+      "side": 1,
+      "message": "I don\u0027t believe anyone would ever check the certificate\u0027s validity every 1ms ;-)\nThe validity is expressed in days; anything less than 1 day doesn\u0027t make sense.",
+      "parentUuid": "841639f1_5327f559",
+      "range": {
+        "startLine": 76,
+        "startChar": 9,
+        "endLine": 76,
+        "endChar": 29
+      },
+      "revId": "04e7ece72d53fd11a2b32c77ca13747c412e005c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "830a5725_d7ed99d6",
