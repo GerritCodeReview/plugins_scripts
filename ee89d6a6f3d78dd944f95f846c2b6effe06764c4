@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f109cd7_6e200e1d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-07T00:48:08Z",
+      "side": 1,
+      "message": "We should give the endpoint context in all logs",
+      "revId": "ee89d6a6f3d78dd944f95f846c2b6effe06764c4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3061b62c_225e9fc3",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-07T00:48:08Z",
+      "side": 1,
+      "message": "```suggestion\n              logger.atFine().log(\"[%s] Skipping X.509 Certificate %s because there are no subjectAlternativeNames of DNS type\", endpoint, cert)\n```",
+      "revId": "ee89d6a6f3d78dd944f95f846c2b6effe06764c4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69b62955_393af4eb",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-07T00:48:08Z",
+      "side": 1,
+      "message": "```suggestion\n            logger.atFine().log(\"[%s] Checking X.509 DNS names %s against %s:%d\", endpoint, certsDnsNames, hostname, port)\n```",
+      "revId": "ee89d6a6f3d78dd944f95f846c2b6effe06764c4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ea6adac_9a2769ce",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-07T00:48:08Z",
+      "side": 1,
+      "message": "```suggestion\n              logger.atWarning().log(\"[%s] Skipping X.509 Certificate %s because none of the certificate DNS names %s are matching the hostname %s\", endpoint, cert, certsDnsNames, hostname)\n```",
+      "revId": "ee89d6a6f3d78dd944f95f846c2b6effe06764c4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e644ad70_f42ade71",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-07T00:48:08Z",
+      "side": 1,
+      "message": "```suggestion\n            logger.atFine().log(\"[%s] X.509 Certificate %s has expiry date %s\", endpoint, cert.subjectDN, cert.notAfter)\n```",
+      "revId": "ee89d6a6f3d78dd944f95f846c2b6effe06764c4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18234997_aae2526e",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-07T00:48:08Z",
+      "side": 1,
+      "message": "```suggestion\n              logger.atInfo().log(\"[%s] X.509 Certificate %s is valid and has %d days left\", endpoint, cert.subjectDN, numberOfDaysToExpire)\n```",
+      "revId": "ee89d6a6f3d78dd944f95f846c2b6effe06764c4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b90340d0_3d7a6fb9",
+        "filename": "admin/certificates-validity-checker-1.0.groovy",
+        "patchSetId": 10
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-08-07T00:48:08Z",
+      "side": 1,
+      "message": "```suggestion\n              logger.atWarning().log(\"[%s] X.509 Certificate for %s **EXPIRED**\", endpoint, cert.subjectDN)\n```",
+      "revId": "ee89d6a6f3d78dd944f95f846c2b6effe06764c4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
