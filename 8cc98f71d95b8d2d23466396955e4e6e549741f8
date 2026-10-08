@@ -63,6 +63,30 @@
       },
       "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95943bb8_6d8ccb5e",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-10-08T19:21:27Z",
+      "side": 1,
+      "message": "I don\u0027t see any caching here, and it would make sense for caching logic to be defined in the provider rather than in the AI provider script.",
+      "parentUuid": "d82364fb_07c632da",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
