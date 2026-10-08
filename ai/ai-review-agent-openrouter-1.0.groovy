@@ -200,11 +200,25 @@ class AiOpenRouterReviewProvider implements AiReviewProvider {
     private static String extractErrorMessage(String body) {
         try {
             def json = new JsonSlurper().parseText(body)
-            if (json?.error) return "[${json.error.code}] ${json.error.message}"
+            if (json?.error) {
+                def message = json.error.message as String
+                def detail = formatErrorMetadata(json.error.metadata)
+                return detail ? "${message}: ${detail}" : message
+            }
         } catch (Exception e) {
             logger.atWarning().withCause(e).log('Failed to parse error response')
         }
         return body.length() > MAX_ERROR_LEN ? "${body.take(MAX_ERROR_LEN)}..." : body
+    }
+
+    // OpenRouter wraps the real upstream failure under `error.metadata`.
+    // Without this, the user only sees the generic "Provider returned error".
+    private static String formatErrorMetadata(metadata) {
+        if (!metadata) return null
+        def parts = []
+        if (metadata.provider_name) parts << "provider=${metadata.provider_name}"
+        if (metadata.raw) parts << (metadata.raw as String)
+        return parts ? parts.join(', ') : null
     }
 }
 
