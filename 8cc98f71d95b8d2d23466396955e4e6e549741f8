@@ -1,5 +1,46 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3c851a0_f90e9ca9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-10-08T17:29:47Z",
+      "side": 1,
+      "message": "Unrelated to this change, but I see the fetching of the models is becoming *quite* expensive.",
+      "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0babff5f_d6b5745a",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-10-08T17:29:47Z",
+      "side": 1,
+      "message": "Fetching the models seems *quite* expensive: I believe the `ai-review-agent-provider` should avoid calling it too frequently.",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
