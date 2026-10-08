@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d289b96c_c1688e9c",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-10-08T08:35:10Z",
+      "side": 1,
+      "message": "One base URL now drives listing, countTokens and generateContent, so a model can\u0027t stay on stable v1.\n\nFine, but note here that v1beta is intended for all calls.",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0623858_f307f03a",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-10-08T08:35:10Z",
+      "side": 1,
+      "message": "Regex has customtools, but he commit message says custom-tools. gemini-[...]-custom-tools won\u0027t match.\n\nUse custom-?tools.",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "953b926e_54071e3b",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-10-08T08:35:10Z",
+      "side": 1,
+      "message": "One synchronous countTokens POST per model — ~15–25 round trips to the Gemini API per getModels().\n\nDoes the plugin layer actually cache this, or does every dropdown render pay the cost?",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3754d542_b374c613",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-10-08T08:35:10Z",
+      "side": 1,
+      "message": "Optional, may be worth exploring: these probes are independent but run sequentially (the findAll at line 62), so wall-clock is the sum of all round trips. If the shared http client is thread-safe, a small bounded pool (~4–8, CompletableFuture) would cut that to roughly the slowest single probe. Probably unnecessary given the daily cache, and there\u0027s no batch endpoint — countTokens is per-model — so per-model probing stays regardless.",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34437459_2e07c590",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-10-08T08:35:10Z",
+      "side": 1,
+      "message": "The v1beta switch moves generateContent (real reviews), not just model listing, onto beta. Needed — the new -latest/preview models 404 on v1 — but the commit message should say so (it reads as listing-only).",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
