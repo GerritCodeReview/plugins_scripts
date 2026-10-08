@@ -18,6 +18,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "33d55f2b_30887058",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-10-08T11:40:31Z",
+      "side": 1,
+      "message": "Done, the comment now states that all three calls (models listing, countTokens and generateContent) use v1beta on purpose.",
+      "parentUuid": "d289b96c_c1688e9c",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e0623858_f307f03a",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-10-08T08:35:10Z",
       "side": 1,
       "message": "Regex has customtools, but he commit message says custom-tools. gemini-[...]-custom-tools won\u0027t match.\n\nUse custom-?tools.",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1dcfaa2_f2b3bc2b",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-10-08T11:40:31Z",
+      "side": 1,
+      "message": "Done. The actual model ID is gemini-3.1-pro-preview-customtools; the regex now uses custom-?tools so both spellings match, and the commit message is fixed.",
+      "parentUuid": "e0623858_f307f03a",
       "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
@@ -52,6 +88,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "01ec31c3_ff5c55a3",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-10-08T11:40:31Z",
+      "side": 1,
+      "message": "Yes, it is cached: AiProvidersInfoCacheImpl keeps the getModels() result in the persistent `models` cache for 1 day, keyed by plugin. So the probes run at most once a day, not on every dropdown render; a full refresh measured ~2.2s (15 probes with the current catalog).\n\nSide note: because the cache is keyed by plugin rather than by API key, the key of whoever triggers the daily refresh decides the list for everyone, and Google decides availability per key (\"no longer available to new users\"). That was already true for the plain listing before this change; happy to look at it in the provider plugin separately.",
+      "parentUuid": "953b926e_54071e3b",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3754d542_b374c613",
@@ -69,6 +123,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a3f942a_078eb862",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-10-08T11:40:31Z",
+      "side": 1,
+      "message": "I would keep it sequential. The shared client (AiHttpClientProvider.createDefaultHttpClient) keeps Apache\u0027s default PoolingHttpClientConnectionManager limit of 2 connections per route, so parallel probes would gain about 2x at most, and while they run they would take both connections from live review calls to the same host. Not worth the extra code for a once-a-day cost.",
+      "parentUuid": "3754d542_b374c613",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "34437459_2e07c590",
@@ -82,6 +154,24 @@
       "writtenOn": "2026-10-08T08:35:10Z",
       "side": 1,
       "message": "The v1beta switch moves generateContent (real reviews), not just model listing, onto beta. Needed — the new -latest/preview models 404 on v1 — but the commit message should say so (it reads as listing-only).",
+      "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86a34451_89d69f32",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-10-08T11:40:31Z",
+      "side": 1,
+      "message": "Done, the commit message now says that generateContent, which serves the actual reviews, moves to v1beta as well, and why.",
+      "parentUuid": "34437459_2e07c590",
       "revId": "70eddd659961ab67d23e57733eb3dc3d4d21dde2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
