@@ -87,6 +87,30 @@
       },
       "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f1cb8b9_5324ebfa",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1025452
+      },
+      "writtenOn": "2026-10-09T07:01:10Z",
+      "side": 1,
+      "message": "That is correct and we did it already in [1237234: Cache list of AI Provider Models](https://review.gerrithub.io/c/GerritForge/ai-review-agent-provider/+/1237234) or you think about sth else?",
+      "parentUuid": "95943bb8_6d8ccb5e",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
