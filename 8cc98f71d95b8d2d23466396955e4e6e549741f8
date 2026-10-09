@@ -111,6 +111,30 @@
       },
       "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4804dd2b_6a689756",
+        "filename": "ai/ai-review-agent-gemini-1.0.groovy",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2026-10-09T07:46:11Z",
+      "side": 1,
+      "message": "Oh yes 😄 I forgot about it.",
+      "parentUuid": "6f1cb8b9_5324ebfa",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "8cc98f71d95b8d2d23466396955e4e6e549741f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
